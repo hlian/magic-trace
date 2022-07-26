@@ -6,16 +6,16 @@ let%expect_test "A raise_notrace OCaml exception" =
   [%expect
     {|
     (lines
-     ("825432/825432 339457.445933440: "
+     ("825432/825432 339457.445933440:       1 cycles:u: "
       "\t    7f5c0c875c60 _dl_open+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c65a1e8 dlopen_doit+0x58 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.446180643: "
+     ("825432/825432 339457.446180643:       1 cycles:u: "
       "\t    7f5c0c875a90 dl_open_worker+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875d0c _dl_open+0xac (/usr/lib64/ld-2.28.so)"
@@ -24,7 +24,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 35.314us BEGIN dlopen@@GLIBC_2.2.5
     -> 70.628us BEGIN _dlerror_run
     -> 105.943us BEGIN _dl_catch_error
@@ -32,7 +32,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 176.573us BEGIN dlopen_doit
     -> 211.888us BEGIN _dl_open
     (lines
-     ("825432/825432 339457.446472442: "
+     ("825432/825432 339457.446472442:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -46,13 +46,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 247.203us END   _dl_open
     -> 247.203us BEGIN _dl_open
     -> 344.469us BEGIN _dl_catch_exception
     -> 441.735us BEGIN dl_open_worker
     (lines
-     ("825432/825432 339457.446740618: "
+     ("825432/825432 339457.446740618:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -66,7 +66,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 539.002us END   dl_open_worker
     -> 539.002us BEGIN dl_open_worker
     -> 583.698us BEGIN _dl_catch_exception
@@ -75,7 +75,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 717.786us BEGIN __exp_finite
     -> 762.482us BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.446991448: "
+     ("825432/825432 339457.446991448:       1 cycles:u: "
       "\t    7f5c0c86b4d0 _dl_map_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -87,7 +87,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 807.178us END   [unknown @ -0x50ffef00 ([unknown])]
     -> 807.178us END   __exp_finite
     -> 807.178us END   _dl_relocate_object
@@ -95,7 +95,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 890.788us BEGIN _dl_lookup_symbol_x
     -> 974.398us BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.447230187: "
+     ("825432/825432 339457.447230187:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c8792d0 _dl_load_cache_lookup+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
@@ -109,7 +109,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  1.058ms END   do_lookup_x
     ->  1.058ms END   _dl_lookup_symbol_x
     ->  1.058ms END   _dl_relocate_object
@@ -117,7 +117,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  1.058ms BEGIN dl_open_worker_begin
     ->  1.177ms BEGIN _dl_map_object
     (lines
-     ("825432/825432 339457.447470278: "
+     ("825432/825432 339457.447470278:       1 cycles:u: "
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c3fdc78 do_sym+0x1e8 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a353 dlsym_doit+0x13 (/usr/lib64/libdl-2.28.so)"
@@ -125,13 +125,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     ->  1.297ms END   _dl_map_object
     ->  1.297ms BEGIN _dl_map_object
     ->  1.377ms BEGIN _dl_load_cache_lookup
     ->  1.457ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.447714027: "
+     ("825432/825432 339457.447714027:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -145,7 +145,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  1.537ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  1.537ms END   _dl_load_cache_lookup
     ->  1.537ms END   _dl_map_object
@@ -169,7 +169,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->   1.72ms BEGIN do_sym
     ->   1.75ms BEGIN cosf32x
     (lines
-     ("825432/825432 339457.447965070: "
+     ("825432/825432 339457.447965070:       1 cycles:u: "
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878471 _dl_sort_maps+0xa1 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c870d77 _dl_map_object_deps+0xa57 (/usr/lib64/ld-2.28.so)"
@@ -183,7 +183,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  1.781ms END   cosf32x
     ->  1.781ms END   do_sym
     ->  1.781ms END   dlsym_doit
@@ -207,7 +207,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  1.996ms BEGIN _dl_lookup_symbol_x
     ->  2.014ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.448211624: "
+     ("825432/825432 339457.448211624:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
@@ -222,7 +222,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  2.032ms END   do_lookup_x
     ->  2.032ms END   _dl_lookup_symbol_x
     ->  2.032ms END   _dl_relocate_object
@@ -232,7 +232,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  2.155ms BEGIN _dl_sort_maps
     ->  2.217ms BEGIN memset
     (lines
-     ("825432/825432 339457.448454909: "
+     ("825432/825432 339457.448454909:       1 cycles:u: "
       "\t    7f5c0c330cb0 cfree@GLIBC_2.2.5+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c8774ff _dl_close_worker+0x86f (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -240,7 +240,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     ->  2.278ms END   memset
     ->  2.278ms END   _dl_sort_maps
     ->  2.278ms END   _dl_map_object_deps
@@ -251,10 +251,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  2.424ms BEGIN memset
     ->  2.473ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.448733775: "
+     ("825432/825432 339457.448733775:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     ->  2.521ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  2.521ms END   memset
     ->  2.521ms END   _dl_map_object_from_fd
@@ -279,7 +279,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  2.731ms BEGIN _dl_close_worker
     ->  2.765ms BEGIN cfree@GLIBC_2.2.5
     (lines
-     ("825432/825432 339457.448979330: "
+     ("825432/825432 339457.448979330:       1 cycles:u: "
       "\t    7f5c0c8760e0 dl_open_worker_begin+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875ac2 dl_open_worker+0x32 (/usr/lib64/ld-2.28.so)"
@@ -290,7 +290,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->    2.8ms END   cfree@GLIBC_2.2.5
     ->    2.8ms END   _dl_close_worker
     ->    2.8ms END   _dl_close
@@ -303,7 +303,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  2.882ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->  2.964ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.449224719: "
+     ("825432/825432 339457.449224719:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -317,7 +317,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  3.046ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  3.046ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->  3.046ms END   main
@@ -333,7 +333,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  3.247ms BEGIN _dl_catch_exception
     ->  3.269ms BEGIN dl_open_worker_begin
     (lines
-     ("825432/825432 339457.449478648: "
+     ("825432/825432 339457.449478648:       1 cycles:u: "
       "\t    7f5c0c8783d0 _dl_sort_maps+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c870d77 _dl_map_object_deps+0xa57 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
@@ -346,14 +346,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  3.291ms END   dl_open_worker_begin
     ->  3.291ms BEGIN dl_open_worker_begin
     ->  3.355ms BEGIN _dl_relocate_object
     ->  3.418ms BEGIN _dl_lookup_symbol_x
     ->  3.482ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.449721642: "
+     ("825432/825432 339457.449721642:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -366,7 +366,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  3.545ms END   do_lookup_x
     ->  3.545ms END   _dl_lookup_symbol_x
     ->  3.545ms END   _dl_relocate_object
@@ -375,9 +375,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  3.626ms BEGIN _dl_map_object_deps
     ->  3.707ms BEGIN _dl_sort_maps
     (lines
-     ("825432/825432 339457.449962554: "
-      "\t          4006f0 dlopen@plt+0x0 (/usr/local/home/alamoreaux/demos/demo)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+     ("825432/825432 339457.449962554:       1 cycles:u: "
+      "\t          4006f0 dlopen@plt+0x0 (/usr/local/demo)"
+      "\t          4008de main+0x87 (/usr/local/demo)"))
     ->  3.788ms END   _dl_sort_maps
     ->  3.788ms END   _dl_map_object_deps
     ->  3.788ms END   dl_open_worker_begin
@@ -385,10 +385,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  3.869ms BEGIN _dl_map_object
     ->  3.949ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.450202504: "
+     ("825432/825432 339457.450202504:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     ->  4.029ms END   _dl_map_object_from_fd
     ->  4.029ms END   _dl_map_object
     ->  4.029ms END   dl_open_worker_begin
@@ -403,7 +403,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  4.029ms END   dlopen@@GLIBC_2.2.5
     ->  4.029ms BEGIN dlopen@plt
     (lines
-     ("825432/825432 339457.450472513: "
+     ("825432/825432 339457.450472513:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -417,14 +417,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  4.269ms END   dlopen@plt
     ->  4.269ms END   main
     ->  4.269ms BEGIN main
     ->  4.359ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->  4.449ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.450724406: "
+     ("825432/825432 339457.450724406:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c2c7 check_match+0x137 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -440,7 +440,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  4.539ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  4.539ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->  4.539ms END   main
@@ -459,7 +459,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  4.755ms BEGIN cosf32x
     ->  4.773ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.450974290: "
+     ("825432/825432 339457.450974290:       1 cycles:u: "
       "\t    7f5c0c8760e0 dl_open_worker_begin+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875ac2 dl_open_worker+0x32 (/usr/lib64/ld-2.28.so)"
@@ -470,7 +470,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  4.791ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  4.791ms END   cosf32x
     ->  4.791ms END   _dl_relocate_object
@@ -480,7 +480,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  4.941ms BEGIN check_match
     ->  4.991ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.451223951: "
+     ("825432/825432 339457.451223951:       1 cycles:u: "
       "\t    7f5c0c2b72d0 __sigsetjmp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe189 _dl_catch_exception+0x69 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c87075a _dl_map_object_deps+0x43a (/usr/lib64/ld-2.28.so)"
@@ -494,7 +494,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  5.041ms END   strcmp
     ->  5.041ms END   check_match
     ->  5.041ms END   do_lookup_x
@@ -503,7 +503,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  5.041ms END   dl_open_worker_begin
     ->  5.041ms BEGIN dl_open_worker_begin
     (lines
-     ("825432/825432 339457.451471766: "
+     ("825432/825432 339457.451471766:       1 cycles:u: "
       "\t    7f5c0c330cb0 cfree@GLIBC_2.2.5+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c869b16 open_verify.constprop.9+0x116 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b979 _dl_map_object+0x4a9 (/usr/lib64/ld-2.28.so)"
@@ -517,14 +517,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  5.291ms END   dl_open_worker_begin
     ->  5.291ms BEGIN dl_open_worker_begin
     ->  5.352ms BEGIN _dl_map_object_deps
     ->  5.414ms BEGIN _dl_catch_exception
     ->  5.476ms BEGIN __sigsetjmp
     (lines
-     ("825432/825432 339457.451713982: "
+     ("825432/825432 339457.451713982:       1 cycles:u: "
       "\t   c9858000c9858 [unknown] ([unknown])"))
     ->  5.538ms END   __sigsetjmp
     ->  5.538ms END   _dl_catch_exception
@@ -535,11 +535,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  5.659ms BEGIN open_verify.constprop.9
     ->   5.72ms BEGIN cfree@GLIBC_2.2.5
     (lines
-     ("825432/825432 339457.451955677: "
+     ("825432/825432 339457.451955677:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     ->  5.781ms END   cfree@GLIBC_2.2.5
     ->  5.781ms END   open_verify.constprop.9
     ->  5.781ms END   _dl_map_object
@@ -556,20 +556,20 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  5.781ms END   main
     ->  5.781ms BEGIN [unknown @ 0xc9858000c9858 ([unknown])]
     (lines
-     ("825432/825432 339457.452202325: "
+     ("825432/825432 339457.452202325:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     ->  6.022ms END   [unknown @ 0xc9858000c9858 ([unknown])]
     ->  6.022ms BEGIN main
     ->  6.084ms BEGIN fprintf
     ->  6.146ms BEGIN vfprintf
     ->  6.207ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.452453054: "
+     ("825432/825432 339457.452453054:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.452699257: "
+     ("825432/825432 339457.452699257:       1 cycles:u: "
       "\t    7f5c0c8758f0 call_dl_init+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1fa _dl_catch_exception+0xda (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875b29 dl_open_worker+0x99 (/usr/lib64/ld-2.28.so)"
@@ -580,7 +580,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  6.269ms END   __printf_fp
     ->  6.269ms END   vfprintf
     ->  6.269ms END   fprintf
@@ -588,7 +588,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  6.269ms BEGIN main
     ->  6.517ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.452947572: "
+     ("825432/825432 339457.452947572:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -602,7 +602,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  6.766ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->  6.766ms END   main
     ->  6.766ms BEGIN main
@@ -617,7 +617,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  6.969ms BEGIN _dl_catch_exception
     ->  6.992ms BEGIN call_dl_init
     (lines
-     ("825432/825432 339457.453199388: "
+     ("825432/825432 339457.453199388:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -631,7 +631,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  7.014ms END   call_dl_init
     ->  7.014ms END   _dl_catch_exception
     ->  7.014ms END   dl_open_worker
@@ -642,7 +642,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  7.182ms BEGIN __exp_finite
     ->  7.224ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.453454688: "
+     ("825432/825432 339457.453454688:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -656,9 +656,9 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.453706658: "
+     ("825432/825432 339457.453706658:       1 cycles:u: "
       "\t    7f5c0c85df60 [unknown] (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87075a _dl_map_object_deps+0x43a (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
@@ -671,7 +671,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  7.266ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  7.266ms END   __exp_finite
     ->  7.266ms END   _dl_relocate_object
@@ -679,7 +679,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  7.435ms BEGIN _dl_lookup_symbol_x
     ->  7.604ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.453955984: "
+     ("825432/825432 339457.453955984:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -692,7 +692,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  7.773ms END   do_lookup_x
     ->  7.773ms END   _dl_lookup_symbol_x
     ->  7.773ms END   _dl_relocate_object
@@ -701,7 +701,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  7.856ms BEGIN _dl_map_object_deps
     ->  7.939ms BEGIN [unknown @ 0x7f5c0c85df60 (/usr/lib64/ld-2.28.so)]
     (lines
-     ("825432/825432 339457.454202869: "
+     ("825432/825432 339457.454202869:       1 cycles:u: "
       "\t    7f5c0c8723f0 _dl_debug_initialize+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86863d _dl_map_object_from_fd+0x3d (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -715,7 +715,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  8.023ms END   [unknown @ 0x7f5c0c85df60 (/usr/lib64/ld-2.28.so)]
     ->  8.023ms END   _dl_map_object_deps
     ->  8.023ms END   dl_open_worker_begin
@@ -723,7 +723,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  8.105ms BEGIN _dl_map_object
     ->  8.187ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.454470916: "
+     ("825432/825432 339457.454470916:       1 cycles:u: "
       "\t    7f5c0c330cb0 cfree@GLIBC_2.2.5+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c8774ff _dl_close_worker+0x86f (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -731,14 +731,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     ->  8.269ms END   _dl_map_object_from_fd
     ->  8.269ms BEGIN _dl_map_object_from_fd
     ->  8.403ms BEGIN _dl_debug_initialize
     (lines
-     ("825432/825432 339457.454714011: "
+     ("825432/825432 339457.454714011:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     ->  8.537ms END   _dl_debug_initialize
     ->  8.537ms END   _dl_map_object_from_fd
     ->  8.537ms END   _dl_map_object
@@ -762,7 +762,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->   8.72ms BEGIN _dl_close_worker
     ->   8.75ms BEGIN cfree@GLIBC_2.2.5
     (lines
-     ("825432/825432 339457.454958443: "
+     ("825432/825432 339457.454958443:       1 cycles:u: "
       "\t    7f5c0bf59270 rintf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -775,7 +775,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  8.781ms END   cfree@GLIBC_2.2.5
     ->  8.781ms END   _dl_close_worker
     ->  8.781ms END   _dl_close
@@ -787,7 +787,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  8.781ms BEGIN main
     ->  8.903ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.455206794: "
+     ("825432/825432 339457.455206794:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -803,7 +803,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  9.025ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->  9.025ms END   main
     ->  9.025ms BEGIN main
@@ -820,7 +820,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  9.235ms BEGIN _dl_relocate_object
     ->  9.254ms BEGIN rintf32
     (lines
-     ("825432/825432 339457.455460942: "
+     ("825432/825432 339457.455460942:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -832,7 +832,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  9.273ms END   rintf32
     ->  9.273ms END   _dl_relocate_object
     ->  9.273ms BEGIN _dl_relocate_object
@@ -841,7 +841,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  9.426ms BEGIN check_match
     ->  9.477ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.455711345: "
+     ("825432/825432 339457.455711345:       1 cycles:u: "
       "\t    7f5c0c330660 malloc+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c870a78 _dl_map_object_deps+0x758 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
@@ -854,7 +854,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  9.528ms END   strcmp
     ->  9.528ms END   check_match
     ->  9.528ms END   do_lookup_x
@@ -862,7 +862,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  9.528ms END   _dl_relocate_object
     ->  9.528ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.455960562: "
+     ("825432/825432 339457.455960562:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -875,14 +875,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  9.778ms END   _dl_relocate_object
     ->  9.778ms END   dl_open_worker_begin
     ->  9.778ms BEGIN dl_open_worker_begin
     ->  9.861ms BEGIN _dl_map_object_deps
     ->  9.944ms BEGIN malloc
     (lines
-     ("825432/825432 339457.456205731: "
+     ("825432/825432 339457.456205731:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -895,15 +895,15 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.456451617: "
+     ("825432/825432 339457.456451617:       1 cycles:u: "
       "\t    7f5c0c65a190 dlopen_doit+0x0 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 10.027ms END   malloc
     -> 10.027ms END   _dl_map_object_deps
     -> 10.027ms END   dl_open_worker_begin
@@ -911,11 +911,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 10.191ms BEGIN _dl_map_object
     -> 10.354ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.456695419: "
+     ("825432/825432 339457.456695419:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 10.518ms END   _dl_map_object_from_fd
     -> 10.518ms END   _dl_map_object
     -> 10.518ms END   dl_open_worker_begin
@@ -926,9 +926,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 10.518ms END   dlopen_doit
     -> 10.518ms BEGIN dlopen_doit
     (lines
-     ("825432/825432 339457.456943034: "
+     ("825432/825432 339457.456943034:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 10.762ms END   dlopen_doit
     -> 10.762ms END   _dl_catch_exception
     -> 10.762ms END   _dl_catch_error
@@ -940,10 +940,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 10.886ms BEGIN vfprintf
     -> 10.948ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.457190004: "
+     ("825432/825432 339457.457190004:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     ->  11.01ms END   __printf_fp
     ->  11.01ms END   vfprintf
     ->  11.01ms END   fprintf
@@ -951,7 +951,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  11.01ms BEGIN main
     -> 11.133ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.457440709: "
+     ("825432/825432 339457.457440709:       1 cycles:u: "
       "\t    7f5c0bf39970 __atan2_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -964,10 +964,10 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 11.257ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.457691156: "
+     ("825432/825432 339457.457691156:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -981,7 +981,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 11.507ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 11.507ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 11.507ms END   main
@@ -999,7 +999,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 11.719ms BEGIN _dl_relocate_object
     -> 11.738ms BEGIN __atan2_finite
     (lines
-     ("825432/825432 339457.457943097: "
+     ("825432/825432 339457.457943097:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -1015,12 +1015,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 11.758ms END   __atan2_finite
     -> 11.758ms BEGIN __exp_finite
     -> 11.884ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.458194188: "
+     ("825432/825432 339457.458194188:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -1034,7 +1034,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  12.01ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  12.01ms END   __exp_finite
     ->  12.01ms END   _dl_relocate_object
@@ -1044,7 +1044,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  12.16ms BEGIN check_match
     -> 12.211ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.458470152: "
+     ("825432/825432 339457.458470152:       1 cycles:u: "
       "\t    7f5c0c870320 _dl_map_object_deps+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -1056,13 +1056,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 12.261ms END   strcmp
     -> 12.261ms END   check_match
     -> 12.261ms END   do_lookup_x
     -> 12.261ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.458719413: "
+     ("825432/825432 339457.458719413:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -1075,7 +1075,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 12.537ms END   do_lookup_x
     -> 12.537ms END   _dl_lookup_symbol_x
     -> 12.537ms END   _dl_relocate_object
@@ -1083,7 +1083,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 12.537ms BEGIN dl_open_worker_begin
     -> 12.661ms BEGIN _dl_map_object_deps
     (lines
-     ("825432/825432 339457.458962040: "
+     ("825432/825432 339457.458962040:       1 cycles:u: "
       "\tffffffffaf000010 [unknown] ([unknown])"
       "\t    7f5c0c87ff20 _fxstat+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c872c7c _dl_sysdep_read_whole_file+0x4c (/usr/lib64/ld-2.28.so)"
@@ -1099,16 +1099,16 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 12.786ms END   _dl_map_object_deps
     -> 12.786ms END   dl_open_worker_begin
     -> 12.786ms BEGIN dl_open_worker_begin
     -> 12.867ms BEGIN _dl_map_object
     -> 12.948ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.459203398: "
+     ("825432/825432 339457.459203398:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 13.029ms END   _dl_map_object_from_fd
     -> 13.029ms END   _dl_map_object
     -> 13.029ms BEGIN _dl_map_object
@@ -1117,11 +1117,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 13.173ms BEGIN _fxstat
     -> 13.222ms BEGIN [unknown @ -0x50fffff0 ([unknown])]
     (lines
-     ("825432/825432 339457.459452837: "
+     ("825432/825432 339457.459452837:       1 cycles:u: "
       "\t    7f5c0c65a000 [unknown] (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     ->  13.27ms END   [unknown @ -0x50fffff0 ([unknown])]
     ->  13.27ms END   _fxstat
     ->  13.27ms END   _dl_sysdep_read_whole_file
@@ -1141,7 +1141,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  13.27ms BEGIN main
     -> 13.395ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.459697957: "
+     ("825432/825432 339457.459697957:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -1153,7 +1153,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 13.519ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 13.519ms END   main
     -> 13.519ms BEGIN main
@@ -1161,7 +1161,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 13.642ms BEGIN _dlerror_run
     -> 13.703ms BEGIN [unknown @ 0x7f5c0c65a000 (/usr/lib64/libdl-2.28.so)]
     (lines
-     ("825432/825432 339457.459948256: "
+     ("825432/825432 339457.459948256:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -1175,7 +1175,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 13.765ms END   [unknown @ 0x7f5c0c65a000 (/usr/lib64/libdl-2.28.so)]
     -> 13.765ms END   _dlerror_run
     -> 13.765ms END   dlsym
@@ -1193,7 +1193,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 13.973ms BEGIN dl_open_worker_begin
     -> 13.994ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.460199768: "
+     ("825432/825432 339457.460199768:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -1206,13 +1206,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 14.015ms END   _dl_relocate_object
     -> 14.015ms BEGIN _dl_relocate_object
     -> 14.099ms BEGIN _dl_lookup_symbol_x
     -> 14.182ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.460455230: "
+     ("825432/825432 339457.460455230:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87311f _dl_name_match_p+0x3f (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b560 _dl_map_object+0x90 (/usr/lib64/ld-2.28.so)"
@@ -1229,12 +1229,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 14.266ms END   do_lookup_x
     -> 14.266ms END   _dl_lookup_symbol_x
     -> 14.266ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.460703987: "
+     ("825432/825432 339457.460703987:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -1247,7 +1247,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 14.522ms END   _dl_lookup_symbol_x
     -> 14.522ms END   _dl_relocate_object
     -> 14.522ms END   dl_open_worker_begin
@@ -1259,7 +1259,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 14.699ms BEGIN _dl_name_match_p
     -> 14.735ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.460949899: "
+     ("825432/825432 339457.460949899:       1 cycles:u: "
       "\t    7f5c0c8681b0 _dl_process_pt_note+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868baf _dl_map_object_from_fd+0x5af (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -1273,7 +1273,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 14.771ms END   strcmp
     -> 14.771ms END   _dl_name_match_p
     -> 14.771ms END   _dl_map_object
@@ -1285,7 +1285,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 14.853ms BEGIN _dl_map_object
     -> 14.934ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.461197354: "
+     ("825432/825432 339457.461197354:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c8792d0 _dl_load_cache_lookup+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
@@ -1299,12 +1299,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 15.016ms END   _dl_map_object_from_fd
     -> 15.016ms BEGIN _dl_map_object_from_fd
     ->  15.14ms BEGIN _dl_process_pt_note
     (lines
-     ("825432/825432 339457.461442670: "
+     ("825432/825432 339457.461442670:       1 cycles:u: "
       "\t    7f5c0bf1e500 [unknown] (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0bf1e5b2 [unknown] (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c876b23 call_destructors+0x43 (/usr/lib64/ld-2.28.so)"
@@ -1315,7 +1315,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 15.264ms END   _dl_process_pt_note
     -> 15.264ms END   _dl_map_object_from_fd
     -> 15.264ms END   _dl_map_object
@@ -1323,11 +1323,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 15.346ms BEGIN _dl_load_cache_lookup
     -> 15.427ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.461695137: "
+     ("825432/825432 339457.461695137:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 15.509ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 15.509ms END   _dl_load_cache_lookup
     -> 15.509ms END   _dl_map_object
@@ -1354,11 +1354,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 15.716ms BEGIN [unknown @ 0x7f5c0bf1e5b2 (/usr/lib64/libm-2.28.so)]
     -> 15.739ms BEGIN [unknown @ 0x7f5c0bf1e500 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.461945002: "
+     ("825432/825432 339457.461945002:       1 cycles:u: "
       "\t    7f5c0c2b58c0 [unknown] (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fab88 vfprintf+0xa8 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 15.762ms END   [unknown @ 0x7f5c0bf1e500 (/usr/lib64/libm-2.28.so)]
     -> 15.762ms END   [unknown @ 0x7f5c0bf1e5b2 (/usr/lib64/libm-2.28.so)]
     -> 15.762ms END   call_destructors
@@ -1375,19 +1375,19 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 15.887ms BEGIN vfprintf
     -> 15.949ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.462192152: "
+     ("825432/825432 339457.462192152:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 16.012ms END   __printf_fp
     -> 16.012ms END   vfprintf
     -> 16.012ms BEGIN vfprintf
     -> 16.135ms BEGIN [unknown @ 0x7f5c0c2b58c0 (/usr/lib64/libc-2.28.so)]
     (lines
-     ("825432/825432 339457.462464667: "
+     ("825432/825432 339457.462464667:       1 cycles:u: "
       "\t    7f5c0c65a900 _dlerror_run+0x0 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 16.259ms END   [unknown @ 0x7f5c0c2b58c0 (/usr/lib64/libc-2.28.so)]
     -> 16.259ms END   vfprintf
     -> 16.259ms END   fprintf
@@ -1396,7 +1396,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  16.35ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->  16.44ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.462711349: "
+     ("825432/825432 339457.462711349:       1 cycles:u: "
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -1409,7 +1409,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 16.531ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 16.531ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 16.531ms END   main
@@ -1417,7 +1417,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 16.613ms BEGIN dlopen@@GLIBC_2.2.5
     -> 16.696ms BEGIN _dlerror_run
     (lines
-     ("825432/825432 339457.462960512: "
+     ("825432/825432 339457.462960512:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -1430,7 +1430,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 16.778ms END   _dlerror_run
     -> 16.778ms BEGIN _dlerror_run
     -> 16.801ms BEGIN _dl_catch_error
@@ -1444,7 +1444,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 16.982ms BEGIN _dl_relocate_object
     -> 17.004ms BEGIN __exp_finite
     (lines
-     ("825432/825432 339457.463212286: "
+     ("825432/825432 339457.463212286:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -1459,13 +1459,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 17.027ms END   __exp_finite
     -> 17.027ms END   _dl_relocate_object
     -> 17.027ms BEGIN _dl_relocate_object
     -> 17.153ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.463466862: "
+     ("825432/825432 339457.463466862:       1 cycles:u: "
       "\t    7f5c0c86a880 _dl_dst_count+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87065e _dl_map_object_deps+0x33e (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
@@ -1478,13 +1478,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 17.279ms END   _dl_lookup_symbol_x
     -> 17.279ms BEGIN _dl_lookup_symbol_x
     -> 17.364ms BEGIN do_lookup_x
     -> 17.449ms BEGIN check_match
     (lines
-     ("825432/825432 339457.463715456: "
+     ("825432/825432 339457.463715456:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
@@ -1499,7 +1499,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 17.533ms END   check_match
     -> 17.533ms END   do_lookup_x
     -> 17.533ms END   _dl_lookup_symbol_x
@@ -1509,7 +1509,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 17.616ms BEGIN _dl_map_object_deps
     -> 17.699ms BEGIN _dl_dst_count
     (lines
-     ("825432/825432 339457.463958798: "
+     ("825432/825432 339457.463958798:       1 cycles:u: "
       "\t    7f5c0c8802e0 mmap64+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c872cb8 _dl_sysdep_read_whole_file+0x88 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c879407 _dl_load_cache_lookup+0x137 (/usr/lib64/ld-2.28.so)"
@@ -1524,7 +1524,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 17.782ms END   _dl_dst_count
     -> 17.782ms END   _dl_map_object_deps
     -> 17.782ms END   dl_open_worker_begin
@@ -1534,14 +1534,14 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 17.928ms BEGIN memset
     -> 17.977ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.464200361: "
+     ("825432/825432 339457.464200361:       1 cycles:u: "
       "\t    7f5c0c876c90 _dl_close_worker+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 18.025ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 18.025ms END   memset
     -> 18.025ms END   _dl_map_object_from_fd
@@ -1551,10 +1551,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 18.146ms BEGIN _dl_sysdep_read_whole_file
     -> 18.207ms BEGIN mmap64
     (lines
-     ("825432/825432 339457.464451531: "
+     ("825432/825432 339457.464451531:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 18.267ms END   mmap64
     -> 18.267ms END   _dl_sysdep_read_whole_file
     -> 18.267ms END   _dl_load_cache_lookup
@@ -1578,7 +1578,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 18.446ms BEGIN _dl_close
     -> 18.482ms BEGIN _dl_close_worker
     (lines
-     ("825432/825432 339457.464699007: "
+     ("825432/825432 339457.464699007:       1 cycles:u: "
       "\t   c9858000c9858 [unknown] ([unknown])"))
     -> 18.518ms END   _dl_close_worker
     -> 18.518ms END   _dl_close
@@ -1591,7 +1591,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 18.601ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 18.683ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.464945650: "
+     ("825432/825432 339457.464945650:       1 cycles:u: "
       "\t    7f5c0bf3dcb0 __log_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -1604,13 +1604,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 18.766ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 18.766ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 18.766ms END   main
     -> 18.766ms BEGIN [unknown @ 0xc9858000c9858 ([unknown])]
     (lines
-     ("825432/825432 339457.465194354: "
+     ("825432/825432 339457.465194354:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -1622,7 +1622,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 19.012ms END   [unknown @ 0xc9858000c9858 ([unknown])]
     -> 19.012ms BEGIN main
     -> 19.031ms BEGIN dlopen@@GLIBC_2.2.5
@@ -1638,7 +1638,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 19.223ms BEGIN _dl_relocate_object
     -> 19.242ms BEGIN __log_finite
     (lines
-     ("825432/825432 339457.465449405: "
+     ("825432/825432 339457.465449405:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -1652,12 +1652,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 19.261ms END   __log_finite
     -> 19.261ms END   _dl_relocate_object
     -> 19.261ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.465700891: "
+     ("825432/825432 339457.465700891:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -1671,9 +1671,9 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.465951642: "
+     ("825432/825432 339457.465951642:       1 cycles:u: "
       "\t    7f5c0c330660 malloc+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c870a78 _dl_map_object_deps+0x758 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
@@ -1686,13 +1686,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 19.516ms END   _dl_relocate_object
     -> 19.516ms BEGIN _dl_relocate_object
     -> 19.683ms BEGIN _dl_lookup_symbol_x
     -> 19.851ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.466203487: "
+     ("825432/825432 339457.466203487:       1 cycles:u: "
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -1706,7 +1706,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 20.018ms END   do_lookup_x
     -> 20.018ms END   _dl_lookup_symbol_x
     -> 20.018ms END   _dl_relocate_object
@@ -1715,7 +1715,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 20.102ms BEGIN _dl_map_object_deps
     -> 20.186ms BEGIN malloc
     (lines
-     ("825432/825432 339457.466471401: "
+     ("825432/825432 339457.466471401:       1 cycles:u: "
       "\t    7f5c0c32ea00 _int_malloc+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3314a1 __libc_calloc+0x81 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c86df51 _dl_new_object+0x71 (/usr/lib64/ld-2.28.so)"
@@ -1731,7 +1731,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  20.27ms END   malloc
     ->  20.27ms END   _dl_map_object_deps
     ->  20.27ms END   dl_open_worker_begin
@@ -1740,7 +1740,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 20.404ms BEGIN _dl_map_object_from_fd
     -> 20.471ms BEGIN _dl_setup_hash
     (lines
-     ("825432/825432 339457.466714359: "
+     ("825432/825432 339457.466714359:       1 cycles:u: "
       "\t   c9858000c9858 [unknown] ([unknown])"))
     -> 20.538ms END   _dl_setup_hash
     -> 20.538ms END   _dl_map_object_from_fd
@@ -1749,9 +1749,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 20.659ms BEGIN __libc_calloc
     ->  20.72ms BEGIN _int_malloc
     (lines
-     ("825432/825432 339457.466956157: "
+     ("825432/825432 339457.466956157:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 20.781ms END   _int_malloc
     -> 20.781ms END   __libc_calloc
     -> 20.781ms END   _dl_new_object
@@ -1770,7 +1770,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 20.781ms END   main
     -> 20.781ms BEGIN [unknown @ 0xc9858000c9858 ([unknown])]
     (lines
-     ("825432/825432 339457.467201910: "
+     ("825432/825432 339457.467201910:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fdaff do_sym+0x6f (/usr/lib64/libc-2.28.so)"
@@ -1779,12 +1779,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     -> 21.023ms END   [unknown @ 0xc9858000c9858 ([unknown])]
     -> 21.023ms BEGIN main
     -> 21.146ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.467451769: "
+     ("825432/825432 339457.467451769:       1 cycles:u: "
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -1797,7 +1797,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 21.268ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 21.268ms END   main
     -> 21.268ms BEGIN main
@@ -1810,7 +1810,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 21.463ms BEGIN _dl_lookup_symbol_x
     -> 21.491ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.467701473: "
+     ("825432/825432 339457.467701473:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -1825,7 +1825,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 21.518ms END   do_lookup_x
     -> 21.518ms END   _dl_lookup_symbol_x
     -> 21.518ms END   do_sym
@@ -1849,7 +1849,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  21.73ms BEGIN _dl_relocate_object
     -> 21.749ms BEGIN __exp_finite
     (lines
-     ("825432/825432 339457.467951784: "
+     ("825432/825432 339457.467951784:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -1861,7 +1861,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 21.768ms END   __exp_finite
     -> 21.768ms END   _dl_relocate_object
     -> 21.768ms BEGIN _dl_relocate_object
@@ -1869,7 +1869,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 21.893ms BEGIN do_lookup_x
     -> 21.956ms BEGIN check_match
     (lines
-     ("825432/825432 339457.468203025: "
+     ("825432/825432 339457.468203025:       1 cycles:u: "
       "\t    7f5c0c32ea00 _int_malloc+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3314a1 __libc_calloc+0x81 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c8737f7 _dl_check_map_versions+0x4c7 (/usr/lib64/ld-2.28.so)"
@@ -1883,14 +1883,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 22.018ms END   check_match
     -> 22.018ms END   do_lookup_x
     -> 22.018ms END   _dl_lookup_symbol_x
     -> 22.018ms END   _dl_relocate_object
     -> 22.018ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.468457156: "
+     ("825432/825432 339457.468457156:       1 cycles:u: "
       "\tffffffffaf000010 [unknown] ([unknown])"
       "\t    7f5c0c880010 __GI___close_nocancel+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c869151 _dl_map_object_from_fd+0xb51 (/usr/lib64/ld-2.28.so)"
@@ -1905,7 +1905,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  22.27ms END   _dl_relocate_object
     ->  22.27ms END   dl_open_worker_begin
     ->  22.27ms BEGIN dl_open_worker_begin
@@ -1913,7 +1913,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 22.397ms BEGIN __libc_calloc
     ->  22.46ms BEGIN _int_malloc
     (lines
-     ("825432/825432 339457.468706531: "
+     ("825432/825432 339457.468706531:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -1926,7 +1926,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 22.524ms END   _int_malloc
     -> 22.524ms END   __libc_calloc
     -> 22.524ms END   _dl_check_map_versions
@@ -1937,7 +1937,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 22.673ms BEGIN __GI___close_nocancel
     -> 22.723ms BEGIN [unknown @ -0x50fffff0 ([unknown])]
     (lines
-     ("825432/825432 339457.468952172: "
+     ("825432/825432 339457.468952172:       1 cycles:u: "
       "\t    7f5c0c330660 malloc+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c8805f9 strdup+0x19 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8793ae _dl_load_cache_lookup+0xde (/usr/lib64/ld-2.28.so)"
@@ -1952,13 +1952,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 22.773ms END   [unknown @ -0x50fffff0 ([unknown])]
     -> 22.773ms END   __GI___close_nocancel
     -> 22.773ms END   _dl_map_object_from_fd
     -> 22.773ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.469201071: "
+     ("825432/825432 339457.469201071:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c8792d0 _dl_load_cache_lookup+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
@@ -1972,7 +1972,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 23.019ms END   _dl_map_object_from_fd
     -> 23.019ms END   _dl_map_object
     -> 23.019ms BEGIN _dl_map_object
@@ -1980,19 +1980,19 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 23.143ms BEGIN strdup
     -> 23.205ms BEGIN malloc
     (lines
-     ("825432/825432 339457.469445371: "
+     ("825432/825432 339457.469445371:       1 cycles:u: "
       "\t    7f5c0c2faae0 vfprintf+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 23.268ms END   malloc
     -> 23.268ms END   strdup
     -> 23.268ms END   _dl_load_cache_lookup
     -> 23.268ms BEGIN _dl_load_cache_lookup
     ->  23.39ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.469694024: "
+     ("825432/825432 339457.469694024:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 23.512ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 23.512ms END   _dl_load_cache_lookup
     -> 23.512ms END   _dl_map_object
@@ -2011,36 +2011,36 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 23.595ms BEGIN fprintf
     -> 23.678ms BEGIN vfprintf
     (lines
-     ("825432/825432 339457.469942661: "
+     ("825432/825432 339457.469942661:       1 cycles:u: "
       "\t    7f5c0c2faae0 vfprintf+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 23.761ms END   vfprintf
     -> 23.761ms END   fprintf
     -> 23.761ms END   main
     -> 23.761ms BEGIN main
     -> 23.885ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.470191360: "
+     ("825432/825432 339457.470191360:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          40098a main+0x133 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40098a main+0x133 (/usr/local/home/demo)"))
     -> 24.009ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 24.009ms END   main
     -> 24.009ms BEGIN main
     -> 24.092ms BEGIN fprintf
     -> 24.175ms BEGIN vfprintf
     (lines
-     ("825432/825432 339457.470459415: "
+     ("825432/825432 339457.470459415:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 24.258ms END   vfprintf
     -> 24.258ms END   fprintf
     -> 24.258ms END   main
     -> 24.258ms BEGIN main
     -> 24.392ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.470708283: "
+     ("825432/825432 339457.470708283:       1 cycles:u: "
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -2053,14 +2053,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 24.526ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 24.526ms END   main
     -> 24.526ms BEGIN main
     -> 24.609ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 24.692ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.470957073: "
+     ("825432/825432 339457.470957073:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -2074,7 +2074,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 24.775ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 24.775ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 24.775ms END   main
@@ -2092,7 +2092,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 24.985ms BEGIN _dl_relocate_object
     -> 25.004ms BEGIN __exp_finite
     (lines
-     ("825432/825432 339457.471208638: "
+     ("825432/825432 339457.471208638:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -2106,12 +2106,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 25.024ms END   __exp_finite
     -> 25.024ms BEGIN cosf32
     -> 25.149ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.471463988: "
+     ("825432/825432 339457.471463988:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -2123,7 +2123,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 25.275ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 25.275ms END   cosf32
     -> 25.275ms END   _dl_relocate_object
@@ -2131,7 +2131,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  25.36ms BEGIN _dl_lookup_symbol_x
     -> 25.445ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.471714258: "
+     ("825432/825432 339457.471714258:       1 cycles:u: "
       "\t    7f5c0c86a880 _dl_dst_count+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87065e _dl_map_object_deps+0x33e (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
@@ -2144,7 +2144,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 25.531ms END   do_lookup_x
     -> 25.531ms END   _dl_lookup_symbol_x
     -> 25.531ms END   _dl_relocate_object
@@ -2152,7 +2152,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 25.531ms BEGIN dl_open_worker_begin
     -> 25.656ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.471962827: "
+     ("825432/825432 339457.471962827:       1 cycles:u: "
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -2166,14 +2166,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 25.781ms END   _dl_check_map_versions
     -> 25.781ms END   dl_open_worker_begin
     -> 25.781ms BEGIN dl_open_worker_begin
     -> 25.864ms BEGIN _dl_map_object_deps
     -> 25.947ms BEGIN _dl_dst_count
     (lines
-     ("825432/825432 339457.472205894: "
+     ("825432/825432 339457.472205894:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c8789f0 _dl_cache_libcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878bd6 search_cache+0x116 (/usr/lib64/ld-2.28.so)"
@@ -2189,7 +2189,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 26.029ms END   _dl_dst_count
     -> 26.029ms END   _dl_map_object_deps
     -> 26.029ms END   dl_open_worker_begin
@@ -2198,7 +2198,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 26.151ms BEGIN _dl_map_object_from_fd
     -> 26.212ms BEGIN memset
     (lines
-     ("825432/825432 339457.472449541: "
+     ("825432/825432 339457.472449541:       1 cycles:u: "
       "\t    7f5c0bf1e500 [unknown] (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0bf1e5b2 [unknown] (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c876b23 call_destructors+0x43 (/usr/lib64/ld-2.28.so)"
@@ -2209,7 +2209,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 26.272ms END   memset
     -> 26.272ms END   _dl_map_object_from_fd
     -> 26.272ms END   _dl_map_object
@@ -2219,10 +2219,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 26.419ms BEGIN _dl_cache_libcmp
     -> 26.467ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.472700997: "
+     ("825432/825432 339457.472700997:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 26.516ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 26.516ms END   _dl_cache_libcmp
     -> 26.516ms END   search_cache
@@ -2251,9 +2251,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 26.722ms BEGIN [unknown @ 0x7f5c0bf1e5b2 (/usr/lib64/libm-2.28.so)]
     -> 26.745ms BEGIN [unknown @ 0x7f5c0bf1e500 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.472950036: "
+     ("825432/825432 339457.472950036:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 26.768ms END   [unknown @ 0x7f5c0bf1e500 (/usr/lib64/libm-2.28.so)]
     -> 26.768ms END   [unknown @ 0x7f5c0bf1e5b2 (/usr/lib64/libm-2.28.so)]
     -> 26.768ms END   call_destructors
@@ -2269,7 +2269,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 26.851ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 26.934ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.473197553: "
+     ("825432/825432 339457.473197553:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fdaff do_sym+0x6f (/usr/lib64/libc-2.28.so)"
@@ -2278,10 +2278,10 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     -> 27.017ms END   [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.473447335: "
+     ("825432/825432 339457.473447335:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -2293,7 +2293,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 27.264ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 27.264ms END   main
     -> 27.264ms BEGIN main
@@ -2306,7 +2306,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 27.458ms BEGIN _dl_lookup_symbol_x
     -> 27.486ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.473697152: "
+     ("825432/825432 339457.473697152:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -2321,7 +2321,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 27.514ms END   do_lookup_x
     -> 27.514ms END   _dl_lookup_symbol_x
     -> 27.514ms END   do_sym
@@ -2344,7 +2344,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 27.722ms BEGIN dl_open_worker_begin
     -> 27.743ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.473948467: "
+     ("825432/825432 339457.473948467:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -2358,14 +2358,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 27.764ms END   _dl_relocate_object
     -> 27.764ms BEGIN _dl_relocate_object
     -> 27.827ms BEGIN _dl_lookup_symbol_x
     -> 27.889ms BEGIN do_lookup_x
     -> 27.952ms BEGIN check_match
     (lines
-     ("825432/825432 339457.474198877: "
+     ("825432/825432 339457.474198877:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -2380,12 +2380,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 28.015ms END   check_match
     -> 28.015ms END   do_lookup_x
     -> 28.015ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.474474908: "
+     ("825432/825432 339457.474474908:       1 cycles:u: "
       "\t    7f5c0c2b72d0 __sigsetjmp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe189 _dl_catch_exception+0x69 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c87075a _dl_map_object_deps+0x43a (/usr/lib64/ld-2.28.so)"
@@ -2399,12 +2399,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 28.265ms END   do_lookup_x
     -> 28.265ms BEGIN do_lookup_x
     -> 28.403ms BEGIN check_match
     (lines
-     ("825432/825432 339457.474723593: "
+     ("825432/825432 339457.474723593:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
@@ -2419,7 +2419,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 28.541ms END   check_match
     -> 28.541ms END   do_lookup_x
     -> 28.541ms END   _dl_lookup_symbol_x
@@ -2430,7 +2430,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 28.666ms BEGIN _dl_catch_exception
     -> 28.728ms BEGIN __sigsetjmp
     (lines
-     ("825432/825432 339457.474964425: "
+     ("825432/825432 339457.474964425:       1 cycles:u: "
       "\t    7f5c0c86b4d0 _dl_map_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -2442,7 +2442,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  28.79ms END   __sigsetjmp
     ->  28.79ms END   _dl_catch_exception
     ->  28.79ms END   _dl_map_object_deps
@@ -2453,17 +2453,17 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 28.935ms BEGIN memset
     -> 28.983ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.475206378: "
+     ("825432/825432 339457.475206378:       1 cycles:u: "
       "\t    7f5c0c2faae0 vfprintf+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 29.031ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 29.031ms END   memset
     -> 29.031ms END   _dl_map_object_from_fd
     -> 29.031ms END   _dl_map_object
     -> 29.031ms BEGIN _dl_map_object
     (lines
-     ("825432/825432 339457.475454053: "
+     ("825432/825432 339457.475454053:       1 cycles:u: "
       "\t   c9858000c9858 [unknown] ([unknown])"))
     -> 29.273ms END   _dl_map_object
     -> 29.273ms END   dl_open_worker_begin
@@ -2481,7 +2481,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 29.355ms BEGIN fprintf
     -> 29.438ms BEGIN vfprintf
     (lines
-     ("825432/825432 339457.475697135: "
+     ("825432/825432 339457.475697135:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -2495,13 +2495,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 29.521ms END   vfprintf
     -> 29.521ms END   fprintf
     -> 29.521ms END   main
     -> 29.521ms BEGIN [unknown @ 0xc9858000c9858 ([unknown])]
     (lines
-     ("825432/825432 339457.475949526: "
+     ("825432/825432 339457.475949526:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -2517,7 +2517,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 29.764ms END   [unknown @ 0xc9858000c9858 ([unknown])]
     -> 29.764ms BEGIN main
     -> 29.782ms BEGIN dlopen@@GLIBC_2.2.5
@@ -2534,7 +2534,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  29.98ms BEGIN cosf32
     -> 29.998ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.476199536: "
+     ("825432/825432 339457.476199536:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -2548,7 +2548,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 30.016ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 30.016ms END   cosf32
     -> 30.016ms END   _dl_relocate_object
@@ -2558,7 +2558,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 30.166ms BEGIN check_match
     -> 30.216ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.476454400: "
+     ("825432/825432 339457.476454400:       1 cycles:u: "
       "\t    7f5c0c862540 strchr+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86a893 _dl_dst_count+0x13 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87065e _dl_map_object_deps+0x33e (/usr/lib64/ld-2.28.so)"
@@ -2572,13 +2572,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 30.266ms END   strcmp
     -> 30.266ms END   check_match
     -> 30.266ms END   do_lookup_x
     -> 30.266ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.476703706: "
+     ("825432/825432 339457.476703706:       1 cycles:u: "
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -2592,7 +2592,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 30.521ms END   do_lookup_x
     -> 30.521ms END   _dl_lookup_symbol_x
     -> 30.521ms END   _dl_relocate_object
@@ -2602,7 +2602,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 30.646ms BEGIN _dl_dst_count
     -> 30.708ms BEGIN strchr
     (lines
-     ("825432/825432 339457.476948542: "
+     ("825432/825432 339457.476948542:       1 cycles:u: "
       "\t    7f5c0c8789f0 _dl_cache_libcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878c80 search_cache+0x1c0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87932c _dl_load_cache_lookup+0x5c (/usr/lib64/ld-2.28.so)"
@@ -2617,7 +2617,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  30.77ms END   strchr
     ->  30.77ms END   _dl_dst_count
     ->  30.77ms END   _dl_map_object_deps
@@ -2627,7 +2627,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 30.893ms BEGIN _dl_map_object_from_fd
     -> 30.954ms BEGIN memset
     (lines
-     ("825432/825432 339457.477194105: "
+     ("825432/825432 339457.477194105:       1 cycles:u: "
       "\t    7f5c0c87fd40 _dl_addr_inside_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875be1 _dl_find_dso_for_object+0x51 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87611c dl_open_worker_begin+0x3c (/usr/lib64/ld-2.28.so)"
@@ -2640,7 +2640,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 31.015ms END   memset
     -> 31.015ms END   _dl_map_object_from_fd
     -> 31.015ms END   _dl_map_object
@@ -2649,14 +2649,14 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 31.138ms BEGIN search_cache
     -> 31.199ms BEGIN _dl_cache_libcmp
     (lines
-     ("825432/825432 339457.477440480: "
+     ("825432/825432 339457.477440480:       1 cycles:u: "
       "\t    7f5c0c876c90 _dl_close_worker+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 31.261ms END   _dl_cache_libcmp
     -> 31.261ms END   search_cache
     -> 31.261ms END   _dl_load_cache_lookup
@@ -2666,10 +2666,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 31.343ms BEGIN _dl_find_dso_for_object
     -> 31.425ms BEGIN _dl_addr_inside_object
     (lines
-     ("825432/825432 339457.477690732: "
+     ("825432/825432 339457.477690732:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 31.507ms END   _dl_addr_inside_object
     -> 31.507ms END   _dl_find_dso_for_object
     -> 31.507ms END   dl_open_worker_begin
@@ -2691,12 +2691,12 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 31.686ms BEGIN _dl_close
     -> 31.722ms BEGIN _dl_close_worker
     (lines
-     ("825432/825432 339457.477939864: "
+     ("825432/825432 339457.477939864:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.478189529: "
+     ("825432/825432 339457.478189529:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -2707,7 +2707,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     -> 31.757ms END   _dl_close_worker
     -> 31.757ms END   _dl_close
     -> 31.757ms END   _dl_catch_exception
@@ -2719,7 +2719,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 31.924ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->  32.09ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.478458187: "
+     ("825432/825432 339457.478458187:       1 cycles:u: "
       "\t    7f5c0bf39970 __atan2_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -2732,7 +2732,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 32.256ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 32.256ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 32.256ms END   main
@@ -2748,7 +2748,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 32.476ms BEGIN check_match
     ->   32.5ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.478710023: "
+     ("825432/825432 339457.478710023:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -2762,7 +2762,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 32.525ms END   strcmp
     -> 32.525ms END   check_match
     -> 32.525ms END   do_lookup_x
@@ -2788,7 +2788,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 32.738ms BEGIN _dl_relocate_object
     -> 32.757ms BEGIN __atan2_finite
     (lines
-     ("825432/825432 339457.478960164: "
+     ("825432/825432 339457.478960164:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -2801,14 +2801,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 32.777ms END   __atan2_finite
     -> 32.777ms END   _dl_relocate_object
     -> 32.777ms BEGIN _dl_relocate_object
     ->  32.86ms BEGIN _dl_lookup_symbol_x
     -> 32.943ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.479210904: "
+     ("825432/825432 339457.479210904:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -2820,12 +2820,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 33.027ms END   do_lookup_x
     -> 33.027ms END   _dl_lookup_symbol_x
     -> 33.027ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.479463564: "
+     ("825432/825432 339457.479463564:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -2838,14 +2838,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 33.277ms END   _dl_lookup_symbol_x
     -> 33.277ms END   _dl_relocate_object
     -> 33.277ms END   dl_open_worker_begin
     -> 33.277ms BEGIN dl_open_worker_begin
     -> 33.404ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.479709609: "
+     ("825432/825432 339457.479709609:       1 cycles:u: "
       "\t    7f5c0c869a00 open_verify.constprop.9+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b979 _dl_map_object+0x4a9 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -2858,14 +2858,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  33.53ms END   _dl_check_map_versions
     ->  33.53ms END   dl_open_worker_begin
     ->  33.53ms BEGIN dl_open_worker_begin
     -> 33.612ms BEGIN _dl_map_object
     -> 33.694ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.479953652: "
+     ("825432/825432 339457.479953652:       1 cycles:u: "
       "\t    7f5c0c85df60 [unknown] (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875d0c _dl_open+0xac (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c65a1e8 dlopen_doit+0x58 (/usr/lib64/libdl-2.28.so)"
@@ -2873,17 +2873,17 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 33.776ms END   _dl_map_object_from_fd
     -> 33.776ms END   _dl_map_object
     -> 33.776ms BEGIN _dl_map_object
     -> 33.898ms BEGIN open_verify.constprop.9
     (lines
-     ("825432/825432 339457.480195948: "
+     ("825432/825432 339457.480195948:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     ->  34.02ms END   open_verify.constprop.9
     ->  34.02ms END   _dl_map_object
     ->  34.02ms END   dl_open_worker_begin
@@ -2892,10 +2892,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  34.02ms END   _dl_catch_exception
     ->  34.02ms BEGIN [unknown @ 0x7f5c0c85df60 (/usr/lib64/ld-2.28.so)]
     (lines
-     ("825432/825432 339457.480445185: "
+     ("825432/825432 339457.480445185:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 34.263ms END   [unknown @ 0x7f5c0c85df60 (/usr/lib64/ld-2.28.so)]
     -> 34.263ms END   _dl_open
     -> 34.263ms END   dlopen_doit
@@ -2909,14 +2909,14 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 34.387ms BEGIN vfprintf
     -> 34.449ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.480694563: "
+     ("825432/825432 339457.480694563:       1 cycles:u: "
       "\t    7f5c0c875c60 _dl_open+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c65a1e8 dlopen_doit+0x58 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 34.512ms END   __printf_fp
     -> 34.512ms END   vfprintf
     -> 34.512ms END   fprintf
@@ -2925,7 +2925,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 34.595ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 34.678ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.480941850: "
+     ("825432/825432 339457.480941850:       1 cycles:u: "
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -2938,7 +2938,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 34.761ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 34.761ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 34.761ms END   main
@@ -2950,7 +2950,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 34.938ms BEGIN dlopen_doit
     -> 34.973ms BEGIN _dl_open
     (lines
-     ("825432/825432 339457.481191676: "
+     ("825432/825432 339457.481191676:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -2964,7 +2964,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 35.008ms END   _dl_open
     -> 35.008ms BEGIN _dl_open
     -> 35.044ms BEGIN _dl_catch_exception
@@ -2974,7 +2974,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 35.187ms BEGIN _dl_relocate_object
     -> 35.223ms BEGIN cosf32x
     (lines
-     ("825432/825432 339457.481447404: "
+     ("825432/825432 339457.481447404:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -2988,12 +2988,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 35.258ms END   cosf32x
     -> 35.258ms BEGIN __exp_finite
     -> 35.386ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.481698823: "
+     ("825432/825432 339457.481698823:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -3006,7 +3006,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 35.514ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 35.514ms END   __exp_finite
     -> 35.514ms END   _dl_relocate_object
@@ -3014,7 +3014,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 35.598ms BEGIN _dl_lookup_symbol_x
     -> 35.682ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.481950292: "
+     ("825432/825432 339457.481950292:       1 cycles:u: "
       "\t    7f5c0c85df60 [unknown] (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87075a _dl_map_object_deps+0x43a (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
@@ -3027,12 +3027,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 35.765ms END   do_lookup_x
     -> 35.765ms END   _dl_lookup_symbol_x
     -> 35.765ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.482199590: "
+     ("825432/825432 339457.482199590:       1 cycles:u: "
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -3046,7 +3046,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 36.017ms END   _dl_lookup_symbol_x
     -> 36.017ms END   _dl_relocate_object
     -> 36.017ms END   dl_open_worker_begin
@@ -3054,7 +3054,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->   36.1ms BEGIN _dl_map_object_deps
     -> 36.183ms BEGIN [unknown @ 0x7f5c0c85df60 (/usr/lib64/ld-2.28.so)]
     (lines
-     ("825432/825432 339457.482466111: "
+     ("825432/825432 339457.482466111:       1 cycles:u: "
       "\t    7f5c0c8792d0 _dl_load_cache_lookup+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -3067,7 +3067,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 36.266ms END   [unknown @ 0x7f5c0c85df60 (/usr/lib64/ld-2.28.so)]
     -> 36.266ms END   _dl_map_object_deps
     -> 36.266ms END   dl_open_worker_begin
@@ -3076,7 +3076,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 36.399ms BEGIN _dl_map_object_from_fd
     -> 36.466ms BEGIN memset
     (lines
-     ("825432/825432 339457.482706486: "
+     ("825432/825432 339457.482706486:       1 cycles:u: "
       "\t    7f5c0bf1e590 [unknown] (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c876b23 call_destructors+0x43 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1fa _dl_catch_exception+0xda (/usr/lib64/libc-2.28.so)"
@@ -3086,17 +3086,17 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 36.533ms END   memset
     -> 36.533ms END   _dl_map_object_from_fd
     -> 36.533ms END   _dl_map_object
     -> 36.533ms BEGIN _dl_map_object
     -> 36.653ms BEGIN _dl_load_cache_lookup
     (lines
-     ("825432/825432 339457.482953680: "
+     ("825432/825432 339457.482953680:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 36.773ms END   _dl_load_cache_lookup
     -> 36.773ms END   _dl_map_object
     -> 36.773ms END   dl_open_worker_begin
@@ -3121,13 +3121,13 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 36.971ms BEGIN call_destructors
     -> 36.996ms BEGIN [unknown @ 0x7f5c0bf1e590 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.483202252: "
+     ("825432/825432 339457.483202252:       1 cycles:u: "
       "\t    7f5c0c65a190 dlopen_doit+0x0 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  37.02ms END   [unknown @ 0x7f5c0bf1e590 (/usr/lib64/libm-2.28.so)]
     ->  37.02ms END   call_destructors
     ->  37.02ms END   _dl_catch_exception
@@ -3142,7 +3142,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 37.103ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 37.186ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.483451697: "
+     ("825432/825432 339457.483451697:       1 cycles:u: "
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -3155,7 +3155,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 37.269ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 37.269ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 37.269ms END   main
@@ -3166,7 +3166,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 37.435ms BEGIN _dl_catch_exception
     -> 37.477ms BEGIN dlopen_doit
     (lines
-     ("825432/825432 339457.483701786: "
+     ("825432/825432 339457.483701786:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -3181,7 +3181,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 37.518ms END   dlopen_doit
     -> 37.518ms BEGIN dlopen_doit
     ->  37.55ms BEGIN _dl_open
@@ -3192,7 +3192,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 37.706ms BEGIN _dl_relocate_object
     -> 37.737ms BEGIN __exp_finite
     (lines
-     ("825432/825432 339457.483952682: "
+     ("825432/825432 339457.483952682:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -3208,7 +3208,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 37.768ms END   __exp_finite
     -> 37.768ms END   _dl_relocate_object
     -> 37.768ms BEGIN _dl_relocate_object
@@ -3216,7 +3216,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 37.894ms BEGIN do_lookup_x
     -> 37.957ms BEGIN check_match
     (lines
-     ("825432/825432 339457.484203062: "
+     ("825432/825432 339457.484203062:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -3228,12 +3228,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 38.019ms END   check_match
     -> 38.019ms BEGIN check_match
     -> 38.144ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.484457619: "
+     ("825432/825432 339457.484457619:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87311f _dl_name_match_p+0x3f (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b560 _dl_map_object+0x90 (/usr/lib64/ld-2.28.so)"
@@ -3250,7 +3250,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  38.27ms END   strcmp
     ->  38.27ms END   check_match
     ->  38.27ms END   do_lookup_x
@@ -3260,7 +3260,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  38.27ms BEGIN dl_open_worker_begin
     -> 38.397ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.484700569: "
+     ("825432/825432 339457.484700569:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -3273,7 +3273,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 38.524ms END   _dl_check_map_versions
     -> 38.524ms END   dl_open_worker_begin
     -> 38.524ms BEGIN dl_open_worker_begin
@@ -3284,7 +3284,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 38.698ms BEGIN _dl_name_match_p
     -> 38.732ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.484948399: "
+     ("825432/825432 339457.484948399:       1 cycles:u: "
       "\t    7f5c0c8792d0 _dl_load_cache_lookup+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -3297,7 +3297,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 38.767ms END   strcmp
     -> 38.767ms END   _dl_name_match_p
     -> 38.767ms END   _dl_map_object
@@ -3309,7 +3309,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  38.85ms BEGIN _dl_map_object
     -> 38.932ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.485194089: "
+     ("825432/825432 339457.485194089:       1 cycles:u: "
       "\t    7f5c0c330cb0 cfree@GLIBC_2.2.5+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c877512 _dl_close_worker+0x882 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -3317,17 +3317,17 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 39.015ms END   _dl_map_object_from_fd
     -> 39.015ms END   _dl_map_object
     -> 39.015ms BEGIN _dl_map_object
     -> 39.138ms BEGIN _dl_load_cache_lookup
     (lines
-     ("825432/825432 339457.485439762: "
+     ("825432/825432 339457.485439762:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 39.261ms END   _dl_load_cache_lookup
     -> 39.261ms END   _dl_map_object
     -> 39.261ms END   dl_open_worker_begin
@@ -3350,10 +3350,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 39.445ms BEGIN _dl_close_worker
     -> 39.476ms BEGIN cfree@GLIBC_2.2.5
     (lines
-     ("825432/825432 339457.485688394: "
+     ("825432/825432 339457.485688394:       1 cycles:u: "
       "\t    7f5c0c2faae0 vfprintf+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 39.506ms END   cfree@GLIBC_2.2.5
     -> 39.506ms END   _dl_close_worker
     -> 39.506ms END   _dl_close
@@ -3367,24 +3367,24 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 39.631ms BEGIN vfprintf
     -> 39.693ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.485938717: "
+     ("825432/825432 339457.485938717:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 39.755ms END   __printf_fp
     -> 39.755ms END   vfprintf
     -> 39.755ms BEGIN vfprintf
     (lines
-     ("825432/825432 339457.486187114: "
+     ("825432/825432 339457.486187114:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 40.005ms END   vfprintf
     -> 40.005ms END   fprintf
     -> 40.005ms END   main
     -> 40.005ms BEGIN main
     -> 40.129ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.486459760: "
+     ("825432/825432 339457.486459760:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fdaff do_sym+0x6f (/usr/lib64/libc-2.28.so)"
@@ -3393,10 +3393,10 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     -> 40.254ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.486707667: "
+     ("825432/825432 339457.486707667:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -3408,7 +3408,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 40.526ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 40.526ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 40.526ms END   main
@@ -3422,7 +3422,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 40.719ms BEGIN _dl_lookup_symbol_x
     -> 40.747ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.486956258: "
+     ("825432/825432 339457.486956258:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -3436,7 +3436,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 40.774ms END   do_lookup_x
     -> 40.774ms END   _dl_lookup_symbol_x
     -> 40.774ms END   do_sym
@@ -3459,7 +3459,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 40.981ms BEGIN dl_open_worker_begin
     -> 41.002ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.487208442: "
+     ("825432/825432 339457.487208442:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -3474,13 +3474,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 41.023ms END   _dl_relocate_object
     -> 41.023ms BEGIN _dl_relocate_object
     -> 41.107ms BEGIN cosf32
     -> 41.191ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.487462882: "
+     ("825432/825432 339457.487462882:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -3493,7 +3493,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 41.275ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 41.275ms END   cosf32
     -> 41.275ms END   _dl_relocate_object
@@ -3502,7 +3502,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 41.402ms BEGIN do_lookup_x
     -> 41.466ms BEGIN check_match
     (lines
-     ("825432/825432 339457.487712871: "
+     ("825432/825432 339457.487712871:       1 cycles:u: "
       "\t    7f5c0c870320 _dl_map_object_deps+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -3514,13 +3514,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 41.529ms END   check_match
     -> 41.529ms END   do_lookup_x
     -> 41.529ms END   _dl_lookup_symbol_x
     -> 41.529ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.487962760: "
+     ("825432/825432 339457.487962760:       1 cycles:u: "
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -3534,14 +3534,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 41.779ms END   _dl_lookup_symbol_x
     -> 41.779ms END   _dl_relocate_object
     -> 41.779ms END   dl_open_worker_begin
     -> 41.779ms BEGIN dl_open_worker_begin
     -> 41.904ms BEGIN _dl_map_object_deps
     (lines
-     ("825432/825432 339457.488209559: "
+     ("825432/825432 339457.488209559:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
@@ -3556,7 +3556,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 42.029ms END   _dl_map_object_deps
     -> 42.029ms END   dl_open_worker_begin
     -> 42.029ms BEGIN dl_open_worker_begin
@@ -3564,7 +3564,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 42.153ms BEGIN _dl_map_object_from_fd
     -> 42.214ms BEGIN _dl_setup_hash
     (lines
-     ("825432/825432 339457.488452967: "
+     ("825432/825432 339457.488452967:       1 cycles:u: "
       "\t    7f5c0c862540 strchr+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876103 dl_open_worker_begin+0x23 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -3576,16 +3576,16 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 42.276ms END   _dl_setup_hash
     -> 42.276ms END   _dl_map_object_from_fd
     -> 42.276ms BEGIN _dl_map_object_from_fd
     -> 42.357ms BEGIN memset
     -> 42.438ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.488695605: "
-      "\t          4006e0 fprintf@plt+0x0 (/usr/local/home/alamoreaux/demos/demo)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+     ("825432/825432 339457.488695605:       1 cycles:u: "
+      "\t          4006e0 fprintf@plt+0x0 (/usr/local/demo)"
+      "\t          4009ab main+0x154 (/usr/local/demo)"))
     ->  42.52ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  42.52ms END   memset
     ->  42.52ms END   _dl_map_object_from_fd
@@ -3594,11 +3594,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  42.52ms BEGIN dl_open_worker_begin
     -> 42.641ms BEGIN strchr
     (lines
-     ("825432/825432 339457.488943476: "
+     ("825432/825432 339457.488943476:       1 cycles:u: "
       "\t    7f5c0c2b58c0 [unknown] (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fab88 vfprintf+0xa8 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 42.762ms END   strchr
     -> 42.762ms END   dl_open_worker_begin
     -> 42.762ms END   _dl_catch_exception
@@ -3614,19 +3614,19 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 42.762ms BEGIN main
     -> 42.886ms BEGIN fprintf@plt
     (lines
-     ("825432/825432 339457.489189915: "
+     ("825432/825432 339457.489189915:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     ->  43.01ms END   fprintf@plt
     ->  43.01ms BEGIN fprintf
     -> 43.092ms BEGIN vfprintf
     -> 43.174ms BEGIN [unknown @ 0x7f5c0c2b58c0 (/usr/lib64/libc-2.28.so)]
     (lines
-     ("825432/825432 339457.489440045: "
+     ("825432/825432 339457.489440045:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.489687594: "
+     ("825432/825432 339457.489687594:       1 cycles:u: "
       "\t    7f5c0bf1e5d0 [unknown] (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c871e08 call_init.part.0+0x98 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c871f05 _dl_init+0x75 (/usr/lib64/ld-2.28.so)"
@@ -3639,7 +3639,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 43.256ms END   [unknown @ 0x7f5c0c2b58c0 (/usr/lib64/libc-2.28.so)]
     -> 43.256ms END   vfprintf
     -> 43.256ms END   fprintf
@@ -3647,7 +3647,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 43.256ms BEGIN main
     -> 43.505ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.489937255: "
+     ("825432/825432 339457.489937255:       1 cycles:u: "
       "\t    7f5c0bf595f0 truncf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -3660,7 +3660,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 43.754ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 43.754ms END   main
     -> 43.754ms BEGIN main
@@ -3677,7 +3677,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 43.965ms BEGIN call_init.part.0
     -> 43.985ms BEGIN [unknown @ 0x7f5c0bf1e5d0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.490188447: "
+     ("825432/825432 339457.490188447:       1 cycles:u: "
       "\t    7f5c0bf4a460 truncf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -3690,7 +3690,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 44.004ms END   [unknown @ 0x7f5c0bf1e5d0 (/usr/lib64/libm-2.28.so)]
     -> 44.004ms END   call_init.part.0
     -> 44.004ms END   _dl_init
@@ -3702,7 +3702,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 44.155ms BEGIN _dl_relocate_object
     -> 44.205ms BEGIN truncf32
     (lines
-     ("825432/825432 339457.490463884: "
+     ("825432/825432 339457.490463884:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -3716,11 +3716,11 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 44.255ms END   truncf32
     -> 44.255ms BEGIN truncf32x
     (lines
-     ("825432/825432 339457.490716355: "
+     ("825432/825432 339457.490716355:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -3735,12 +3735,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  44.53ms END   truncf32x
     ->  44.53ms BEGIN cosf32x
     -> 44.657ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.490966964: "
+     ("825432/825432 339457.490966964:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -3752,7 +3752,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 44.783ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 44.783ms END   cosf32x
     -> 44.783ms END   _dl_relocate_object
@@ -3761,7 +3761,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 44.908ms BEGIN do_lookup_x
     -> 44.971ms BEGIN check_match
     (lines
-     ("825432/825432 339457.491216240: "
+     ("825432/825432 339457.491216240:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
@@ -3776,7 +3776,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 45.034ms END   check_match
     -> 45.034ms END   do_lookup_x
     -> 45.034ms END   _dl_lookup_symbol_x
@@ -3785,7 +3785,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 45.034ms BEGIN dl_open_worker_begin
     -> 45.158ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.491464028: "
+     ("825432/825432 339457.491464028:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c8789f0 _dl_cache_libcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878bd6 search_cache+0x116 (/usr/lib64/ld-2.28.so)"
@@ -3801,7 +3801,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 45.283ms END   _dl_check_map_versions
     -> 45.283ms END   dl_open_worker_begin
     -> 45.283ms BEGIN dl_open_worker_begin
@@ -3810,7 +3810,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 45.431ms BEGIN _dl_setup_hash
     -> 45.481ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.491704920: "
+     ("825432/825432 339457.491704920:       1 cycles:u: "
       "\t    7f5c0bf1e590 [unknown] (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c876b23 call_destructors+0x43 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1fa _dl_catch_exception+0xda (/usr/lib64/libc-2.28.so)"
@@ -3820,7 +3820,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 45.531ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 45.531ms END   _dl_setup_hash
     -> 45.531ms END   _dl_map_object_from_fd
@@ -3831,9 +3831,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 45.675ms BEGIN _dl_cache_libcmp
     -> 45.723ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.491951471: "
+     ("825432/825432 339457.491951471:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 45.771ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 45.771ms END   _dl_cache_libcmp
     -> 45.771ms END   search_cache
@@ -3861,7 +3861,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 45.969ms BEGIN call_destructors
     -> 45.993ms BEGIN [unknown @ 0x7f5c0bf1e590 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.492196580: "
+     ("825432/825432 339457.492196580:       1 cycles:u: "
       "\t    7f5c0c8760e0 dl_open_worker_begin+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875ac2 dl_open_worker+0x32 (/usr/lib64/ld-2.28.so)"
@@ -3872,7 +3872,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 46.018ms END   [unknown @ 0x7f5c0bf1e590 (/usr/lib64/libm-2.28.so)]
     -> 46.018ms END   call_destructors
     -> 46.018ms END   _dl_catch_exception
@@ -3886,7 +3886,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 46.018ms BEGIN main
     -> 46.141ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.492448887: "
+     ("825432/825432 339457.492448887:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -3900,7 +3900,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 46.263ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 46.263ms END   main
     -> 46.263ms BEGIN main
@@ -3915,7 +3915,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  46.47ms BEGIN _dl_catch_exception
     -> 46.493ms BEGIN dl_open_worker_begin
     (lines
-     ("825432/825432 339457.492701806: "
+     ("825432/825432 339457.492701806:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c2c7 check_match+0x137 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -3931,14 +3931,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 46.515ms END   dl_open_worker_begin
     -> 46.515ms BEGIN dl_open_worker_begin
     -> 46.579ms BEGIN _dl_relocate_object
     -> 46.642ms BEGIN cosf32
     -> 46.705ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.492952927: "
+     ("825432/825432 339457.492952927:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -3952,7 +3952,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 46.768ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 46.768ms END   cosf32
     -> 46.768ms END   _dl_relocate_object
@@ -3962,7 +3962,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 46.919ms BEGIN check_match
     -> 46.969ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.493204945: "
+     ("825432/825432 339457.493204945:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8730f4 _dl_name_match_p+0x14 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b560 _dl_map_object+0x90 (/usr/lib64/ld-2.28.so)"
@@ -3979,13 +3979,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 47.019ms END   strcmp
     -> 47.019ms END   check_match
     -> 47.019ms END   do_lookup_x
     -> 47.019ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.493457407: "
+     ("825432/825432 339457.493457407:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -3998,7 +3998,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 47.272ms END   do_lookup_x
     -> 47.272ms END   _dl_lookup_symbol_x
     -> 47.272ms END   _dl_relocate_object
@@ -4011,7 +4011,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 47.452ms BEGIN _dl_name_match_p
     -> 47.488ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.493703083: "
+     ("825432/825432 339457.493703083:       1 cycles:u: "
       "\t    7f5c0c8789f0 _dl_cache_libcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878bd6 search_cache+0x116 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87932c _dl_load_cache_lookup+0x5c (/usr/lib64/ld-2.28.so)"
@@ -4026,7 +4026,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 47.524ms END   strcmp
     -> 47.524ms END   _dl_name_match_p
     -> 47.524ms END   _dl_map_object
@@ -4038,7 +4038,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 47.606ms BEGIN _dl_map_object
     -> 47.688ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.493949200: "
+     ("825432/825432 339457.493949200:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b594 _dl_map_object+0xc4 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -4051,7 +4051,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  47.77ms END   _dl_map_object_from_fd
     ->  47.77ms END   _dl_map_object
     ->  47.77ms BEGIN _dl_map_object
@@ -4059,14 +4059,14 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 47.893ms BEGIN search_cache
     -> 47.954ms BEGIN _dl_cache_libcmp
     (lines
-     ("825432/825432 339457.494192706: "
+     ("825432/825432 339457.494192706:       1 cycles:u: "
       "\t    7f5c0c876c90 _dl_close_worker+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 48.016ms END   _dl_cache_libcmp
     -> 48.016ms END   search_cache
     -> 48.016ms END   _dl_load_cache_lookup
@@ -4074,10 +4074,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 48.016ms BEGIN _dl_map_object
     -> 48.138ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.494462334: "
+     ("825432/825432 339457.494462334:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 48.259ms END   strcmp
     -> 48.259ms END   _dl_map_object
     -> 48.259ms END   dl_open_worker_begin
@@ -4099,7 +4099,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 48.452ms BEGIN _dl_close
     ->  48.49ms BEGIN _dl_close_worker
     (lines
-     ("825432/825432 339457.494710462: "
+     ("825432/825432 339457.494710462:       1 cycles:u: "
       "\t    7f5c0c86e470 _dl_protect_relro+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86f433 _dl_relocate_object+0xe83 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -4112,7 +4112,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 48.529ms END   _dl_close_worker
     -> 48.529ms END   _dl_close
     -> 48.529ms END   _dl_catch_exception
@@ -4124,7 +4124,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 48.612ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 48.694ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.494959778: "
+     ("825432/825432 339457.494959778:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -4138,7 +4138,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 48.777ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 48.777ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 48.777ms END   main
@@ -4156,7 +4156,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 48.988ms BEGIN _dl_relocate_object
     -> 49.007ms BEGIN _dl_protect_relro
     (lines
-     ("825432/825432 339457.495211103: "
+     ("825432/825432 339457.495211103:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -4170,14 +4170,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 49.026ms END   _dl_protect_relro
     -> 49.026ms END   _dl_relocate_object
     -> 49.026ms BEGIN _dl_relocate_object
     ->  49.11ms BEGIN cosf32
     -> 49.194ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.495467157: "
+     ("825432/825432 339457.495467157:       1 cycles:u: "
       "\t    7f5c0c8730e0 _dl_name_match_p+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8733f3 _dl_check_map_versions+0xc3 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
@@ -4190,7 +4190,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 49.278ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 49.278ms END   cosf32
     -> 49.278ms END   _dl_relocate_object
@@ -4198,7 +4198,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 49.363ms BEGIN _dl_lookup_symbol_x
     -> 49.448ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.495718094: "
+     ("825432/825432 339457.495718094:       1 cycles:u: "
       "\t    7f5c0c870320 _dl_map_object_deps+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -4210,7 +4210,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 49.534ms END   do_lookup_x
     -> 49.534ms END   _dl_lookup_symbol_x
     -> 49.534ms END   _dl_relocate_object
@@ -4219,7 +4219,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 49.617ms BEGIN _dl_check_map_versions
     -> 49.701ms BEGIN _dl_name_match_p
     (lines
-     ("825432/825432 339457.495962842: "
+     ("825432/825432 339457.495962842:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -4232,14 +4232,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 49.785ms END   _dl_name_match_p
     -> 49.785ms END   _dl_check_map_versions
     -> 49.785ms END   dl_open_worker_begin
     -> 49.785ms BEGIN dl_open_worker_begin
     -> 49.907ms BEGIN _dl_map_object_deps
     (lines
-     ("825432/825432 339457.496210685: "
+     ("825432/825432 339457.496210685:       1 cycles:u: "
       "\t    7f5c0c8789f0 _dl_cache_libcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878bd6 search_cache+0x116 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87932c _dl_load_cache_lookup+0x5c (/usr/lib64/ld-2.28.so)"
@@ -4254,14 +4254,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 50.029ms END   _dl_map_object_deps
     -> 50.029ms END   dl_open_worker_begin
     -> 50.029ms BEGIN dl_open_worker_begin
     -> 50.112ms BEGIN _dl_map_object
     -> 50.195ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.496458892: "
+     ("825432/825432 339457.496458892:       1 cycles:u: "
       "\t    7f5c0c330cb0 cfree@GLIBC_2.2.5+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c877573 _dl_close_worker+0x8e3 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -4269,7 +4269,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 50.277ms END   _dl_map_object_from_fd
     -> 50.277ms END   _dl_map_object
     -> 50.277ms BEGIN _dl_map_object
@@ -4277,11 +4277,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 50.401ms BEGIN search_cache
     -> 50.463ms BEGIN _dl_cache_libcmp
     (lines
-     ("825432/825432 339457.496702501: "
+     ("825432/825432 339457.496702501:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 50.525ms END   _dl_cache_libcmp
     -> 50.525ms END   search_cache
     -> 50.525ms END   _dl_load_cache_lookup
@@ -4306,9 +4306,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 50.708ms BEGIN _dl_close_worker
     -> 50.739ms BEGIN cfree@GLIBC_2.2.5
     (lines
-     ("825432/825432 339457.496949770: "
+     ("825432/825432 339457.496949770:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 50.769ms END   cfree@GLIBC_2.2.5
     -> 50.769ms END   _dl_close_worker
     -> 50.769ms END   _dl_close
@@ -4322,14 +4322,14 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 50.893ms BEGIN vfprintf
     -> 50.955ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.497198802: "
+     ("825432/825432 339457.497198802:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.497448524: "
+     ("825432/825432 339457.497448524:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 51.016ms END   __printf_fp
     -> 51.016ms END   vfprintf
     -> 51.016ms END   fprintf
@@ -4337,7 +4337,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 51.016ms BEGIN main
     -> 51.266ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.497696760: "
+     ("825432/825432 339457.497696760:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -4349,10 +4349,10 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 51.515ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.497947707: "
+     ("825432/825432 339457.497947707:       1 cycles:u: "
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -4365,7 +4365,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 51.763ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 51.763ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 51.763ms END   main
@@ -4382,7 +4382,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 51.972ms BEGIN dl_open_worker_begin
     -> 51.993ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.498197523: "
+     ("825432/825432 339457.498197523:       1 cycles:u: "
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -4395,12 +4395,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 52.014ms END   _dl_relocate_object
     -> 52.014ms BEGIN _dl_relocate_object
     -> 52.139ms BEGIN __exp_finite
     (lines
-     ("825432/825432 339457.498506772: "
+     ("825432/825432 339457.498506772:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -4414,11 +4414,11 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 52.264ms END   __exp_finite
     -> 52.264ms BEGIN cosf32
     (lines
-     ("825432/825432 339457.498758712: "
+     ("825432/825432 339457.498758712:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -4431,14 +4431,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 52.573ms END   cosf32
     -> 52.573ms END   _dl_relocate_object
     -> 52.573ms BEGIN _dl_relocate_object
     -> 52.657ms BEGIN _dl_lookup_symbol_x
     -> 52.741ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.499006401: "
+     ("825432/825432 339457.499006401:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -4452,12 +4452,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 52.825ms END   do_lookup_x
     -> 52.825ms END   _dl_lookup_symbol_x
     -> 52.825ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.499245022: "
+     ("825432/825432 339457.499245022:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8730f4 _dl_name_match_p+0x14 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b560 _dl_map_object+0x90 (/usr/lib64/ld-2.28.so)"
@@ -4471,7 +4471,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 53.073ms END   _dl_lookup_symbol_x
     -> 53.073ms END   _dl_relocate_object
     -> 53.073ms END   dl_open_worker_begin
@@ -4480,10 +4480,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 53.192ms BEGIN _dl_map_object_from_fd
     -> 53.252ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.499487950: "
+     ("825432/825432 339457.499487950:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 53.312ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 53.312ms END   _dl_map_object_from_fd
     -> 53.312ms END   _dl_map_object
@@ -4491,7 +4491,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 53.393ms BEGIN _dl_name_match_p
     -> 53.474ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.499731142: "
+     ("825432/825432 339457.499731142:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -4505,7 +4505,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 53.555ms END   strcmp
     -> 53.555ms END   _dl_name_match_p
     -> 53.555ms END   _dl_map_object
@@ -4524,7 +4524,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 53.636ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 53.717ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.499980656: "
+     ("825432/825432 339457.499980656:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -4538,7 +4538,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 53.798ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 53.798ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 53.798ms END   main
@@ -4557,7 +4557,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 54.012ms BEGIN cosf32x
     -> 54.029ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.500231109: "
+     ("825432/825432 339457.500231109:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -4570,7 +4570,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 54.047ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 54.047ms END   cosf32x
     -> 54.047ms END   _dl_relocate_object
@@ -4578,7 +4578,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 54.131ms BEGIN _dl_lookup_symbol_x
     -> 54.214ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.500484149: "
+     ("825432/825432 339457.500484149:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
@@ -4593,12 +4593,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 54.298ms END   do_lookup_x
     -> 54.298ms END   _dl_lookup_symbol_x
     -> 54.298ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.500728386: "
+     ("825432/825432 339457.500728386:       1 cycles:u: "
       "\t    7f5c0c8789f0 _dl_cache_libcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878bd6 search_cache+0x116 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87932c _dl_load_cache_lookup+0x5c (/usr/lib64/ld-2.28.so)"
@@ -4613,7 +4613,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 54.551ms END   _dl_lookup_symbol_x
     -> 54.551ms END   _dl_relocate_object
     -> 54.551ms END   dl_open_worker_begin
@@ -4623,7 +4623,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 54.697ms BEGIN _dl_setup_hash
     -> 54.746ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.500971834: "
+     ("825432/825432 339457.500971834:       1 cycles:u: "
       "\t   c9858000c9858 [unknown] ([unknown])"))
     -> 54.795ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 54.795ms END   _dl_setup_hash
@@ -4634,11 +4634,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 54.917ms BEGIN search_cache
     -> 54.978ms BEGIN _dl_cache_libcmp
     (lines
-     ("825432/825432 339457.501213142: "
+     ("825432/825432 339457.501213142:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 55.038ms END   _dl_cache_libcmp
     -> 55.038ms END   search_cache
     -> 55.038ms END   _dl_load_cache_lookup
@@ -4656,17 +4656,17 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 55.038ms END   main
     -> 55.038ms BEGIN [unknown @ 0xc9858000c9858 ([unknown])]
     (lines
-     ("825432/825432 339457.501461873: "
+     ("825432/825432 339457.501461873:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     ->  55.28ms END   [unknown @ 0xc9858000c9858 ([unknown])]
     ->  55.28ms BEGIN main
     -> 55.342ms BEGIN fprintf
     -> 55.404ms BEGIN vfprintf
     -> 55.466ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.501711334: "
+     ("825432/825432 339457.501711334:       1 cycles:u: "
       "\t    7f5c0c85edd0 munmap+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8796bb _dl_unload_cache+0x2b (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875d14 _dl_open+0xb4 (/usr/lib64/ld-2.28.so)"
@@ -4675,7 +4675,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 55.528ms END   __printf_fp
     -> 55.528ms END   vfprintf
     -> 55.528ms END   fprintf
@@ -4684,7 +4684,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 55.612ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 55.695ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.501958352: "
+     ("825432/825432 339457.501958352:       1 cycles:u: "
       "\t    7f5c0bf420a0 ceilf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -4697,7 +4697,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 55.778ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 55.778ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 55.778ms END   main
@@ -4711,7 +4711,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  55.97ms BEGIN _dl_unload_cache
     -> 55.997ms BEGIN munmap
     (lines
-     ("825432/825432 339457.502209144: "
+     ("825432/825432 339457.502209144:       1 cycles:u: "
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -4724,7 +4724,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 56.025ms END   munmap
     -> 56.025ms END   _dl_unload_cache
     -> 56.025ms END   _dl_open
@@ -4736,7 +4736,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 56.204ms BEGIN _dl_relocate_object
     ->  56.24ms BEGIN ceilf32x
     (lines
-     ("825432/825432 339457.502484657: "
+     ("825432/825432 339457.502484657:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -4749,11 +4749,11 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 56.276ms END   ceilf32x
     -> 56.276ms BEGIN __exp_finite
     (lines
-     ("825432/825432 339457.502735853: "
+     ("825432/825432 339457.502735853:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -4767,13 +4767,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 56.551ms END   __exp_finite
     -> 56.551ms END   _dl_relocate_object
     -> 56.551ms BEGIN _dl_relocate_object
     -> 56.677ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.502986284: "
+     ("825432/825432 339457.502986284:       1 cycles:u: "
       "\t    7f5c0c8730e0 _dl_name_match_p+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8733f3 _dl_check_map_versions+0xc3 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
@@ -4786,12 +4786,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 56.802ms END   _dl_lookup_symbol_x
     -> 56.802ms BEGIN _dl_lookup_symbol_x
     -> 56.928ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.503235188: "
+     ("825432/825432 339457.503235188:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -4804,7 +4804,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 57.053ms END   do_lookup_x
     -> 57.053ms END   _dl_lookup_symbol_x
     -> 57.053ms END   _dl_relocate_object
@@ -4813,7 +4813,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 57.136ms BEGIN _dl_check_map_versions
     -> 57.219ms BEGIN _dl_name_match_p
     (lines
-     ("825432/825432 339457.503481624: "
+     ("825432/825432 339457.503481624:       1 cycles:u: "
       "\t    7f5c0c8789f0 _dl_cache_libcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878bd6 search_cache+0x116 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87932c _dl_load_cache_lookup+0x5c (/usr/lib64/ld-2.28.so)"
@@ -4828,7 +4828,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 57.302ms END   _dl_name_match_p
     -> 57.302ms END   _dl_check_map_versions
     -> 57.302ms END   dl_open_worker_begin
@@ -4836,7 +4836,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 57.384ms BEGIN _dl_map_object
     -> 57.466ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.503724659: "
+     ("825432/825432 339457.503724659:       1 cycles:u: "
       "\t   c9858000c9858 [unknown] ([unknown])"))
     -> 57.548ms END   _dl_map_object_from_fd
     -> 57.548ms END   _dl_map_object
@@ -4845,11 +4845,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  57.67ms BEGIN search_cache
     ->  57.73ms BEGIN _dl_cache_libcmp
     (lines
-     ("825432/825432 339457.503966888: "
+     ("825432/825432 339457.503966888:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 57.791ms END   _dl_cache_libcmp
     -> 57.791ms END   search_cache
     -> 57.791ms END   _dl_load_cache_lookup
@@ -4867,17 +4867,17 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 57.791ms END   main
     -> 57.791ms BEGIN [unknown @ 0xc9858000c9858 ([unknown])]
     (lines
-     ("825432/825432 339457.504212400: "
+     ("825432/825432 339457.504212400:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 58.033ms END   [unknown @ 0xc9858000c9858 ([unknown])]
     -> 58.033ms BEGIN main
     -> 58.095ms BEGIN fprintf
     -> 58.156ms BEGIN vfprintf
     -> 58.218ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.504461335: "
+     ("825432/825432 339457.504461335:       1 cycles:u: "
       "\t    7f5c0bf3eb10 __pow_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -4890,7 +4890,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 58.279ms END   __printf_fp
     -> 58.279ms END   vfprintf
     -> 58.279ms END   fprintf
@@ -4899,7 +4899,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 58.362ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 58.445ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.504710867: "
+     ("825432/825432 339457.504710867:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -4913,7 +4913,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 58.528ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 58.528ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 58.528ms END   main
@@ -4931,7 +4931,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 58.739ms BEGIN _dl_relocate_object
     -> 58.758ms BEGIN __pow_finite
     (lines
-     ("825432/825432 339457.504965828: "
+     ("825432/825432 339457.504965828:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -4946,12 +4946,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 58.777ms END   __pow_finite
     -> 58.777ms BEGIN cosf32
     -> 58.905ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.505217241: "
+     ("825432/825432 339457.505217241:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -4964,7 +4964,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 59.032ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 59.032ms END   cosf32
     -> 59.032ms END   _dl_relocate_object
@@ -4973,7 +4973,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 59.158ms BEGIN do_lookup_x
     -> 59.221ms BEGIN check_match
     (lines
-     ("825432/825432 339457.505490440: "
+     ("825432/825432 339457.505490440:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
@@ -4988,13 +4988,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 59.284ms END   check_match
     -> 59.284ms END   do_lookup_x
     -> 59.284ms END   _dl_lookup_symbol_x
     -> 59.284ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.505751394: "
+     ("825432/825432 339457.505751394:       1 cycles:u: "
       "\t    7f5c0c86dee0 _dl_new_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868792 _dl_map_object_from_fd+0x192 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -5008,7 +5008,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 59.557ms END   _dl_lookup_symbol_x
     -> 59.557ms END   _dl_relocate_object
     -> 59.557ms END   dl_open_worker_begin
@@ -5018,24 +5018,24 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 59.714ms BEGIN _dl_setup_hash
     -> 59.766ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.505994013: "
+     ("825432/825432 339457.505994013:       1 cycles:u: "
       "\t    7f5c0c876c90 _dl_close_worker+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 59.818ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 59.818ms END   _dl_setup_hash
     -> 59.818ms END   _dl_map_object_from_fd
     -> 59.818ms BEGIN _dl_map_object_from_fd
     -> 59.939ms BEGIN _dl_new_object
     (lines
-     ("825432/825432 339457.506233677: "
+     ("825432/825432 339457.506233677:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 60.061ms END   _dl_new_object
     -> 60.061ms END   _dl_map_object_from_fd
     -> 60.061ms END   _dl_map_object
@@ -5058,7 +5058,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 60.232ms BEGIN _dl_close
     -> 60.266ms BEGIN _dl_close_worker
     (lines
-     ("825432/825432 339457.506478727: "
+     ("825432/825432 339457.506478727:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -5072,7 +5072,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->   60.3ms END   _dl_close_worker
     ->   60.3ms END   _dl_close
     ->   60.3ms END   _dl_catch_exception
@@ -5084,7 +5084,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 60.382ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 60.464ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.506729559: "
+     ("825432/825432 339457.506729559:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -5099,7 +5099,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 60.545ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 60.545ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 60.545ms END   main
@@ -5118,7 +5118,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  60.76ms BEGIN cosf32
     -> 60.778ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.506979770: "
+     ("825432/825432 339457.506979770:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -5130,7 +5130,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 60.796ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 60.796ms END   cosf32
     -> 60.796ms END   _dl_relocate_object
@@ -5139,7 +5139,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 60.921ms BEGIN do_lookup_x
     -> 60.984ms BEGIN check_match
     (lines
-     ("825432/825432 339457.507229592: "
+     ("825432/825432 339457.507229592:       1 cycles:u: "
       "\t    7f5c0c8702e0 openaux+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c87075a _dl_map_object_deps+0x43a (/usr/lib64/ld-2.28.so)"
@@ -5153,7 +5153,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 61.046ms END   check_match
     -> 61.046ms END   do_lookup_x
     -> 61.046ms END   _dl_lookup_symbol_x
@@ -5162,7 +5162,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 61.046ms BEGIN dl_open_worker_begin
     -> 61.171ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.507476391: "
+     ("825432/825432 339457.507476391:       1 cycles:u: "
       "\t    7f5c0c8681b0 _dl_process_pt_note+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868baf _dl_map_object_from_fd+0x5af (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -5176,7 +5176,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 61.296ms END   _dl_check_map_versions
     -> 61.296ms END   dl_open_worker_begin
     -> 61.296ms BEGIN dl_open_worker_begin
@@ -5184,7 +5184,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  61.42ms BEGIN _dl_catch_exception
     -> 61.481ms BEGIN openaux
     (lines
-     ("825432/825432 339457.507723905: "
+     ("825432/825432 339457.507723905:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c8789f0 _dl_cache_libcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878bd6 search_cache+0x116 (/usr/lib64/ld-2.28.so)"
@@ -5200,7 +5200,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 61.543ms END   openaux
     -> 61.543ms END   _dl_catch_exception
     -> 61.543ms END   _dl_map_object_deps
@@ -5210,14 +5210,14 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 61.667ms BEGIN _dl_map_object_from_fd
     -> 61.729ms BEGIN _dl_process_pt_note
     (lines
-     ("825432/825432 339457.507970655: "
+     ("825432/825432 339457.507970655:       1 cycles:u: "
       "\t    7f5c0c876c90 _dl_close_worker+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     ->  61.79ms END   _dl_process_pt_note
     ->  61.79ms END   _dl_map_object_from_fd
     ->  61.79ms END   _dl_map_object
@@ -5227,11 +5227,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 61.939ms BEGIN _dl_cache_libcmp
     -> 61.988ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.508214531: "
+     ("825432/825432 339457.508214531:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 62.037ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 62.037ms END   _dl_cache_libcmp
     -> 62.037ms END   search_cache
@@ -5256,10 +5256,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 62.211ms BEGIN _dl_close
     -> 62.246ms BEGIN _dl_close_worker
     (lines
-     ("825432/825432 339457.508464865: "
+     ("825432/825432 339457.508464865:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 62.281ms END   _dl_close_worker
     -> 62.281ms END   _dl_close
     -> 62.281ms END   _dl_catch_exception
@@ -5272,14 +5272,14 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 62.406ms BEGIN vfprintf
     -> 62.469ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.508712276: "
+     ("825432/825432 339457.508712276:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.508963410: "
-      "\t          400750 dlerror@plt+0x0 (/usr/local/home/alamoreaux/demos/demo)"
-      "\t          400919 main+0xc2 (/usr/local/home/alamoreaux/demos/demo)"))
+     ("825432/825432 339457.508963410:       1 cycles:u: "
+      "\t          400750 dlerror@plt+0x0 (/usr/local/demo)"
+      "\t          400919 main+0xc2 (/usr/local/demo)"))
     -> 62.531ms END   __printf_fp
     -> 62.531ms END   vfprintf
     -> 62.531ms END   fprintf
@@ -5288,7 +5288,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 62.698ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 62.864ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.509210831: "
+     ("825432/825432 339457.509210831:       1 cycles:u: "
       "\t    7f5c0c8758f0 call_dl_init+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1fa _dl_catch_exception+0xda (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875b29 dl_open_worker+0x99 (/usr/lib64/ld-2.28.so)"
@@ -5299,14 +5299,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  63.03ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  63.03ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->  63.03ms END   main
     ->  63.03ms BEGIN main
     -> 63.154ms BEGIN dlerror@plt
     (lines
-     ("825432/825432 339457.509463853: "
+     ("825432/825432 339457.509463853:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -5320,7 +5320,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 63.277ms END   dlerror@plt
     -> 63.277ms END   main
     -> 63.277ms BEGIN main
@@ -5335,7 +5335,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 63.484ms BEGIN _dl_catch_exception
     -> 63.507ms BEGIN call_dl_init
     (lines
-     ("825432/825432 339457.509714355: "
+     ("825432/825432 339457.509714355:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -5349,7 +5349,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  63.53ms END   call_dl_init
     ->  63.53ms END   _dl_catch_exception
     ->  63.53ms END   dl_open_worker
@@ -5360,7 +5360,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 63.697ms BEGIN cosf32x
     -> 63.739ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.509965697: "
+     ("825432/825432 339457.509965697:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -5375,13 +5375,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 63.781ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 63.781ms END   cosf32x
     -> 63.781ms BEGIN __exp_finite
     -> 63.907ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.510216647: "
+     ("825432/825432 339457.510216647:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -5395,7 +5395,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 64.032ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 64.032ms END   __exp_finite
     -> 64.032ms END   _dl_relocate_object
@@ -5404,7 +5404,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 64.158ms BEGIN do_lookup_x
     ->  64.22ms BEGIN check_match
     (lines
-     ("825432/825432 339457.510493231: "
+     ("825432/825432 339457.510493231:       1 cycles:u: "
       "\t    7f5c0c2b72d0 __sigsetjmp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe189 _dl_catch_exception+0x69 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c87075a _dl_map_object_deps+0x43a (/usr/lib64/ld-2.28.so)"
@@ -5418,12 +5418,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 64.283ms END   check_match
     -> 64.283ms END   do_lookup_x
     -> 64.283ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.510741966: "
+     ("825432/825432 339457.510741966:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -5436,7 +5436,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  64.56ms END   do_lookup_x
     ->  64.56ms END   _dl_lookup_symbol_x
     ->  64.56ms END   _dl_relocate_object
@@ -5446,7 +5446,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 64.684ms BEGIN _dl_catch_exception
     -> 64.746ms BEGIN __sigsetjmp
     (lines
-     ("825432/825432 339457.510986287: "
+     ("825432/825432 339457.510986287:       1 cycles:u: "
       "\t    7f5c0c86b4d0 _dl_map_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -5458,7 +5458,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 64.809ms END   __sigsetjmp
     -> 64.809ms END   _dl_catch_exception
     -> 64.809ms END   _dl_map_object_deps
@@ -5467,7 +5467,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  64.89ms BEGIN _dl_map_object
     -> 64.971ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.511229268: "
+     ("825432/825432 339457.511229268:       1 cycles:u: "
       "\t    7f5c0c330cb0 cfree@GLIBC_2.2.5+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c8774ff _dl_close_worker+0x86f (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -5475,15 +5475,15 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 65.053ms END   _dl_map_object_from_fd
     -> 65.053ms END   _dl_map_object
     -> 65.053ms BEGIN _dl_map_object
     (lines
-     ("825432/825432 339457.511473710: "
+     ("825432/825432 339457.511473710:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 65.296ms END   _dl_map_object
     -> 65.296ms END   dl_open_worker_begin
     -> 65.296ms END   _dl_catch_exception
@@ -5505,7 +5505,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 65.479ms BEGIN _dl_close_worker
     ->  65.51ms BEGIN cfree@GLIBC_2.2.5
     (lines
-     ("825432/825432 339457.511718908: "
+     ("825432/825432 339457.511718908:       1 cycles:u: "
       "\t    7f5c0c875a90 dl_open_worker+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875d0c _dl_open+0xac (/usr/lib64/ld-2.28.so)"
@@ -5514,7 +5514,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  65.54ms END   cfree@GLIBC_2.2.5
     ->  65.54ms END   _dl_close_worker
     ->  65.54ms END   _dl_close
@@ -5527,7 +5527,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 65.622ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 65.704ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.511967987: "
+     ("825432/825432 339457.511967987:       1 cycles:u: "
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -5540,7 +5540,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 65.785ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 65.785ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 65.785ms END   main
@@ -5554,7 +5554,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 65.979ms BEGIN _dl_catch_exception
     -> 66.007ms BEGIN dl_open_worker
     (lines
-     ("825432/825432 339457.512217319: "
+     ("825432/825432 339457.512217319:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -5568,7 +5568,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 66.035ms END   dl_open_worker
     -> 66.035ms BEGIN dl_open_worker
     -> 66.084ms BEGIN _dl_catch_exception
@@ -5576,7 +5576,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 66.184ms BEGIN _dl_relocate_object
     -> 66.234ms BEGIN __exp_finite
     (lines
-     ("825432/825432 339457.512472310: "
+     ("825432/825432 339457.512472310:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -5589,14 +5589,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 66.284ms END   __exp_finite
     -> 66.284ms END   _dl_relocate_object
     -> 66.284ms BEGIN _dl_relocate_object
     -> 66.369ms BEGIN _dl_lookup_symbol_x
     -> 66.454ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.512723768: "
+     ("825432/825432 339457.512723768:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8735d1 _dl_check_map_versions+0x2a1 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
@@ -5609,12 +5609,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 66.539ms END   do_lookup_x
     -> 66.539ms END   _dl_lookup_symbol_x
     -> 66.539ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.512974422: "
+     ("825432/825432 339457.512974422:       1 cycles:u: "
       "\t    7f5c0c8730e0 _dl_name_match_p+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b560 _dl_map_object+0x90 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c870311 openaux+0x31 (/usr/lib64/ld-2.28.so)"
@@ -5630,7 +5630,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  66.79ms END   _dl_lookup_symbol_x
     ->  66.79ms END   _dl_relocate_object
     ->  66.79ms END   dl_open_worker_begin
@@ -5638,7 +5638,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 66.874ms BEGIN _dl_check_map_versions
     -> 66.957ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.513223300: "
+     ("825432/825432 339457.513223300:       1 cycles:u: "
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -5652,7 +5652,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 67.041ms END   strcmp
     -> 67.041ms END   _dl_check_map_versions
     -> 67.041ms END   dl_open_worker_begin
@@ -5663,7 +5663,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 67.207ms BEGIN _dl_map_object
     -> 67.248ms BEGIN _dl_name_match_p
     (lines
-     ("825432/825432 339457.513466895: "
+     ("825432/825432 339457.513466895:       1 cycles:u: "
       "\t    7f5c0c8730e0 _dl_name_match_p+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b560 _dl_map_object+0x90 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -5676,7 +5676,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  67.29ms END   _dl_name_match_p
     ->  67.29ms END   _dl_map_object
     ->  67.29ms END   openaux
@@ -5688,7 +5688,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 67.412ms BEGIN _dl_map_object_from_fd
     -> 67.473ms BEGIN memset
     (lines
-     ("825432/825432 339457.513709458: "
+     ("825432/825432 339457.513709458:       1 cycles:u: "
       "\t    7f5c0c8783d0 _dl_sort_maps+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8770ab _dl_close_worker+0x41b (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -5696,18 +5696,18 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 67.533ms END   memset
     -> 67.533ms END   _dl_map_object_from_fd
     -> 67.533ms END   _dl_map_object
     -> 67.533ms BEGIN _dl_map_object
     -> 67.655ms BEGIN _dl_name_match_p
     (lines
-     ("825432/825432 339457.513959270: "
+     ("825432/825432 339457.513959270:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 67.776ms END   _dl_name_match_p
     -> 67.776ms END   _dl_map_object
     -> 67.776ms END   dl_open_worker_begin
@@ -5730,16 +5730,16 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 67.963ms BEGIN _dl_close_worker
     -> 67.995ms BEGIN _dl_sort_maps
     (lines
-     ("825432/825432 339457.514209130: "
+     ("825432/825432 339457.514209130:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.514479070: "
+     ("825432/825432 339457.514479070:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 68.026ms END   _dl_sort_maps
     -> 68.026ms END   _dl_close_worker
     -> 68.026ms END   _dl_close
@@ -5753,7 +5753,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 68.286ms BEGIN vfprintf
     -> 68.416ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.514726651: "
+     ("825432/825432 339457.514726651:       1 cycles:u: "
       "\t    7f5c0bf56070 logf+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -5766,7 +5766,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 68.546ms END   __printf_fp
     -> 68.546ms END   vfprintf
     -> 68.546ms END   fprintf
@@ -5775,7 +5775,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 68.628ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 68.711ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.514975590: "
+     ("825432/825432 339457.514975590:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -5787,7 +5787,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 68.793ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 68.793ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 68.793ms END   main
@@ -5805,7 +5805,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 69.004ms BEGIN _dl_relocate_object
     -> 69.023ms BEGIN logf
     (lines
-     ("825432/825432 339457.515226501: "
+     ("825432/825432 339457.515226501:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -5819,12 +5819,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 69.042ms END   logf
     -> 69.042ms END   _dl_relocate_object
     -> 69.042ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.515480817: "
+     ("825432/825432 339457.515480817:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
@@ -5839,13 +5839,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 69.293ms END   _dl_relocate_object
     -> 69.293ms BEGIN _dl_relocate_object
     -> 69.378ms BEGIN _dl_lookup_symbol_x
     -> 69.463ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.515724315: "
+     ("825432/825432 339457.515724315:       1 cycles:u: "
       "\t    7f5c0c8789f0 _dl_cache_libcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878bd6 search_cache+0x116 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87932c _dl_load_cache_lookup+0x5c (/usr/lib64/ld-2.28.so)"
@@ -5860,7 +5860,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 69.547ms END   do_lookup_x
     -> 69.547ms END   _dl_lookup_symbol_x
     -> 69.547ms END   _dl_relocate_object
@@ -5871,7 +5871,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 69.693ms BEGIN _dl_setup_hash
     -> 69.742ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.515968618: "
+     ("825432/825432 339457.515968618:       1 cycles:u: "
       "\t    7f5c0c330cb0 cfree@GLIBC_2.2.5+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c877573 _dl_close_worker+0x8e3 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -5879,7 +5879,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 69.791ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 69.791ms END   _dl_setup_hash
     -> 69.791ms END   _dl_map_object_from_fd
@@ -5889,7 +5889,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 69.913ms BEGIN search_cache
     -> 69.974ms BEGIN _dl_cache_libcmp
     (lines
-     ("825432/825432 339457.516210173: "
+     ("825432/825432 339457.516210173:       1 cycles:u: "
       "\t   c9858000c9858 [unknown] ([unknown])"))
     -> 70.035ms END   _dl_cache_libcmp
     -> 70.035ms END   search_cache
@@ -5915,7 +5915,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 70.216ms BEGIN _dl_close_worker
     -> 70.247ms BEGIN cfree@GLIBC_2.2.5
     (lines
-     ("825432/825432 339457.516458875: "
+     ("825432/825432 339457.516458875:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fdaff do_sym+0x6f (/usr/lib64/libc-2.28.so)"
@@ -5924,7 +5924,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     -> 70.277ms END   cfree@GLIBC_2.2.5
     -> 70.277ms END   _dl_close_worker
     -> 70.277ms END   _dl_close
@@ -5935,7 +5935,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 70.277ms END   main
     -> 70.277ms BEGIN [unknown @ 0xc9858000c9858 ([unknown])]
     (lines
-     ("825432/825432 339457.516706046: "
+     ("825432/825432 339457.516706046:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -5947,7 +5947,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 70.525ms END   [unknown @ 0xc9858000c9858 ([unknown])]
     -> 70.525ms BEGIN main
     -> 70.553ms BEGIN dlsym
@@ -5959,7 +5959,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 70.718ms BEGIN _dl_lookup_symbol_x
     -> 70.745ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.516955331: "
+     ("825432/825432 339457.516955331:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -5973,7 +5973,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 70.773ms END   do_lookup_x
     -> 70.773ms END   _dl_lookup_symbol_x
     -> 70.773ms END   do_sym
@@ -5996,7 +5996,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  70.98ms BEGIN dl_open_worker_begin
     -> 71.001ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.517206313: "
+     ("825432/825432 339457.517206313:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -6009,13 +6009,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 71.022ms END   _dl_relocate_object
     -> 71.022ms BEGIN _dl_relocate_object
     -> 71.106ms BEGIN __exp_finite
     -> 71.189ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.517461650: "
+     ("825432/825432 339457.517461650:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -6029,14 +6029,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 71.273ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 71.273ms END   __exp_finite
     -> 71.273ms END   _dl_relocate_object
     -> 71.273ms BEGIN _dl_relocate_object
     -> 71.401ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.517713640: "
+     ("825432/825432 339457.517713640:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -6050,9 +6050,9 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.517965308: "
+     ("825432/825432 339457.517965308:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -6067,12 +6067,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 71.528ms END   _dl_lookup_symbol_x
     -> 71.528ms BEGIN _dl_lookup_symbol_x
     ->  71.78ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.518216069: "
+     ("825432/825432 339457.518216069:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -6084,12 +6084,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 72.032ms END   do_lookup_x
     -> 72.032ms BEGIN do_lookup_x
     -> 72.157ms BEGIN check_match
     (lines
-     ("825432/825432 339457.518499369: "
+     ("825432/825432 339457.518499369:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -6102,7 +6102,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 72.283ms END   check_match
     -> 72.283ms END   do_lookup_x
     -> 72.283ms END   _dl_lookup_symbol_x
@@ -6111,7 +6111,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 72.283ms BEGIN dl_open_worker_begin
     -> 72.424ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.518747967: "
+     ("825432/825432 339457.518747967:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c8792d0 _dl_load_cache_lookup+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
@@ -6125,28 +6125,28 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 72.566ms END   _dl_check_map_versions
     -> 72.566ms END   dl_open_worker_begin
     -> 72.566ms BEGIN dl_open_worker_begin
     -> 72.649ms BEGIN _dl_map_object
     -> 72.732ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.518988131: "
+     ("825432/825432 339457.518988131:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 72.815ms END   _dl_map_object_from_fd
     -> 72.815ms END   _dl_map_object
     -> 72.815ms BEGIN _dl_map_object
     -> 72.895ms BEGIN _dl_load_cache_lookup
     -> 72.975ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.519232585: "
+     ("825432/825432 339457.519232585:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 73.055ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 73.055ms END   _dl_load_cache_lookup
     -> 73.055ms END   _dl_map_object
@@ -6166,7 +6166,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 73.177ms BEGIN vfprintf
     -> 73.238ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.519480889: "
+     ("825432/825432 339457.519480889:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -6180,7 +6180,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 73.299ms END   __printf_fp
     -> 73.299ms END   vfprintf
     -> 73.299ms END   fprintf
@@ -6189,7 +6189,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 73.382ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 73.465ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.519732100: "
+     ("825432/825432 339457.519732100:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -6203,7 +6203,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 73.547ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 73.547ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 73.547ms END   main
@@ -6222,7 +6222,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 73.763ms BEGIN __exp_finite
     -> 73.781ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.519983362: "
+     ("825432/825432 339457.519983362:       1 cycles:u: "
       "\t    7f5c0c87b340 _dl_cet_open_check+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87626e dl_open_worker_begin+0x18e (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -6234,7 +6234,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 73.799ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 73.799ms END   __exp_finite
     -> 73.799ms END   _dl_relocate_object
@@ -6242,7 +6242,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 73.882ms BEGIN _dl_lookup_symbol_x
     -> 73.966ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.520233211: "
+     ("825432/825432 339457.520233211:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
@@ -6257,7 +6257,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  74.05ms END   do_lookup_x
     ->  74.05ms END   _dl_lookup_symbol_x
     ->  74.05ms END   _dl_relocate_object
@@ -6265,7 +6265,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  74.05ms BEGIN dl_open_worker_begin
     -> 74.175ms BEGIN _dl_cet_open_check
     (lines
-     ("825432/825432 339457.520480545: "
+     ("825432/825432 339457.520480545:       1 cycles:u: "
       "\t    7f5c0c8792d0 _dl_load_cache_lookup+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -6278,7 +6278,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->   74.3ms END   _dl_cet_open_check
     ->   74.3ms END   dl_open_worker_begin
     ->   74.3ms BEGIN dl_open_worker_begin
@@ -6287,7 +6287,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 74.448ms BEGIN _dl_setup_hash
     -> 74.498ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.520720431: "
+     ("825432/825432 339457.520720431:       1 cycles:u: "
       "\t    7f5c0c863030 rtld_lock_default_lock_recursive+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877415 _dl_close_worker+0x785 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -6295,7 +6295,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 74.547ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 74.547ms END   _dl_setup_hash
     -> 74.547ms END   _dl_map_object_from_fd
@@ -6303,9 +6303,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 74.547ms BEGIN _dl_map_object
     -> 74.667ms BEGIN _dl_load_cache_lookup
     (lines
-     ("825432/825432 339457.520970168: "
+     ("825432/825432 339457.520970168:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          40098a main+0x133 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40098a main+0x133 (/usr/local/home/demo)"))
     -> 74.787ms END   _dl_load_cache_lookup
     -> 74.787ms END   _dl_map_object
     -> 74.787ms END   dl_open_worker_begin
@@ -6328,10 +6328,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 74.974ms BEGIN _dl_close_worker
     -> 75.006ms BEGIN rtld_lock_default_lock_recursive
     (lines
-     ("825432/825432 339457.521217820: "
+     ("825432/825432 339457.521217820:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 75.037ms END   rtld_lock_default_lock_recursive
     -> 75.037ms END   _dl_close_worker
     -> 75.037ms END   _dl_close
@@ -6343,7 +6343,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 75.037ms BEGIN main
     -> 75.161ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.521470553: "
+     ("825432/825432 339457.521470553:       1 cycles:u: "
       "\t    7f5c0c863040 rtld_lock_default_unlock_recursive+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875d59 _dl_open+0xf9 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c65a1e8 dlopen_doit+0x58 (/usr/lib64/libdl-2.28.so)"
@@ -6351,14 +6351,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 75.284ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 75.284ms END   main
     -> 75.284ms BEGIN main
     -> 75.369ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 75.453ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.521718777: "
+     ("825432/825432 339457.521718777:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -6370,7 +6370,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 75.537ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 75.537ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 75.537ms END   main
@@ -6383,7 +6383,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 75.723ms BEGIN _dl_open
     -> 75.754ms BEGIN rtld_lock_default_unlock_recursive
     (lines
-     ("825432/825432 339457.521970096: "
+     ("825432/825432 339457.521970096:       1 cycles:u: "
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -6396,7 +6396,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 75.785ms END   rtld_lock_default_unlock_recursive
     -> 75.785ms END   _dl_open
     -> 75.785ms BEGIN _dl_open
@@ -6406,7 +6406,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 75.953ms BEGIN dl_open_worker_begin
     -> 75.995ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.522220565: "
+     ("825432/825432 339457.522220565:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -6420,12 +6420,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 76.037ms END   _dl_relocate_object
     -> 76.037ms BEGIN _dl_relocate_object
     -> 76.162ms BEGIN cosf32x
     (lines
-     ("825432/825432 339457.522475468: "
+     ("825432/825432 339457.522475468:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -6439,12 +6439,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 76.287ms END   cosf32x
     -> 76.287ms BEGIN __exp_finite
     -> 76.415ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.522726627: "
+     ("825432/825432 339457.522726627:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -6457,7 +6457,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 76.542ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 76.542ms END   __exp_finite
     -> 76.542ms END   _dl_relocate_object
@@ -6465,7 +6465,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 76.626ms BEGIN _dl_lookup_symbol_x
     -> 76.709ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.522978122: "
+     ("825432/825432 339457.522978122:       1 cycles:u: "
       "\t    7f5c0c2b5a90 [unknown] (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3316e5 __libc_calloc+0x2c5 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c8737f7 _dl_check_map_versions+0x4c7 (/usr/lib64/ld-2.28.so)"
@@ -6479,12 +6479,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 76.793ms END   do_lookup_x
     -> 76.793ms END   _dl_lookup_symbol_x
     -> 76.793ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.523228701: "
+     ("825432/825432 339457.523228701:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b594 _dl_map_object+0xc4 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c870311 openaux+0x31 (/usr/lib64/ld-2.28.so)"
@@ -6500,7 +6500,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 77.045ms END   _dl_lookup_symbol_x
     -> 77.045ms END   _dl_relocate_object
     -> 77.045ms END   dl_open_worker_begin
@@ -6509,7 +6509,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  77.17ms BEGIN __libc_calloc
     -> 77.233ms BEGIN [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     (lines
-     ("825432/825432 339457.523480327: "
+     ("825432/825432 339457.523480327:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -6522,7 +6522,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 77.295ms END   [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     -> 77.295ms END   __libc_calloc
     -> 77.295ms END   _dl_check_map_versions
@@ -6534,7 +6534,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 77.463ms BEGIN _dl_map_object
     -> 77.505ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.523727886: "
+     ("825432/825432 339457.523727886:       1 cycles:u: "
       "\t    7f5c0c2b5a90 [unknown] (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3316e5 __libc_calloc+0x2c5 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c86df51 _dl_new_object+0x71 (/usr/lib64/ld-2.28.so)"
@@ -6550,7 +6550,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 77.547ms END   strcmp
     -> 77.547ms END   _dl_map_object
     -> 77.547ms END   openaux
@@ -6561,7 +6561,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 77.629ms BEGIN _dl_map_object
     -> 77.712ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.523974060: "
+     ("825432/825432 339457.523974060:       1 cycles:u: "
       "\t    7f5c0c87ff20 _fxstat+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c872c7c _dl_sysdep_read_whole_file+0x4c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c879407 _dl_load_cache_lookup+0x137 (/usr/lib64/ld-2.28.so)"
@@ -6576,21 +6576,21 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 77.794ms END   _dl_map_object_from_fd
     -> 77.794ms BEGIN _dl_map_object_from_fd
     -> 77.856ms BEGIN _dl_new_object
     -> 77.918ms BEGIN __libc_calloc
     -> 77.979ms BEGIN [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     (lines
-     ("825432/825432 339457.524221555: "
+     ("825432/825432 339457.524221555:       1 cycles:u: "
       "\t    7f5c0c876c90 _dl_close_worker+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 78.041ms END   [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     -> 78.041ms END   __libc_calloc
     -> 78.041ms END   _dl_new_object
@@ -6601,10 +6601,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 78.164ms BEGIN _dl_sysdep_read_whole_file
     -> 78.226ms BEGIN _fxstat
     (lines
-     ("825432/825432 339457.524466673: "
+     ("825432/825432 339457.524466673:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 78.288ms END   _fxstat
     -> 78.288ms END   _dl_sysdep_read_whole_file
     -> 78.288ms END   _dl_load_cache_lookup
@@ -6628,7 +6628,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 78.463ms BEGIN _dl_close
     -> 78.498ms BEGIN _dl_close_worker
     (lines
-     ("825432/825432 339457.524715567: "
+     ("825432/825432 339457.524715567:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fdaff do_sym+0x6f (/usr/lib64/libc-2.28.so)"
@@ -6637,7 +6637,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     -> 78.533ms END   _dl_close_worker
     -> 78.533ms END   _dl_close
     -> 78.533ms END   _dl_catch_exception
@@ -6649,7 +6649,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 78.616ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 78.699ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.524963127: "
+     ("825432/825432 339457.524963127:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -6661,7 +6661,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 78.782ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 78.782ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 78.782ms END   main
@@ -6675,7 +6675,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 78.975ms BEGIN _dl_lookup_symbol_x
     -> 79.002ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.525213196: "
+     ("825432/825432 339457.525213196:       1 cycles:u: "
       "\t    7f5c0bf53570 expf+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -6688,7 +6688,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  79.03ms END   do_lookup_x
     ->  79.03ms END   _dl_lookup_symbol_x
     ->  79.03ms END   do_sym
@@ -6711,7 +6711,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 79.238ms BEGIN dl_open_worker_begin
     -> 79.259ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.525467186: "
+     ("825432/825432 339457.525467186:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -6725,12 +6725,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  79.28ms END   _dl_relocate_object
     ->  79.28ms BEGIN _dl_relocate_object
     -> 79.407ms BEGIN expf
     (lines
-     ("825432/825432 339457.525718605: "
+     ("825432/825432 339457.525718605:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -6743,14 +6743,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 79.534ms END   expf
     -> 79.534ms END   _dl_relocate_object
     -> 79.534ms BEGIN _dl_relocate_object
     -> 79.618ms BEGIN _dl_lookup_symbol_x
     -> 79.701ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.525970036: "
+     ("825432/825432 339457.525970036:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -6764,12 +6764,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 79.785ms END   do_lookup_x
     -> 79.785ms END   _dl_lookup_symbol_x
     -> 79.785ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.526222367: "
+     ("825432/825432 339457.526222367:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -6784,12 +6784,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 80.037ms END   _dl_lookup_symbol_x
     -> 80.037ms BEGIN _dl_lookup_symbol_x
     -> 80.163ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.526496522: "
+     ("825432/825432 339457.526496522:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
@@ -6804,12 +6804,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 80.289ms END   do_lookup_x
     -> 80.289ms BEGIN do_lookup_x
     -> 80.426ms BEGIN check_match
     (lines
-     ("825432/825432 339457.526745225: "
+     ("825432/825432 339457.526745225:       1 cycles:u: "
       "\t    7f5c0c8802e0 mmap64+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868e31 _dl_map_object_from_fd+0x831 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -6823,7 +6823,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 80.563ms END   check_match
     -> 80.563ms END   do_lookup_x
     -> 80.563ms END   _dl_lookup_symbol_x
@@ -6835,7 +6835,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 80.712ms BEGIN _dl_setup_hash
     -> 80.762ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.526989289: "
+     ("825432/825432 339457.526989289:       1 cycles:u: "
       "\t    7f5c0c880010 __GI___close_nocancel+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c872c9c _dl_sysdep_read_whole_file+0x6c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c879407 _dl_load_cache_lookup+0x137 (/usr/lib64/ld-2.28.so)"
@@ -6850,18 +6850,18 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 80.812ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 80.812ms END   _dl_setup_hash
     -> 80.812ms END   _dl_map_object_from_fd
     -> 80.812ms BEGIN _dl_map_object_from_fd
     -> 80.934ms BEGIN mmap64
     (lines
-     ("825432/825432 339457.527228898: "
+     ("825432/825432 339457.527228898:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 81.056ms END   mmap64
     -> 81.056ms END   _dl_map_object_from_fd
     -> 81.056ms END   _dl_map_object
@@ -6870,7 +6870,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 81.176ms BEGIN _dl_sysdep_read_whole_file
     -> 81.236ms BEGIN __GI___close_nocancel
     (lines
-     ("825432/825432 339457.527477712: "
+     ("825432/825432 339457.527477712:       1 cycles:u: "
       "\t    7f5c0c8723f0 _dl_debug_initialize+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875d42 _dl_open+0xe2 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c65a1e8 dlopen_doit+0x58 (/usr/lib64/libdl-2.28.so)"
@@ -6878,7 +6878,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 81.295ms END   __GI___close_nocancel
     -> 81.295ms END   _dl_sysdep_read_whole_file
     -> 81.295ms END   _dl_load_cache_lookup
@@ -6899,7 +6899,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  81.42ms BEGIN vfprintf
     -> 81.482ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.527723997: "
+     ("825432/825432 339457.527723997:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -6913,7 +6913,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 81.544ms END   __printf_fp
     -> 81.544ms END   vfprintf
     -> 81.544ms END   fprintf
@@ -6927,7 +6927,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 81.729ms BEGIN _dl_open
     ->  81.76ms BEGIN _dl_debug_initialize
     (lines
-     ("825432/825432 339457.527974000: "
+     ("825432/825432 339457.527974000:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -6941,7 +6941,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 81.791ms END   _dl_debug_initialize
     -> 81.791ms END   _dl_open
     -> 81.791ms BEGIN _dl_open
@@ -6953,7 +6953,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 81.978ms BEGIN cosf32x
     -> 82.009ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.528225855: "
+     ("825432/825432 339457.528225855:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -6967,9 +6967,9 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.528480869: "
+     ("825432/825432 339457.528480869:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -6981,7 +6981,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 82.041ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 82.041ms END   cosf32x
     -> 82.041ms END   _dl_relocate_object
@@ -6989,7 +6989,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  82.21ms BEGIN _dl_lookup_symbol_x
     -> 82.378ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.528731502: "
+     ("825432/825432 339457.528731502:       1 cycles:u: "
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -7003,7 +7003,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 82.547ms END   do_lookup_x
     -> 82.547ms END   _dl_lookup_symbol_x
     -> 82.547ms END   _dl_relocate_object
@@ -7011,7 +7011,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 82.547ms BEGIN dl_open_worker_begin
     -> 82.673ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.528976943: "
+     ("825432/825432 339457.528976943:       1 cycles:u: "
       "\t    7f5c0c2b5a90 [unknown] (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3316e5 __libc_calloc+0x2c5 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c86df51 _dl_new_object+0x71 (/usr/lib64/ld-2.28.so)"
@@ -7027,7 +7027,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 82.798ms END   _dl_check_map_versions
     -> 82.798ms END   dl_open_worker_begin
     -> 82.798ms BEGIN dl_open_worker_begin
@@ -7035,7 +7035,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 82.921ms BEGIN _dl_map_object_from_fd
     -> 82.982ms BEGIN _dl_setup_hash
     (lines
-     ("825432/825432 339457.529221025: "
+     ("825432/825432 339457.529221025:       1 cycles:u: "
       "\t    7f5c0c8760e0 dl_open_worker_begin+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875ac2 dl_open_worker+0x32 (/usr/lib64/ld-2.28.so)"
@@ -7046,7 +7046,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 83.044ms END   _dl_setup_hash
     -> 83.044ms END   _dl_map_object_from_fd
     -> 83.044ms BEGIN _dl_map_object_from_fd
@@ -7054,12 +7054,12 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 83.166ms BEGIN __libc_calloc
     -> 83.227ms BEGIN [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     (lines
-     ("825432/825432 339457.529467789: "
+     ("825432/825432 339457.529467789:       1 cycles:u: "
       "\t    7f5c0c2b7d30 __mpn_mul_1+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c300285 __GI___printf_fp_l+0x2145 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 83.288ms END   [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     -> 83.288ms END   __libc_calloc
     -> 83.288ms END   _dl_new_object
@@ -7068,9 +7068,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 83.288ms END   dl_open_worker_begin
     -> 83.288ms BEGIN dl_open_worker_begin
     (lines
-     ("825432/825432 339457.529714540: "
+     ("825432/825432 339457.529714540:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 83.534ms END   dl_open_worker_begin
     -> 83.534ms END   _dl_catch_exception
     -> 83.534ms END   dl_open_worker
@@ -7088,7 +7088,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 83.682ms BEGIN __GI___printf_fp_l
     -> 83.732ms BEGIN __mpn_mul_1
     (lines
-     ("825432/825432 339457.529962461: "
+     ("825432/825432 339457.529962461:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fdaff do_sym+0x6f (/usr/lib64/libc-2.28.so)"
@@ -7097,7 +7097,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     -> 83.781ms END   __mpn_mul_1
     -> 83.781ms END   __GI___printf_fp_l
     -> 83.781ms END   vfprintf
@@ -7106,7 +7106,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 83.781ms BEGIN main
     -> 83.905ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.530210655: "
+     ("825432/825432 339457.530210655:       1 cycles:u: "
       "\t    7f5c0c863040 rtld_lock_default_unlock_recursive+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875ad1 dl_open_worker+0x41 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -7116,7 +7116,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 84.029ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 84.029ms END   main
     -> 84.029ms BEGIN main
@@ -7129,7 +7129,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 84.222ms BEGIN _dl_lookup_symbol_x
     ->  84.25ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.530482449: "
+     ("825432/825432 339457.530482449:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -7142,7 +7142,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 84.277ms END   do_lookup_x
     -> 84.277ms END   _dl_lookup_symbol_x
     -> 84.277ms END   do_sym
@@ -7163,7 +7163,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 84.495ms BEGIN dl_open_worker
     -> 84.522ms BEGIN rtld_lock_default_unlock_recursive
     (lines
-     ("825432/825432 339457.530733071: "
+     ("825432/825432 339457.530733071:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -7177,7 +7177,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 84.549ms END   rtld_lock_default_unlock_recursive
     -> 84.549ms END   dl_open_worker
     -> 84.549ms BEGIN dl_open_worker
@@ -7186,7 +7186,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 84.699ms BEGIN _dl_relocate_object
     ->  84.75ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.530984009: "
+     ("825432/825432 339457.530984009:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -7200,9 +7200,9 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.531233821: "
+     ("825432/825432 339457.531233821:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -7214,12 +7214,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->   84.8ms END   _dl_lookup_symbol_x
     ->   84.8ms BEGIN _dl_lookup_symbol_x
     ->  85.05ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.531486454: "
+     ("825432/825432 339457.531486454:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -7232,7 +7232,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->   85.3ms END   do_lookup_x
     ->   85.3ms END   _dl_lookup_symbol_x
     ->   85.3ms END   _dl_relocate_object
@@ -7240,7 +7240,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->   85.3ms BEGIN dl_open_worker_begin
     -> 85.427ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.531731558: "
+     ("825432/825432 339457.531731558:       1 cycles:u: "
       "\t    7f5c0c8723f0 _dl_debug_initialize+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86863d _dl_map_object_from_fd+0x3d (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -7254,14 +7254,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 85.553ms END   _dl_check_map_versions
     -> 85.553ms END   dl_open_worker_begin
     -> 85.553ms BEGIN dl_open_worker_begin
     -> 85.635ms BEGIN _dl_map_object
     -> 85.716ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.531975015: "
+     ("825432/825432 339457.531975015:       1 cycles:u: "
       "\t    7f5c0c85df60 [unknown] (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875ac2 dl_open_worker+0x32 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -7271,17 +7271,17 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 85.798ms END   _dl_map_object_from_fd
     -> 85.798ms BEGIN _dl_map_object_from_fd
     ->  85.92ms BEGIN _dl_debug_initialize
     (lines
-     ("825432/825432 339457.532218507: "
+     ("825432/825432 339457.532218507:       1 cycles:u: "
       "\t    7f5c0c2b59a0 [unknown] (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2ff5c7 __GI___printf_fp_l+0x1487 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 86.042ms END   _dl_debug_initialize
     -> 86.042ms END   _dl_map_object_from_fd
     -> 86.042ms END   _dl_map_object
@@ -7289,10 +7289,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 86.042ms END   _dl_catch_exception
     -> 86.042ms BEGIN [unknown @ 0x7f5c0c85df60 (/usr/lib64/ld-2.28.so)]
     (lines
-     ("825432/825432 339457.532467540: "
+     ("825432/825432 339457.532467540:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 86.285ms END   [unknown @ 0x7f5c0c85df60 (/usr/lib64/ld-2.28.so)]
     -> 86.285ms END   dl_open_worker
     -> 86.285ms END   _dl_catch_exception
@@ -7309,7 +7309,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 86.434ms BEGIN __GI___printf_fp_l
     -> 86.484ms BEGIN [unknown @ 0x7f5c0c2b59a0 (/usr/lib64/libc-2.28.so)]
     (lines
-     ("825432/825432 339457.532716880: "
+     ("825432/825432 339457.532716880:       1 cycles:u: "
       "\t    7f5c0c8723f0 _dl_debug_initialize+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875d42 _dl_open+0xe2 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c65a1e8 dlopen_doit+0x58 (/usr/lib64/libdl-2.28.so)"
@@ -7317,7 +7317,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 86.534ms END   [unknown @ 0x7f5c0c2b59a0 (/usr/lib64/libc-2.28.so)]
     -> 86.534ms END   __GI___printf_fp_l
     -> 86.534ms END   vfprintf
@@ -7327,7 +7327,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 86.617ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->   86.7ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.532963941: "
+     ("825432/825432 339457.532963941:       1 cycles:u: "
       "\t    7f5c0bf44c90 sinf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -7340,7 +7340,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 86.783ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 86.783ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 86.783ms END   main
@@ -7353,7 +7353,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 86.969ms BEGIN _dl_open
     ->     87ms BEGIN _dl_debug_initialize
     (lines
-     ("825432/825432 339457.533213757: "
+     ("825432/825432 339457.533213757:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -7367,7 +7367,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 87.031ms END   _dl_debug_initialize
     -> 87.031ms END   _dl_open
     -> 87.031ms BEGIN _dl_open
@@ -7378,7 +7378,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 87.209ms BEGIN _dl_relocate_object
     -> 87.245ms BEGIN sinf32x
     (lines
-     ("825432/825432 339457.533469291: "
+     ("825432/825432 339457.533469291:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -7394,14 +7394,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  87.28ms END   sinf32x
     ->  87.28ms END   _dl_relocate_object
     ->  87.28ms BEGIN _dl_relocate_object
     -> 87.365ms BEGIN _dl_lookup_symbol_x
     -> 87.451ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.533719908: "
+     ("825432/825432 339457.533719908:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -7413,13 +7413,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 87.536ms END   do_lookup_x
     -> 87.536ms BEGIN do_lookup_x
     -> 87.619ms BEGIN check_match
     -> 87.703ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.533971180: "
+     ("825432/825432 339457.533971180:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -7433,7 +7433,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 87.786ms END   strcmp
     -> 87.786ms END   check_match
     -> 87.786ms END   do_lookup_x
@@ -7441,7 +7441,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 87.786ms END   _dl_relocate_object
     -> 87.786ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.534222534: "
+     ("825432/825432 339457.534222534:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -7453,13 +7453,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 88.038ms END   _dl_relocate_object
     -> 88.038ms BEGIN _dl_relocate_object
     -> 88.122ms BEGIN _dl_lookup_symbol_x
     -> 88.205ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.534509929: "
+     ("825432/825432 339457.534509929:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
@@ -7474,7 +7474,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 88.289ms END   do_lookup_x
     -> 88.289ms END   _dl_lookup_symbol_x
     -> 88.289ms END   _dl_relocate_object
@@ -7482,7 +7482,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 88.289ms BEGIN dl_open_worker_begin
     -> 88.433ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.534754956: "
+     ("825432/825432 339457.534754956:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c8792d0 _dl_load_cache_lookup+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
@@ -7496,7 +7496,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 88.576ms END   _dl_check_map_versions
     -> 88.576ms END   dl_open_worker_begin
     -> 88.576ms BEGIN dl_open_worker_begin
@@ -7505,10 +7505,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 88.724ms BEGIN memset
     -> 88.773ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.534993356: "
+     ("825432/825432 339457.534993356:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 88.822ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 88.822ms END   memset
     -> 88.822ms END   _dl_map_object_from_fd
@@ -7517,7 +7517,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 88.901ms BEGIN _dl_load_cache_lookup
     ->  88.98ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.535236008: "
+     ("825432/825432 339457.535236008:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -7531,7 +7531,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  89.06ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  89.06ms END   _dl_load_cache_lookup
     ->  89.06ms END   _dl_map_object
@@ -7550,7 +7550,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 89.141ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 89.222ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.535490022: "
+     ("825432/825432 339457.535490022:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -7563,7 +7563,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 89.303ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 89.303ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 89.303ms END   main
@@ -7582,7 +7582,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  89.52ms BEGIN cosf32x
     -> 89.538ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.535741122: "
+     ("825432/825432 339457.535741122:       1 cycles:u: "
       "\t    7f5c0c86b4d0 _dl_map_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c870311 openaux+0x31 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -7597,14 +7597,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 89.557ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 89.557ms END   cosf32x
     -> 89.557ms END   _dl_relocate_object
     -> 89.557ms BEGIN _dl_relocate_object
     -> 89.682ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.535988172: "
+     ("825432/825432 339457.535988172:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
@@ -7619,7 +7619,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 89.808ms END   _dl_lookup_symbol_x
     -> 89.808ms END   _dl_relocate_object
     -> 89.808ms END   dl_open_worker_begin
@@ -7629,7 +7629,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 89.956ms BEGIN openaux
     -> 90.005ms BEGIN _dl_map_object
     (lines
-     ("825432/825432 339457.536232140: "
+     ("825432/825432 339457.536232140:       1 cycles:u: "
       "\tffffffffaf000010 [unknown] ([unknown])"
       "\t    7f5c0c880010 __GI___close_nocancel+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c872c9c _dl_sysdep_read_whole_file+0x6c (/usr/lib64/ld-2.28.so)"
@@ -7645,7 +7645,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 90.055ms END   _dl_map_object
     -> 90.055ms END   openaux
     -> 90.055ms END   _dl_catch_exception
@@ -7657,10 +7657,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 90.201ms BEGIN memset
     ->  90.25ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.536476650: "
+     ("825432/825432 339457.536476650:       1 cycles:u: "
       "\t    7f5c0c2faae0 vfprintf+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 90.299ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 90.299ms END   memset
     -> 90.299ms END   _dl_map_object_from_fd
@@ -7671,9 +7671,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 90.445ms BEGIN __GI___close_nocancel
     -> 90.494ms BEGIN [unknown @ -0x50fffff0 ([unknown])]
     (lines
-     ("825432/825432 339457.536722017: "
+     ("825432/825432 339457.536722017:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 90.543ms END   [unknown @ -0x50fffff0 ([unknown])]
     -> 90.543ms END   __GI___close_nocancel
     -> 90.543ms END   _dl_sysdep_read_whole_file
@@ -7694,7 +7694,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 90.625ms BEGIN fprintf
     -> 90.707ms BEGIN vfprintf
     (lines
-     ("825432/825432 339457.536967460: "
+     ("825432/825432 339457.536967460:       1 cycles:u: "
       "\t    7f5c0c8758f0 call_dl_init+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1fa _dl_catch_exception+0xda (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875b29 dl_open_worker+0x99 (/usr/lib64/ld-2.28.so)"
@@ -7705,14 +7705,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 90.789ms END   vfprintf
     -> 90.789ms END   fprintf
     -> 90.789ms END   main
     -> 90.789ms BEGIN main
     -> 90.911ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.537217229: "
+     ("825432/825432 339457.537217229:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -7726,7 +7726,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 91.034ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 91.034ms END   main
     -> 91.034ms BEGIN main
@@ -7741,7 +7741,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 91.238ms BEGIN _dl_catch_exception
     -> 91.261ms BEGIN call_dl_init
     (lines
-     ("825432/825432 339457.537472115: "
+     ("825432/825432 339457.537472115:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -7757,7 +7757,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 91.284ms END   call_dl_init
     -> 91.284ms END   _dl_catch_exception
     -> 91.284ms END   dl_open_worker
@@ -7768,7 +7768,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 91.454ms BEGIN cosf32x
     -> 91.496ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.537722911: "
+     ("825432/825432 339457.537722911:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -7782,7 +7782,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 91.539ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 91.539ms END   cosf32x
     -> 91.539ms END   _dl_relocate_object
@@ -7792,7 +7792,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 91.689ms BEGIN check_match
     -> 91.739ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.537974586: "
+     ("825432/825432 339457.537974586:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -7806,9 +7806,9 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.538225364: "
+     ("825432/825432 339457.538225364:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -7822,9 +7822,9 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.538481183: "
+     ("825432/825432 339457.538481183:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8730f4 _dl_name_match_p+0x14 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b560 _dl_map_object+0x90 (/usr/lib64/ld-2.28.so)"
@@ -7841,13 +7841,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 91.789ms END   strcmp
     -> 91.789ms END   check_match
     -> 91.789ms END   do_lookup_x
     -> 91.789ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.538730313: "
+     ("825432/825432 339457.538730313:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -7860,7 +7860,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 92.548ms END   do_lookup_x
     -> 92.548ms END   _dl_lookup_symbol_x
     -> 92.548ms END   _dl_relocate_object
@@ -7873,7 +7873,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 92.726ms BEGIN _dl_name_match_p
     -> 92.761ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.538976308: "
+     ("825432/825432 339457.538976308:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -7886,14 +7886,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.539219467: "
+     ("825432/825432 339457.539219467:       1 cycles:u: "
       "\t    7f5c0c3fe120 _dl_catch_exception+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 92.797ms END   strcmp
     -> 92.797ms END   _dl_name_match_p
     -> 92.797ms END   _dl_map_object
@@ -7905,10 +7905,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     ->  92.96ms BEGIN _dl_map_object
     -> 93.123ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.539485661: "
+     ("825432/825432 339457.539485661:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 93.286ms END   _dl_map_object_from_fd
     -> 93.286ms END   _dl_map_object
     -> 93.286ms END   dl_open_worker_begin
@@ -7928,7 +7928,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 93.446ms BEGIN _dl_catch_error
     -> 93.499ms BEGIN _dl_catch_exception
     (lines
-     ("825432/825432 339457.539733263: "
+     ("825432/825432 339457.539733263:       1 cycles:u: "
       "\t    7f5c0c8760e0 dl_open_worker_begin+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875ac2 dl_open_worker+0x32 (/usr/lib64/ld-2.28.so)"
@@ -7939,7 +7939,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 93.552ms END   _dl_catch_exception
     -> 93.552ms END   _dl_catch_error
     -> 93.552ms END   _dlerror_run
@@ -7949,7 +7949,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 93.635ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 93.717ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.539980816: "
+     ("825432/825432 339457.539980816:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -7963,7 +7963,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->   93.8ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->   93.8ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->   93.8ms END   main
@@ -7979,7 +7979,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 94.002ms BEGIN _dl_catch_exception
     -> 94.025ms BEGIN dl_open_worker_begin
     (lines
-     ("825432/825432 339457.540232717: "
+     ("825432/825432 339457.540232717:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -7992,14 +7992,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 94.047ms END   dl_open_worker_begin
     -> 94.047ms BEGIN dl_open_worker_begin
     ->  94.11ms BEGIN _dl_relocate_object
     -> 94.173ms BEGIN cosf32
     -> 94.236ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.540489216: "
+     ("825432/825432 339457.540489216:       1 cycles:u: "
       "\t    7f5c0c86b4d0 _dl_map_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c870311 openaux+0x31 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -8014,14 +8014,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 94.299ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 94.299ms END   cosf32
     -> 94.299ms END   _dl_relocate_object
     -> 94.299ms BEGIN _dl_relocate_object
     -> 94.428ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.540736768: "
+     ("825432/825432 339457.540736768:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
@@ -8036,7 +8036,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 94.556ms END   _dl_lookup_symbol_x
     -> 94.556ms END   _dl_relocate_object
     -> 94.556ms END   dl_open_worker_begin
@@ -8046,7 +8046,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 94.704ms BEGIN openaux
     -> 94.754ms BEGIN _dl_map_object
     (lines
-     ("825432/825432 339457.540977925: "
+     ("825432/825432 339457.540977925:       1 cycles:u: "
       "\t    7f5c0c8760e0 dl_open_worker_begin+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c875ac2 dl_open_worker+0x32 (/usr/lib64/ld-2.28.so)"
@@ -8057,7 +8057,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 94.803ms END   _dl_map_object
     -> 94.803ms END   openaux
     -> 94.803ms END   _dl_catch_exception
@@ -8069,12 +8069,12 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 94.948ms BEGIN memset
     -> 94.996ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.541221874: "
+     ("825432/825432 339457.541221874:       1 cycles:u: "
       "\t    7f5c0c32aec0 __libc_alloca_cutoff+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fea07 __GI___printf_fp_l+0x8c7 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 95.044ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 95.044ms END   memset
     -> 95.044ms END   _dl_map_object_from_fd
@@ -8082,13 +8082,13 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 95.044ms END   dl_open_worker_begin
     -> 95.044ms BEGIN dl_open_worker_begin
     (lines
-     ("825432/825432 339457.541471697: "
+     ("825432/825432 339457.541471697:       1 cycles:u: "
       "\t    7f5c0c65a190 dlopen_doit+0x0 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 95.288ms END   dl_open_worker_begin
     -> 95.288ms END   _dl_catch_exception
     -> 95.288ms END   dl_open_worker
@@ -8106,7 +8106,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 95.438ms BEGIN __GI___printf_fp_l
     -> 95.488ms BEGIN __libc_alloca_cutoff
     (lines
-     ("825432/825432 339457.541719256: "
+     ("825432/825432 339457.541719256:       1 cycles:u: "
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -8119,7 +8119,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 95.538ms END   __libc_alloca_cutoff
     -> 95.538ms END   __GI___printf_fp_l
     -> 95.538ms END   vfprintf
@@ -8132,7 +8132,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 95.703ms BEGIN _dl_catch_exception
     -> 95.745ms BEGIN dlopen_doit
     (lines
-     ("825432/825432 339457.541968414: "
+     ("825432/825432 339457.541968414:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -8146,7 +8146,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 95.786ms END   dlopen_doit
     -> 95.786ms BEGIN dlopen_doit
     -> 95.817ms BEGIN _dl_open
@@ -8157,7 +8157,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 95.973ms BEGIN _dl_relocate_object
     -> 96.004ms BEGIN cosf32x
     (lines
-     ("825432/825432 339457.542219688: "
+     ("825432/825432 339457.542219688:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -8171,12 +8171,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 96.035ms END   cosf32x
     -> 96.035ms BEGIN __exp_finite
     -> 96.161ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.542475752: "
+     ("825432/825432 339457.542475752:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -8192,7 +8192,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 96.286ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 96.286ms END   __exp_finite
     -> 96.286ms END   _dl_relocate_object
@@ -8200,7 +8200,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 96.372ms BEGIN _dl_lookup_symbol_x
     -> 96.457ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.542726957: "
+     ("825432/825432 339457.542726957:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -8212,13 +8212,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 96.542ms END   do_lookup_x
     -> 96.542ms BEGIN do_lookup_x
     -> 96.626ms BEGIN check_match
     ->  96.71ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.542978417: "
+     ("825432/825432 339457.542978417:       1 cycles:u: "
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -8232,7 +8232,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 96.794ms END   strcmp
     -> 96.794ms END   check_match
     -> 96.794ms END   do_lookup_x
@@ -8242,7 +8242,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 96.794ms BEGIN dl_open_worker_begin
     -> 96.919ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.543225909: "
+     ("825432/825432 339457.543225909:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
@@ -8257,7 +8257,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 97.045ms END   _dl_check_map_versions
     -> 97.045ms END   dl_open_worker_begin
     -> 97.045ms BEGIN dl_open_worker_begin
@@ -8265,18 +8265,18 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 97.169ms BEGIN _dl_map_object_from_fd
     -> 97.231ms BEGIN _dl_setup_hash
     (lines
-     ("825432/825432 339457.543491990: "
-      "\t          400700 dlclose@plt+0x0 (/usr/local/home/alamoreaux/demos/demo)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+     ("825432/825432 339457.543491990:       1 cycles:u: "
+      "\t          400700 dlclose@plt+0x0 (/usr/local/demo)"
+      "\t          4009b7 main+0x160 (/usr/local/demo)"))
     -> 97.292ms END   _dl_setup_hash
     -> 97.292ms END   _dl_map_object_from_fd
     -> 97.292ms BEGIN _dl_map_object_from_fd
     -> 97.381ms BEGIN memset
     ->  97.47ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.543735197: "
+     ("825432/825432 339457.543735197:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 97.559ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 97.559ms END   memset
     -> 97.559ms END   _dl_map_object_from_fd
@@ -8295,7 +8295,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 97.559ms BEGIN main
     ->  97.68ms BEGIN dlclose@plt
     (lines
-     ("825432/825432 339457.543977597: "
+     ("825432/825432 339457.543977597:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -8307,13 +8307,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 97.802ms END   dlclose@plt
     -> 97.802ms END   main
     -> 97.802ms BEGIN main
     -> 97.923ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     (lines
-     ("825432/825432 339457.544226883: "
+     ("825432/825432 339457.544226883:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -8329,7 +8329,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 98.044ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 98.044ms END   main
     -> 98.044ms BEGIN main
@@ -8345,7 +8345,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 98.252ms BEGIN dl_open_worker_begin
     -> 98.273ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.544481615: "
+     ("825432/825432 339457.544481615:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -8357,7 +8357,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 98.293ms END   _dl_relocate_object
     -> 98.293ms BEGIN _dl_relocate_object
     -> 98.344ms BEGIN _dl_lookup_symbol_x
@@ -8365,7 +8365,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 98.446ms BEGIN check_match
     -> 98.497ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.544731757: "
+     ("825432/825432 339457.544731757:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
@@ -8380,7 +8380,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 98.548ms END   strcmp
     -> 98.548ms END   check_match
     -> 98.548ms END   do_lookup_x
@@ -8390,7 +8390,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 98.548ms BEGIN dl_open_worker_begin
     -> 98.673ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.544975917: "
+     ("825432/825432 339457.544975917:       1 cycles:u: "
       "\t    7f5c0c869a00 open_verify.constprop.9+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b979 _dl_map_object+0x4a9 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -8403,7 +8403,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 98.798ms END   _dl_check_map_versions
     -> 98.798ms END   dl_open_worker_begin
     -> 98.798ms BEGIN dl_open_worker_begin
@@ -8412,12 +8412,12 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 98.945ms BEGIN _dl_setup_hash
     -> 98.994ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.545220980: "
+     ("825432/825432 339457.545220980:       1 cycles:u: "
       "\t    7f5c0c3fe120 _dl_catch_exception+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 99.042ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 99.042ms END   _dl_setup_hash
     -> 99.042ms END   _dl_map_object_from_fd
@@ -8425,10 +8425,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 99.042ms BEGIN _dl_map_object
     -> 99.165ms BEGIN open_verify.constprop.9
     (lines
-     ("825432/825432 339457.545466437: "
+     ("825432/825432 339457.545466437:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 99.288ms END   open_verify.constprop.9
     -> 99.288ms END   _dl_map_object
     -> 99.288ms END   dl_open_worker_begin
@@ -8448,7 +8448,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 99.435ms BEGIN _dl_catch_error
     -> 99.484ms BEGIN _dl_catch_exception
     (lines
-     ("825432/825432 339457.545712333: "
+     ("825432/825432 339457.545712333:       1 cycles:u: "
       "\tffffffffaf000010 [unknown] ([unknown])"
       "\t    7f5c0c85ee00 mprotect+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86e4b7 _dl_protect_relro+0x47 (/usr/lib64/ld-2.28.so)"
@@ -8463,7 +8463,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 99.533ms END   _dl_catch_exception
     -> 99.533ms END   _dl_catch_error
     -> 99.533ms END   _dlerror_run
@@ -8473,7 +8473,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 99.615ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 99.697ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.545963225: "
+     ("825432/825432 339457.545963225:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -8487,7 +8487,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 99.779ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 99.779ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 99.779ms END   main
@@ -8507,7 +8507,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 99.996ms BEGIN mprotect
     -> 100.013ms BEGIN [unknown @ -0x50fffff0 ([unknown])]
     (lines
-     ("825432/825432 339457.546216328: "
+     ("825432/825432 339457.546216328:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -8520,7 +8520,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 100.03ms END   [unknown @ -0x50fffff0 ([unknown])]
     -> 100.03ms END   mprotect
     -> 100.03ms END   _dl_protect_relro
@@ -8529,7 +8529,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 100.114ms BEGIN cosf32
     -> 100.199ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.546472293: "
+     ("825432/825432 339457.546472293:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -8541,14 +8541,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 100.283ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 100.283ms END   cosf32
     -> 100.283ms END   _dl_relocate_object
     -> 100.283ms BEGIN _dl_relocate_object
     -> 100.411ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.546724476: "
+     ("825432/825432 339457.546724476:       1 cycles:u: "
       "\t    7f5c0c8730e0 _dl_name_match_p+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8733f3 _dl_check_map_versions+0xc3 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
@@ -8561,14 +8561,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 100.539ms END   _dl_lookup_symbol_x
     -> 100.539ms END   _dl_relocate_object
     -> 100.539ms END   dl_open_worker_begin
     -> 100.539ms BEGIN dl_open_worker_begin
     -> 100.665ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.546976219: "
+     ("825432/825432 339457.546976219:       1 cycles:u: "
       "\t    7f5c0c862540 strchr+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86a893 _dl_dst_count+0x13 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87065e _dl_map_object_deps+0x33e (/usr/lib64/ld-2.28.so)"
@@ -8582,12 +8582,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 100.791ms END   _dl_check_map_versions
     -> 100.791ms BEGIN _dl_check_map_versions
     -> 100.917ms BEGIN _dl_name_match_p
     (lines
-     ("825432/825432 339457.547225476: "
+     ("825432/825432 339457.547225476:       1 cycles:u: "
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -8601,7 +8601,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 101.043ms END   _dl_name_match_p
     -> 101.043ms END   _dl_check_map_versions
     -> 101.043ms END   dl_open_worker_begin
@@ -8610,13 +8610,13 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 101.167ms BEGIN _dl_dst_count
     -> 101.23ms BEGIN strchr
     (lines
-     ("825432/825432 339457.547493876: "
+     ("825432/825432 339457.547493876:       1 cycles:u: "
       "\t    7f5c0c65a190 dlopen_doit+0x0 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 101.292ms END   strchr
     -> 101.292ms END   _dl_dst_count
     -> 101.292ms END   _dl_map_object_deps
@@ -8626,12 +8626,12 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 101.426ms BEGIN _dl_map_object_from_fd
     -> 101.493ms BEGIN memset
     (lines
-     ("825432/825432 339457.547737909: "
+     ("825432/825432 339457.547737909:       1 cycles:u: "
       "\t    7f5c0c2f4380 __mpn_extract_double+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fee8f __GI___printf_fp_l+0xd4f (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 101.56ms END   memset
     -> 101.56ms END   _dl_map_object_from_fd
     -> 101.56ms END   _dl_map_object
@@ -8643,7 +8643,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 101.56ms END   dlopen_doit
     -> 101.56ms BEGIN dlopen_doit
     (lines
-     ("825432/825432 339457.547983550: "
+     ("825432/825432 339457.547983550:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fdaff do_sym+0x6f (/usr/lib64/libc-2.28.so)"
@@ -8652,7 +8652,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     -> 101.804ms END   dlopen_doit
     -> 101.804ms END   _dl_catch_exception
     -> 101.804ms END   _dl_catch_error
@@ -8665,7 +8665,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 101.952ms BEGIN __GI___printf_fp_l
     -> 102.001ms BEGIN __mpn_extract_double
     (lines
-     ("825432/825432 339457.548229265: "
+     ("825432/825432 339457.548229265:       1 cycles:u: "
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -8678,7 +8678,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 102.05ms END   __mpn_extract_double
     -> 102.05ms END   __GI___printf_fp_l
     -> 102.05ms END   vfprintf
@@ -8694,7 +8694,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 102.241ms BEGIN _dl_lookup_symbol_x
     -> 102.269ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.548482678: "
+     ("825432/825432 339457.548482678:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -8708,7 +8708,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 102.296ms END   do_lookup_x
     -> 102.296ms END   _dl_lookup_symbol_x
     -> 102.296ms END   do_sym
@@ -8732,7 +8732,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 102.51ms BEGIN _dl_relocate_object
     -> 102.53ms BEGIN __exp_finite
     (lines
-     ("825432/825432 339457.548733982: "
+     ("825432/825432 339457.548733982:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -8744,14 +8744,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 102.549ms END   __exp_finite
     -> 102.549ms END   _dl_relocate_object
     -> 102.549ms BEGIN _dl_relocate_object
     -> 102.633ms BEGIN _dl_lookup_symbol_x
     -> 102.717ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.548983156: "
+     ("825432/825432 339457.548983156:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -8765,7 +8765,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 102.801ms END   do_lookup_x
     -> 102.801ms END   _dl_lookup_symbol_x
     -> 102.801ms END   _dl_relocate_object
@@ -8773,7 +8773,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 102.801ms BEGIN dl_open_worker_begin
     -> 102.925ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.549227744: "
+     ("825432/825432 339457.549227744:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c8789f0 _dl_cache_libcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878bd6 search_cache+0x116 (/usr/lib64/ld-2.28.so)"
@@ -8789,7 +8789,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 103.05ms END   _dl_check_map_versions
     -> 103.05ms END   dl_open_worker_begin
     -> 103.05ms BEGIN dl_open_worker_begin
@@ -8797,12 +8797,12 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 103.172ms BEGIN _dl_map_object_from_fd
     -> 103.233ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.549471154: "
+     ("825432/825432 339457.549471154:       1 cycles:u: "
       "\t    7f5c0c2fdd10 hack_digit+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2feb6c __GI___printf_fp_l+0xa2c (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 103.294ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 103.294ms END   _dl_map_object_from_fd
     -> 103.294ms END   _dl_map_object
@@ -8812,10 +8812,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 103.44ms BEGIN _dl_cache_libcmp
     -> 103.489ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.549716691: "
+     ("825432/825432 339457.549716691:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 103.538ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 103.538ms END   _dl_cache_libcmp
     -> 103.538ms END   search_cache
@@ -8838,7 +8838,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 103.685ms BEGIN __GI___printf_fp_l
     -> 103.734ms BEGIN hack_digit
     (lines
-     ("825432/825432 339457.549965308: "
+     ("825432/825432 339457.549965308:       1 cycles:u: "
       "\t    7f5c0bf59270 rintf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -8851,7 +8851,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 103.783ms END   hack_digit
     -> 103.783ms END   __GI___printf_fp_l
     -> 103.783ms END   vfprintf
@@ -8861,7 +8861,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 103.866ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 103.949ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.550215389: "
+     ("825432/825432 339457.550215389:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -8875,7 +8875,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 104.032ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 104.032ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 104.032ms END   main
@@ -8893,7 +8893,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 104.243ms BEGIN _dl_relocate_object
     -> 104.263ms BEGIN rintf32
     (lines
-     ("825432/825432 339457.550470176: "
+     ("825432/825432 339457.550470176:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -8907,12 +8907,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 104.282ms END   rintf32
     -> 104.282ms BEGIN __exp_finite
     -> 104.409ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.550722761: "
+     ("825432/825432 339457.550722761:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -8928,7 +8928,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 104.537ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 104.537ms END   __exp_finite
     -> 104.537ms END   _dl_relocate_object
@@ -8936,7 +8936,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 104.621ms BEGIN _dl_lookup_symbol_x
     -> 104.705ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.550974328: "
+     ("825432/825432 339457.550974328:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -8950,13 +8950,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 104.789ms END   do_lookup_x
     -> 104.789ms BEGIN do_lookup_x
     -> 104.873ms BEGIN check_match
     -> 104.957ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.551225831: "
+     ("825432/825432 339457.551225831:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8735d1 _dl_check_map_versions+0x2a1 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
@@ -8969,13 +8969,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 105.041ms END   strcmp
     -> 105.041ms END   check_match
     -> 105.041ms END   do_lookup_x
     -> 105.041ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.551500059: "
+     ("825432/825432 339457.551500059:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -8988,7 +8988,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 105.292ms END   do_lookup_x
     -> 105.292ms END   _dl_lookup_symbol_x
     -> 105.292ms END   _dl_relocate_object
@@ -8997,7 +8997,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 105.384ms BEGIN _dl_check_map_versions
     -> 105.475ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.551744603: "
+     ("825432/825432 339457.551744603:       1 cycles:u: "
       "\t    7f5c0c869a00 open_verify.constprop.9+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b979 _dl_map_object+0x4a9 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -9010,7 +9010,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 105.567ms END   strcmp
     -> 105.567ms END   _dl_check_map_versions
     -> 105.567ms END   dl_open_worker_begin
@@ -9018,7 +9018,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 105.648ms BEGIN _dl_map_object
     -> 105.73ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.551992072: "
+     ("825432/825432 339457.551992072:       1 cycles:u: "
       "\t    7f5c0c85edd0 munmap+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87a1bc _dl_unmap+0x1c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8774cc _dl_close_worker+0x83c (/usr/lib64/ld-2.28.so)"
@@ -9027,16 +9027,16 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 105.811ms END   _dl_map_object_from_fd
     -> 105.811ms END   _dl_map_object
     -> 105.811ms BEGIN _dl_map_object
     -> 105.935ms BEGIN open_verify.constprop.9
     (lines
-     ("825432/825432 339457.552232749: "
+     ("825432/825432 339457.552232749:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 106.059ms END   open_verify.constprop.9
     -> 106.059ms END   _dl_map_object
     -> 106.059ms END   dl_open_worker_begin
@@ -9060,7 +9060,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 106.246ms BEGIN _dl_unmap
     -> 106.273ms BEGIN munmap
     (lines
-     ("825432/825432 339457.552480365: "
+     ("825432/825432 339457.552480365:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -9074,7 +9074,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 106.299ms END   munmap
     -> 106.299ms END   _dl_unmap
     -> 106.299ms END   _dl_close_worker
@@ -9088,7 +9088,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 106.382ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 106.464ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.552731815: "
+     ("825432/825432 339457.552731815:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -9101,7 +9101,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 106.547ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 106.547ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 106.547ms END   main
@@ -9120,7 +9120,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 106.762ms BEGIN __exp_finite
     -> 106.78ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.552983175: "
+     ("825432/825432 339457.552983175:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -9132,14 +9132,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 106.798ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 106.798ms END   __exp_finite
     -> 106.798ms END   _dl_relocate_object
     -> 106.798ms BEGIN _dl_relocate_object
     -> 106.924ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.553234240: "
+     ("825432/825432 339457.553234240:       1 cycles:u: "
       "\t    7f5c0c8702e0 openaux+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c87075a _dl_map_object_deps+0x43a (/usr/lib64/ld-2.28.so)"
@@ -9153,14 +9153,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 107.05ms END   _dl_lookup_symbol_x
     -> 107.05ms END   _dl_relocate_object
     -> 107.05ms END   dl_open_worker_begin
     -> 107.05ms BEGIN dl_open_worker_begin
     -> 107.175ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.553482340: "
+     ("825432/825432 339457.553482340:       1 cycles:u: "
       "\t    7f5c0c331420 __libc_calloc+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c86df51 _dl_new_object+0x71 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868792 _dl_map_object_from_fd+0x192 (/usr/lib64/ld-2.28.so)"
@@ -9175,7 +9175,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 107.301ms END   _dl_check_map_versions
     -> 107.301ms END   dl_open_worker_begin
     -> 107.301ms BEGIN dl_open_worker_begin
@@ -9183,7 +9183,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 107.425ms BEGIN _dl_catch_exception
     -> 107.487ms BEGIN openaux
     (lines
-     ("825432/825432 339457.553728340: "
+     ("825432/825432 339457.553728340:       1 cycles:u: "
       "\t    7f5c0c87ff20 _fxstat+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c872c7c _dl_sysdep_read_whole_file+0x4c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c879407 _dl_load_cache_lookup+0x137 (/usr/lib64/ld-2.28.so)"
@@ -9198,7 +9198,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 107.549ms END   openaux
     -> 107.549ms END   _dl_catch_exception
     -> 107.549ms END   _dl_map_object_deps
@@ -9209,7 +9209,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 107.697ms BEGIN _dl_new_object
     -> 107.746ms BEGIN __libc_calloc
     (lines
-     ("825432/825432 339457.553969416: "
+     ("825432/825432 339457.553969416:       1 cycles:u: "
       "\t    7f5c0c8783d0 _dl_sort_maps+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8770ab _dl_close_worker+0x41b (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -9217,7 +9217,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 107.795ms END   __libc_calloc
     -> 107.795ms END   _dl_new_object
     -> 107.795ms END   _dl_map_object_from_fd
@@ -9227,11 +9227,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 107.915ms BEGIN _dl_sysdep_read_whole_file
     -> 107.976ms BEGIN _fxstat
     (lines
-     ("825432/825432 339457.554219536: "
+     ("825432/825432 339457.554219536:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 108.036ms END   _fxstat
     -> 108.036ms END   _dl_sysdep_read_whole_file
     -> 108.036ms END   _dl_load_cache_lookup
@@ -9256,10 +9256,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 108.224ms BEGIN _dl_close_worker
     -> 108.255ms BEGIN _dl_sort_maps
     (lines
-     ("825432/825432 339457.554469825: "
+     ("825432/825432 339457.554469825:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 108.286ms END   _dl_sort_maps
     -> 108.286ms END   _dl_close_worker
     -> 108.286ms END   _dl_close
@@ -9273,9 +9273,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 108.411ms BEGIN vfprintf
     -> 108.474ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.554718570: "
+     ("825432/825432 339457.554718570:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 108.536ms END   __printf_fp
     -> 108.536ms END   vfprintf
     -> 108.536ms END   fprintf
@@ -9284,22 +9284,22 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 108.619ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 108.702ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.554967272: "
+     ("825432/825432 339457.554967272:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 108.785ms END   [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.555218288: "
+     ("825432/825432 339457.555218288:       1 cycles:u: "
       "\t    7f5c0c65a190 dlopen_doit+0x0 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 109.034ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.555487957: "
+     ("825432/825432 339457.555487957:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -9313,7 +9313,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 109.285ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 109.285ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 109.285ms END   main
@@ -9324,7 +9324,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 109.465ms BEGIN _dl_catch_exception
     -> 109.51ms BEGIN dlopen_doit
     (lines
-     ("825432/825432 339457.555740353: "
+     ("825432/825432 339457.555740353:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -9339,7 +9339,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 109.555ms END   dlopen_doit
     -> 109.555ms BEGIN dlopen_doit
     -> 109.583ms BEGIN _dl_open
@@ -9351,7 +9351,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 109.751ms BEGIN cosf32
     -> 109.779ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.555990957: "
+     ("825432/825432 339457.555990957:       1 cycles:u: "
       "\t    7f5c0c86c190 check_match+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
@@ -9366,9 +9366,9 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.556242356: "
+     ("825432/825432 339457.556242356:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -9380,7 +9380,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 109.807ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 109.807ms END   cosf32
     -> 109.807ms END   _dl_relocate_object
@@ -9389,7 +9389,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 110.058ms BEGIN do_lookup_x
     -> 110.183ms BEGIN check_match
     (lines
-     ("825432/825432 339457.556496174: "
+     ("825432/825432 339457.556496174:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -9402,14 +9402,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 110.309ms END   check_match
     -> 110.309ms END   do_lookup_x
     -> 110.309ms END   _dl_lookup_symbol_x
     -> 110.309ms END   _dl_relocate_object
     -> 110.309ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.556741442: "
+     ("825432/825432 339457.556741442:       1 cycles:u: "
       "\t    7f5c0c32ea00 _int_malloc+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3314a1 __libc_calloc+0x81 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c86df51 _dl_new_object+0x71 (/usr/lib64/ld-2.28.so)"
@@ -9425,14 +9425,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 110.563ms END   _dl_relocate_object
     -> 110.563ms END   dl_open_worker_begin
     -> 110.563ms BEGIN dl_open_worker_begin
     -> 110.644ms BEGIN _dl_map_object
     -> 110.726ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.556984752: "
+     ("825432/825432 339457.556984752:       1 cycles:u: "
       "\t    7f5c0c86b4d0 _dl_map_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -9444,20 +9444,20 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 110.808ms END   _dl_map_object_from_fd
     -> 110.808ms BEGIN _dl_map_object_from_fd
     -> 110.869ms BEGIN _dl_new_object
     -> 110.93ms BEGIN __libc_calloc
     -> 110.99ms BEGIN _int_malloc
     (lines
-     ("825432/825432 339457.557227580: "
+     ("825432/825432 339457.557227580:       1 cycles:u: "
       "\t    7f5c0c2b7d30 __mpn_mul_1+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fde0c hack_digit+0xfc (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2feb6c __GI___printf_fp_l+0xa2c (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 111.051ms END   _int_malloc
     -> 111.051ms END   __libc_calloc
     -> 111.051ms END   _dl_new_object
@@ -9465,7 +9465,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 111.051ms END   _dl_map_object
     -> 111.051ms BEGIN _dl_map_object
     (lines
-     ("825432/825432 339457.557476914: "
+     ("825432/825432 339457.557476914:       1 cycles:u: "
       "\t   c9858000c9858 [unknown] ([unknown])"))
     -> 111.294ms END   _dl_map_object
     -> 111.294ms END   dl_open_worker_begin
@@ -9486,7 +9486,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 111.46ms BEGIN hack_digit
     -> 111.502ms BEGIN __mpn_mul_1
     (lines
-     ("825432/825432 339457.557722520: "
+     ("825432/825432 339457.557722520:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -9498,7 +9498,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 111.543ms END   __mpn_mul_1
     -> 111.543ms END   hack_digit
     -> 111.543ms END   __GI___printf_fp_l
@@ -9507,7 +9507,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 111.543ms END   main
     -> 111.543ms BEGIN [unknown @ 0xc9858000c9858 ([unknown])]
     (lines
-     ("825432/825432 339457.557972460: "
+     ("825432/825432 339457.557972460:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -9521,7 +9521,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 111.789ms END   [unknown @ 0xc9858000c9858 ([unknown])]
     -> 111.789ms BEGIN main
     -> 111.81ms BEGIN dlopen@@GLIBC_2.2.5
@@ -9536,7 +9536,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 111.997ms BEGIN dl_open_worker_begin
     -> 112.018ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.558223669: "
+     ("825432/825432 339457.558223669:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -9548,13 +9548,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 112.039ms END   _dl_relocate_object
     -> 112.039ms BEGIN _dl_relocate_object
     -> 112.123ms BEGIN __exp_finite
     -> 112.206ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.558478443: "
+     ("825432/825432 339457.558478443:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -9567,13 +9567,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 112.29ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 112.29ms END   __exp_finite
     -> 112.29ms END   _dl_relocate_object
     -> 112.29ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.558729112: "
+     ("825432/825432 339457.558729112:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -9587,12 +9587,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 112.545ms END   _dl_relocate_object
     -> 112.545ms BEGIN _dl_relocate_object
     -> 112.67ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.558980050: "
+     ("825432/825432 339457.558980050:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -9604,12 +9604,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 112.796ms END   _dl_lookup_symbol_x
     -> 112.796ms BEGIN _dl_lookup_symbol_x
     -> 112.921ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.559230350: "
+     ("825432/825432 339457.559230350:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8730f4 _dl_name_match_p+0x14 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b560 _dl_map_object+0x90 (/usr/lib64/ld-2.28.so)"
@@ -9626,7 +9626,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 113.047ms END   do_lookup_x
     -> 113.047ms END   _dl_lookup_symbol_x
     -> 113.047ms END   _dl_relocate_object
@@ -9634,7 +9634,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 113.047ms BEGIN dl_open_worker_begin
     -> 113.172ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.559482160: "
+     ("825432/825432 339457.559482160:       1 cycles:u: "
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -9648,7 +9648,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 113.297ms END   _dl_check_map_versions
     -> 113.297ms END   dl_open_worker_begin
     -> 113.297ms BEGIN dl_open_worker_begin
@@ -9659,7 +9659,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 113.477ms BEGIN _dl_name_match_p
     -> 113.513ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.559728446: "
+     ("825432/825432 339457.559728446:       1 cycles:u: "
       "\t    7f5c0c8681b0 _dl_process_pt_note+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868baf _dl_map_object_from_fd+0x5af (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -9673,7 +9673,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 113.549ms END   strcmp
     -> 113.549ms END   _dl_name_match_p
     -> 113.549ms END   _dl_map_object
@@ -9686,7 +9686,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 113.672ms BEGIN _dl_map_object_from_fd
     -> 113.733ms BEGIN memset
     (lines
-     ("825432/825432 339457.559976126: "
+     ("825432/825432 339457.559976126:       1 cycles:u: "
       "\t    7f5c0c8792d0 _dl_load_cache_lookup+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -9699,13 +9699,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 113.795ms END   memset
     -> 113.795ms END   _dl_map_object_from_fd
     -> 113.795ms BEGIN _dl_map_object_from_fd
     -> 113.919ms BEGIN _dl_process_pt_note
     (lines
-     ("825432/825432 339457.560222773: "
+     ("825432/825432 339457.560222773:       1 cycles:u: "
       "\t    7f5c0c330cb0 cfree@GLIBC_2.2.5+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c877536 _dl_close_worker+0x8a6 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -9713,17 +9713,17 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 114.043ms END   _dl_process_pt_note
     -> 114.043ms END   _dl_map_object_from_fd
     -> 114.043ms END   _dl_map_object
     -> 114.043ms BEGIN _dl_map_object
     -> 114.166ms BEGIN _dl_load_cache_lookup
     (lines
-     ("825432/825432 339457.560487769: "
+     ("825432/825432 339457.560487769:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 114.289ms END   _dl_load_cache_lookup
     -> 114.289ms END   _dl_map_object
     -> 114.289ms END   dl_open_worker_begin
@@ -9746,7 +9746,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 114.488ms BEGIN _dl_close_worker
     -> 114.521ms BEGIN cfree@GLIBC_2.2.5
     (lines
-     ("825432/825432 339457.560733721: "
+     ("825432/825432 339457.560733721:       1 cycles:u: "
       "\t    7f5c0c879690 _dl_unload_cache+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875d14 _dl_open+0xb4 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c65a1e8 dlopen_doit+0x58 (/usr/lib64/libdl-2.28.so)"
@@ -9754,7 +9754,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 114.554ms END   cfree@GLIBC_2.2.5
     -> 114.554ms END   _dl_close_worker
     -> 114.554ms END   _dl_close
@@ -9767,7 +9767,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 114.636ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 114.718ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.560982985: "
+     ("825432/825432 339457.560982985:       1 cycles:u: "
       "\t    7f5c0bf56070 logf+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -9780,7 +9780,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  114.8ms END   [unknown @ -0x50ffef00 ([unknown])]
     ->  114.8ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     ->  114.8ms END   main
@@ -9793,7 +9793,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 114.987ms BEGIN _dl_open
     -> 115.018ms BEGIN _dl_unload_cache
     (lines
-     ("825432/825432 339457.561231847: "
+     ("825432/825432 339457.561231847:       1 cycles:u: "
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -9806,7 +9806,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 115.05ms END   _dl_unload_cache
     -> 115.05ms END   _dl_open
     -> 115.05ms BEGIN _dl_open
@@ -9817,7 +9817,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 115.227ms BEGIN _dl_relocate_object
     -> 115.263ms BEGIN logf
     (lines
-     ("825432/825432 339457.561485982: "
+     ("825432/825432 339457.561485982:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -9831,11 +9831,11 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 115.298ms END   logf
     -> 115.298ms BEGIN cosf32
     (lines
-     ("825432/825432 339457.561736440: "
+     ("825432/825432 339457.561736440:       1 cycles:u: "
       "\t    7f5c0c2b5a90 [unknown] (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3316e5 __libc_calloc+0x2c5 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c8737f7 _dl_check_map_versions+0x4c7 (/usr/lib64/ld-2.28.so)"
@@ -9849,14 +9849,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 115.553ms END   cosf32
     -> 115.553ms END   _dl_relocate_object
     -> 115.553ms BEGIN _dl_relocate_object
     -> 115.636ms BEGIN _dl_lookup_symbol_x
     -> 115.72ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.561986342: "
+     ("825432/825432 339457.561986342:       1 cycles:u: "
       "\t    7f5c0c86a880 _dl_dst_count+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87065e _dl_map_object_deps+0x33e (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
@@ -9869,7 +9869,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 115.803ms END   do_lookup_x
     -> 115.803ms END   _dl_lookup_symbol_x
     -> 115.803ms END   _dl_relocate_object
@@ -9879,7 +9879,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 115.928ms BEGIN __libc_calloc
     -> 115.99ms BEGIN [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     (lines
-     ("825432/825432 339457.562233802: "
+     ("825432/825432 339457.562233802:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
@@ -9894,7 +9894,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 116.053ms END   [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     -> 116.053ms END   __libc_calloc
     -> 116.053ms END   _dl_check_map_versions
@@ -9903,7 +9903,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 116.135ms BEGIN _dl_map_object_deps
     -> 116.218ms BEGIN _dl_dst_count
     (lines
-     ("825432/825432 339457.562483702: "
+     ("825432/825432 339457.562483702:       1 cycles:u: "
       "\t    7f5c0c879e50 __tunable_get_val+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c878b51 search_cache+0x91 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87932c _dl_load_cache_lookup+0x5c (/usr/lib64/ld-2.28.so)"
@@ -9918,7 +9918,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  116.3ms END   _dl_dst_count
     ->  116.3ms END   _dl_map_object_deps
     ->  116.3ms END   dl_open_worker_begin
@@ -9928,7 +9928,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 116.45ms BEGIN memset
     ->  116.5ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.562728584: "
+     ("825432/825432 339457.562728584:       1 cycles:u: "
       "\t    7f5c0c85df60 [unknown] (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875d0c _dl_open+0xac (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c65a1e8 dlopen_doit+0x58 (/usr/lib64/libdl-2.28.so)"
@@ -9936,7 +9936,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 116.55ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 116.55ms END   memset
     -> 116.55ms END   _dl_map_object_from_fd
@@ -9946,10 +9946,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 116.673ms BEGIN search_cache
     -> 116.734ms BEGIN __tunable_get_val
     (lines
-     ("825432/825432 339457.562970253: "
+     ("825432/825432 339457.562970253:       1 cycles:u: "
       "\t    7f5c0c2faae0 vfprintf+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 116.795ms END   __tunable_get_val
     -> 116.795ms END   search_cache
     -> 116.795ms END   _dl_load_cache_lookup
@@ -9960,11 +9960,11 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 116.795ms END   _dl_catch_exception
     -> 116.795ms BEGIN [unknown @ 0x7f5c0c85df60 (/usr/lib64/ld-2.28.so)]
     (lines
-     ("825432/825432 339457.563218888: "
+     ("825432/825432 339457.563218888:       1 cycles:u: "
       "\t    7f5c0c300ba0 __printf_fp+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2fb67a vfprintf+0xb9a (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 117.037ms END   [unknown @ 0x7f5c0c85df60 (/usr/lib64/ld-2.28.so)]
     -> 117.037ms END   _dl_open
     -> 117.037ms END   dlopen_doit
@@ -9977,27 +9977,27 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 117.12ms BEGIN fprintf
     -> 117.203ms BEGIN vfprintf
     (lines
-     ("825432/825432 339457.563469936: "
+     ("825432/825432 339457.563469936:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 117.285ms END   vfprintf
     -> 117.285ms BEGIN vfprintf
     -> 117.411ms BEGIN __printf_fp
     (lines
-     ("825432/825432 339457.563719975: "
+     ("825432/825432 339457.563719975:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.563967418: "
+     ("825432/825432 339457.563967418:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.564216807: "
+     ("825432/825432 339457.564216807:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 117.536ms END   __printf_fp
     -> 117.536ms END   vfprintf
     -> 117.536ms END   fprintf
@@ -10006,7 +10006,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 117.785ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 118.034ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.564486335: "
+     ("825432/825432 339457.564486335:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -10020,10 +10020,10 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 118.283ms END   [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.564737871: "
+     ("825432/825432 339457.564737871:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -10037,7 +10037,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 118.553ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 118.553ms END   main
     -> 118.553ms BEGIN main
@@ -10055,7 +10055,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 118.768ms BEGIN cosf32x
     -> 118.786ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.564988423: "
+     ("825432/825432 339457.564988423:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -10069,13 +10069,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 118.804ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 118.804ms END   cosf32x
     -> 118.804ms BEGIN __exp_finite
     -> 118.93ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.565239868: "
+     ("825432/825432 339457.565239868:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c1f8 check_match+0x68 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -10091,7 +10091,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 119.055ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 119.055ms END   __exp_finite
     -> 119.055ms END   _dl_relocate_object
@@ -10099,7 +10099,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 119.139ms BEGIN _dl_lookup_symbol_x
     -> 119.223ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.565494386: "
+     ("825432/825432 339457.565494386:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8730f4 _dl_name_match_p+0x14 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8733f3 _dl_check_map_versions+0xc3 (/usr/lib64/ld-2.28.so)"
@@ -10113,13 +10113,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 119.306ms END   do_lookup_x
     -> 119.306ms BEGIN do_lookup_x
     -> 119.391ms BEGIN check_match
     -> 119.476ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.565742752: "
+     ("825432/825432 339457.565742752:       1 cycles:u: "
       "\t    7f5c0c868600 _dl_map_object_from_fd+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -10132,7 +10132,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 119.561ms END   strcmp
     -> 119.561ms END   check_match
     -> 119.561ms END   do_lookup_x
@@ -10144,7 +10144,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 119.685ms BEGIN _dl_name_match_p
     -> 119.747ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.565988173: "
+     ("825432/825432 339457.565988173:       1 cycles:u: "
       "\t    7f5c0c32ea00 _int_malloc+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3314a1 __libc_calloc+0x81 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c86df51 _dl_new_object+0x71 (/usr/lib64/ld-2.28.so)"
@@ -10160,7 +10160,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 119.809ms END   strcmp
     -> 119.809ms END   _dl_name_match_p
     -> 119.809ms END   _dl_check_map_versions
@@ -10169,7 +10169,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 119.891ms BEGIN _dl_map_object
     -> 119.973ms BEGIN _dl_map_object_from_fd
     (lines
-     ("825432/825432 339457.566233029: "
+     ("825432/825432 339457.566233029:       1 cycles:u: "
       "\t    7f5c0c872c30 _dl_sysdep_read_whole_file+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c879407 _dl_load_cache_lookup+0x137 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
@@ -10183,16 +10183,16 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 120.055ms END   _dl_map_object_from_fd
     -> 120.055ms BEGIN _dl_map_object_from_fd
     -> 120.116ms BEGIN _dl_new_object
     -> 120.177ms BEGIN __libc_calloc
     -> 120.238ms BEGIN _int_malloc
     (lines
-     ("825432/825432 339457.566477194: "
-      "\t          400700 dlclose@plt+0x0 (/usr/local/home/alamoreaux/demos/demo)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+     ("825432/825432 339457.566477194:       1 cycles:u: "
+      "\t          400700 dlclose@plt+0x0 (/usr/local/demo)"
+      "\t          4009b7 main+0x160 (/usr/local/demo)"))
     ->  120.3ms END   _int_malloc
     ->  120.3ms END   __libc_calloc
     ->  120.3ms END   _dl_new_object
@@ -10202,10 +10202,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 120.381ms BEGIN _dl_load_cache_lookup
     -> 120.462ms BEGIN _dl_sysdep_read_whole_file
     (lines
-     ("825432/825432 339457.566725411: "
+     ("825432/825432 339457.566725411:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 120.544ms END   _dl_sysdep_read_whole_file
     -> 120.544ms END   _dl_load_cache_lookup
     -> 120.544ms END   _dl_map_object
@@ -10223,22 +10223,22 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 120.544ms BEGIN main
     -> 120.668ms BEGIN dlclose@plt
     (lines
-     ("825432/825432 339457.566973567: "
+     ("825432/825432 339457.566973567:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 120.792ms END   dlclose@plt
     -> 120.792ms END   main
     -> 120.792ms BEGIN main
     -> 120.875ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 120.957ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.567220432: "
+     ("825432/825432 339457.567220432:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 121.04ms END   [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.567471297: "
+     ("825432/825432 339457.567471297:       1 cycles:u: "
       "\t    7f5c0bf5fe80 exp2f+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -10251,10 +10251,10 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 121.287ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.567721390: "
+     ("825432/825432 339457.567721390:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf44ce0 cosf32x+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -10268,7 +10268,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 121.538ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 121.538ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 121.538ms END   main
@@ -10286,7 +10286,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 121.749ms BEGIN _dl_relocate_object
     -> 121.769ms BEGIN exp2f
     (lines
-     ("825432/825432 339457.567972540: "
+     ("825432/825432 339457.567972540:       1 cycles:u: "
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -10299,12 +10299,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 121.788ms END   exp2f
     -> 121.788ms BEGIN cosf32x
     -> 121.914ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.568222359: "
+     ("825432/825432 339457.568222359:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf57ec0 cosf32+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -10318,12 +10318,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 122.039ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 122.039ms END   cosf32x
     -> 122.039ms BEGIN __exp_finite
     (lines
-     ("825432/825432 339457.568503015: "
+     ("825432/825432 339457.568503015:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -10337,12 +10337,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 122.289ms END   __exp_finite
     -> 122.289ms BEGIN cosf32
     -> 122.429ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.568754085: "
+     ("825432/825432 339457.568754085:       1 cycles:u: "
       "\t    7f5c0c873330 _dl_check_map_versions+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -10354,7 +10354,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 122.57ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 122.57ms END   cosf32
     -> 122.57ms END   _dl_relocate_object
@@ -10362,7 +10362,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 122.653ms BEGIN _dl_lookup_symbol_x
     -> 122.737ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.569002738: "
+     ("825432/825432 339457.569002738:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
@@ -10377,7 +10377,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 122.821ms END   do_lookup_x
     -> 122.821ms END   _dl_lookup_symbol_x
     -> 122.821ms END   _dl_relocate_object
@@ -10385,7 +10385,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 122.821ms BEGIN dl_open_worker_begin
     -> 122.945ms BEGIN _dl_check_map_versions
     (lines
-     ("825432/825432 339457.569248064: "
+     ("825432/825432 339457.569248064:       1 cycles:u: "
       "\t    7f5c0c331420 __libc_calloc+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c86df51 _dl_new_object+0x71 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868792 _dl_map_object_from_fd+0x192 (/usr/lib64/ld-2.28.so)"
@@ -10400,7 +10400,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 123.069ms END   _dl_check_map_versions
     -> 123.069ms END   dl_open_worker_begin
     -> 123.069ms BEGIN dl_open_worker_begin
@@ -10409,7 +10409,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 123.216ms BEGIN _dl_setup_hash
     -> 123.266ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.569486595: "
+     ("825432/825432 339457.569486595:       1 cycles:u: "
       "\t    7f5c0c8783d0 _dl_sort_maps+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8770ab _dl_close_worker+0x41b (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877dbd _dl_close+0x2d (/usr/lib64/ld-2.28.so)"
@@ -10417,7 +10417,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 123.315ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 123.315ms END   _dl_setup_hash
     -> 123.315ms END   _dl_map_object_from_fd
@@ -10425,10 +10425,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 123.394ms BEGIN _dl_new_object
     -> 123.474ms BEGIN __libc_calloc
     (lines
-     ("825432/825432 339457.569732735: "
+     ("825432/825432 339457.569732735:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 123.553ms END   __libc_calloc
     -> 123.553ms END   _dl_new_object
     -> 123.553ms END   _dl_map_object_from_fd
@@ -10453,9 +10453,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 123.738ms BEGIN _dl_close_worker
     -> 123.769ms BEGIN _dl_sort_maps
     (lines
-     ("825432/825432 339457.569980223: "
-      "\t          400750 dlerror@plt+0x0 (/usr/local/home/alamoreaux/demos/demo)"
-      "\t          400919 main+0xc2 (/usr/local/home/alamoreaux/demos/demo)"))
+     ("825432/825432 339457.569980223:       1 cycles:u: "
+      "\t          400750 dlerror@plt+0x0 (/usr/local/demo)"
+      "\t          400919 main+0xc2 (/usr/local/demo)"))
     -> 123.799ms END   _dl_sort_maps
     -> 123.799ms END   _dl_close_worker
     -> 123.799ms END   _dl_close
@@ -10468,7 +10468,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 123.882ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 123.964ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.570226311: "
+     ("825432/825432 339457.570226311:       1 cycles:u: "
       "\t    7f5c0c863040 rtld_lock_default_unlock_recursive+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875ad1 dl_open_worker+0x41 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -10478,14 +10478,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 124.047ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 124.047ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 124.047ms END   main
     -> 124.047ms BEGIN main
     -> 124.17ms BEGIN dlerror@plt
     (lines
-     ("825432/825432 339457.570477783: "
+     ("825432/825432 339457.570477783:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf3a320 __exp_finite+0x0 (/usr/lib64/libm-2.28.so)"
       "\t    7f5c0c86eda5 _dl_relocate_object+0x7f5 (/usr/lib64/ld-2.28.so)"
@@ -10499,7 +10499,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 124.293ms END   dlerror@plt
     -> 124.293ms END   main
     -> 124.293ms BEGIN main
@@ -10513,7 +10513,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 124.494ms BEGIN dl_open_worker
     -> 124.519ms BEGIN rtld_lock_default_unlock_recursive
     (lines
-     ("825432/825432 339457.570728534: "
+     ("825432/825432 339457.570728534:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -10526,7 +10526,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 124.544ms END   rtld_lock_default_unlock_recursive
     -> 124.544ms END   dl_open_worker
     -> 124.544ms BEGIN dl_open_worker
@@ -10536,7 +10536,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 124.712ms BEGIN __exp_finite
     -> 124.753ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.570978306: "
+     ("825432/825432 339457.570978306:       1 cycles:u: "
       "\t    7f5c0c86ce70 _dl_lookup_symbol_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
@@ -10549,9 +10549,9 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.571229032: "
+     ("825432/825432 339457.571229032:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -10565,14 +10565,14 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 124.795ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 124.795ms END   __exp_finite
     -> 124.795ms END   _dl_relocate_object
     -> 124.795ms BEGIN _dl_relocate_object
     -> 125.045ms BEGIN _dl_lookup_symbol_x
     (lines
-     ("825432/825432 339457.571482970: "
+     ("825432/825432 339457.571482970:       1 cycles:u: "
       "\t    7f5c0c330660 malloc+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c870a78 _dl_map_object_deps+0x758 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
@@ -10585,12 +10585,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 125.296ms END   _dl_lookup_symbol_x
     -> 125.296ms BEGIN _dl_lookup_symbol_x
     -> 125.423ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.571733119: "
+     ("825432/825432 339457.571733119:       1 cycles:u: "
       "\t    7f5c0c870320 _dl_map_object_deps+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8761ec dl_open_worker_begin+0x10c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -10602,7 +10602,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 125.55ms END   do_lookup_x
     -> 125.55ms END   _dl_lookup_symbol_x
     -> 125.55ms END   _dl_relocate_object
@@ -10611,7 +10611,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 125.633ms BEGIN _dl_map_object_deps
     -> 125.716ms BEGIN malloc
     (lines
-     ("825432/825432 339457.571981008: "
+     ("825432/825432 339457.571981008:       1 cycles:u: "
       "\t    7f5c0c862ed0 memset+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868dae _dl_map_object_from_fd+0x7ae (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -10625,12 +10625,12 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     ->  125.8ms END   malloc
     ->  125.8ms END   _dl_map_object_deps
     ->  125.8ms BEGIN _dl_map_object_deps
     (lines
-     ("825432/825432 339457.572228196: "
+     ("825432/825432 339457.572228196:       1 cycles:u: "
       "\t    7f5c0c2b5a90 [unknown] (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3316e5 __libc_calloc+0x2c5 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c86df51 _dl_new_object+0x71 (/usr/lib64/ld-2.28.so)"
@@ -10646,7 +10646,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 126.048ms END   _dl_map_object_deps
     -> 126.048ms END   dl_open_worker_begin
     -> 126.048ms BEGIN dl_open_worker_begin
@@ -10654,7 +10654,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 126.171ms BEGIN _dl_map_object_from_fd
     -> 126.233ms BEGIN memset
     (lines
-     ("825432/825432 339457.572489593: "
+     ("825432/825432 339457.572489593:       1 cycles:u: "
       "\t    7f5c0c32b860 __unregister_atfork+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c2e57e4 __cxa_finalize+0x1c4 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0bf1e5b2 [unknown] (/usr/lib64/libm-2.28.so)"
@@ -10666,7 +10666,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 126.295ms END   memset
     -> 126.295ms END   _dl_map_object_from_fd
     -> 126.295ms BEGIN _dl_map_object_from_fd
@@ -10674,10 +10674,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 126.425ms BEGIN __libc_calloc
     -> 126.491ms BEGIN [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     (lines
-     ("825432/825432 339457.572741673: "
+     ("825432/825432 339457.572741673:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 126.556ms END   [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     -> 126.556ms END   __libc_calloc
     -> 126.556ms END   _dl_new_object
@@ -10707,9 +10707,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 126.766ms BEGIN __cxa_finalize
     -> 126.787ms BEGIN __unregister_atfork
     (lines
-     ("825432/825432 339457.572988988: "
+     ("825432/825432 339457.572988988:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 126.808ms END   __unregister_atfork
     -> 126.808ms END   __cxa_finalize
     -> 126.808ms END   [unknown @ 0x7f5c0bf1e5b2 (/usr/lib64/libm-2.28.so)]
@@ -10726,7 +10726,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 126.891ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 126.973ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.573234143: "
+     ("825432/825432 339457.573234143:       1 cycles:u: "
       "\t    7f5c0c863040 rtld_lock_default_unlock_recursive+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c875ad1 dl_open_worker+0x41 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -10736,10 +10736,10 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 127.056ms END   [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.573485463: "
+     ("825432/825432 339457.573485463:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c2c7 check_match+0x137 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86c6b9 do_lookup_x+0x389 (/usr/lib64/ld-2.28.so)"
@@ -10755,7 +10755,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 127.301ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 127.301ms END   main
     -> 127.301ms BEGIN main
@@ -10769,7 +10769,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 127.502ms BEGIN dl_open_worker
     -> 127.527ms BEGIN rtld_lock_default_unlock_recursive
     (lines
-     ("825432/825432 339457.573736512: "
+     ("825432/825432 339457.573736512:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -10783,7 +10783,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 127.552ms END   rtld_lock_default_unlock_recursive
     -> 127.552ms END   dl_open_worker
     -> 127.552ms BEGIN dl_open_worker
@@ -10795,7 +10795,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 127.74ms BEGIN check_match
     -> 127.772ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.573987467: "
+     ("825432/825432 339457.573987467:       1 cycles:u: "
       "\t    7f5c0c8730e0 _dl_name_match_p+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c8733f3 _dl_check_map_versions+0xc3 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876231 dl_open_worker_begin+0x151 (/usr/lib64/ld-2.28.so)"
@@ -10808,13 +10808,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 127.803ms END   strcmp
     -> 127.803ms END   check_match
     -> 127.803ms END   do_lookup_x
     -> 127.803ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.574237093: "
+     ("825432/825432 339457.574237093:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
@@ -10829,7 +10829,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 128.054ms END   do_lookup_x
     -> 128.054ms END   _dl_lookup_symbol_x
     -> 128.054ms END   _dl_relocate_object
@@ -10838,7 +10838,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 128.137ms BEGIN _dl_check_map_versions
     -> 128.22ms BEGIN _dl_name_match_p
     (lines
-     ("825432/825432 339457.574484154: "
+     ("825432/825432 339457.574484154:       1 cycles:u: "
       "\t    7f5c0c8792d0 _dl_load_cache_lookup+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b930 _dl_map_object+0x460 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -10851,7 +10851,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 128.304ms END   _dl_name_match_p
     -> 128.304ms END   _dl_check_map_versions
     -> 128.304ms END   dl_open_worker_begin
@@ -10861,7 +10861,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 128.452ms BEGIN _dl_setup_hash
     -> 128.501ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.574730512: "
+     ("825432/825432 339457.574730512:       1 cycles:u: "
       "\t    7f5c0c85ef50 strcmp+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c87311f _dl_name_match_p+0x3f (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b560 _dl_map_object+0x90 (/usr/lib64/ld-2.28.so)"
@@ -10875,7 +10875,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 128.551ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 128.551ms END   _dl_setup_hash
     -> 128.551ms END   _dl_map_object_from_fd
@@ -10883,19 +10883,19 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 128.551ms BEGIN _dl_map_object
     -> 128.674ms BEGIN _dl_load_cache_lookup
     (lines
-     ("825432/825432 339457.574979928: "
+     ("825432/825432 339457.574979928:       1 cycles:u: "
       "\t    7f5c0c3fe120 _dl_catch_exception+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 128.797ms END   _dl_load_cache_lookup
     -> 128.797ms END   _dl_map_object
     -> 128.797ms BEGIN _dl_map_object
     -> 128.88ms BEGIN _dl_name_match_p
     -> 128.963ms BEGIN strcmp
     (lines
-     ("825432/825432 339457.575223963: "
+     ("825432/825432 339457.575223963:       1 cycles:u: "
       "\t    7f5c0c876ae0 call_destructors+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1fa _dl_catch_exception+0xda (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c877184 _dl_close_worker+0x4f4 (/usr/lib64/ld-2.28.so)"
@@ -10904,7 +10904,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 129.046ms END   strcmp
     -> 129.046ms END   _dl_name_match_p
     -> 129.046ms END   _dl_map_object
@@ -10925,10 +10925,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 129.193ms BEGIN _dl_catch_error
     -> 129.242ms BEGIN _dl_catch_exception
     (lines
-     ("825432/825432 339457.575477277: "
+     ("825432/825432 339457.575477277:       1 cycles:u: "
       "\t    7f5c0c2faae0 vfprintf+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c303933 fprintf+0x93 (/usr/lib64/libc-2.28.so)"
-      "\t          4009ab main+0x154 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009ab main+0x154 (/usr/local/home/demo)"))
     -> 129.291ms END   _dl_catch_exception
     -> 129.291ms BEGIN _dl_catch_exception
     -> 129.341ms BEGIN _dl_close
@@ -10936,10 +10936,10 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 129.443ms BEGIN _dl_catch_exception
     -> 129.493ms BEGIN call_destructors
     (lines
-     ("825432/825432 339457.575724558: "
+     ("825432/825432 339457.575724558:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 129.544ms END   call_destructors
     -> 129.544ms END   _dl_catch_exception
     -> 129.544ms END   _dl_close_worker
@@ -10953,9 +10953,9 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 129.626ms BEGIN fprintf
     -> 129.709ms BEGIN vfprintf
     (lines
-     ("825432/825432 339457.575973114: "
+     ("825432/825432 339457.575973114:       1 cycles:u: "
       "\t    7f5c0bf90df0 [unknown] (/usr/lib64/libm-2.28.so)"
-      "\t          400976 main+0x11f (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          400976 main+0x11f (/usr/local/home/demo)"))
     -> 129.791ms END   vfprintf
     -> 129.791ms END   fprintf
     -> 129.791ms END   main
@@ -10963,15 +10963,15 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 129.874ms BEGIN [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 129.957ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.576221756: "
+     ("825432/825432 339457.576221756:       1 cycles:u: "
       "\t    7f5c0c3fe120 _dl_catch_exception+0x0 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a3be dlsym+0x5e (/usr/lib64/libdl-2.28.so)"
-      "\t          40092a main+0xd3 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          40092a main+0xd3 (/usr/local/home/demo)"))
     -> 130.04ms END   [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.576492686: "
+     ("825432/825432 339457.576492686:       1 cycles:u: "
       "\t    7f5c0c86e5b0 _dl_relocate_object+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876321 dl_open_worker_begin+0x241 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
@@ -10983,7 +10983,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 130.288ms END   [unknown @ 0x7f5c0bf90df0 (/usr/lib64/libm-2.28.so)]
     -> 130.288ms END   main
     -> 130.288ms BEGIN main
@@ -10992,7 +10992,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 130.451ms BEGIN _dl_catch_error
     -> 130.505ms BEGIN _dl_catch_exception
     (lines
-     ("825432/825432 339457.576743855: "
+     ("825432/825432 339457.576743855:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -11006,7 +11006,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 130.559ms END   _dl_catch_exception
     -> 130.559ms END   _dl_catch_error
     -> 130.559ms END   _dlerror_run
@@ -11025,7 +11025,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 130.769ms BEGIN dl_open_worker_begin
     -> 130.789ms BEGIN _dl_relocate_object
     (lines
-     ("825432/825432 339457.576994893: "
+     ("825432/825432 339457.576994893:       1 cycles:u: "
       "\t    7f5c0c86c330 do_lookup_x+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86cf8c _dl_lookup_symbol_x+0x11c (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86ebf2 _dl_relocate_object+0x642 (/usr/lib64/ld-2.28.so)"
@@ -11039,9 +11039,9 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     (lines
-     ("825432/825432 339457.577245763: "
+     ("825432/825432 339457.577245763:       1 cycles:u: "
       "\t    7f5c0c2b5a90 [unknown] (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3316e5 __libc_calloc+0x2c5 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c8737f7 _dl_check_map_versions+0x4c7 (/usr/lib64/ld-2.28.so)"
@@ -11055,13 +11055,13 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 130.81ms END   _dl_relocate_object
     -> 130.81ms BEGIN _dl_relocate_object
     -> 130.978ms BEGIN _dl_lookup_symbol_x
     -> 131.145ms BEGIN do_lookup_x
     (lines
-     ("825432/825432 339457.577499491: "
+     ("825432/825432 339457.577499491:       1 cycles:u: "
       "\tffffffffaf001100 [unknown] ([unknown])"
       "\t    7f5c0c86dd80 _dl_setup_hash+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86918f _dl_map_object_from_fd+0xb8f (/usr/lib64/ld-2.28.so)"
@@ -11076,7 +11076,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 131.312ms END   do_lookup_x
     -> 131.312ms END   _dl_lookup_symbol_x
     -> 131.312ms END   _dl_relocate_object
@@ -11086,7 +11086,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 131.439ms BEGIN __libc_calloc
     -> 131.503ms BEGIN [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     (lines
-     ("825432/825432 339457.577745241: "
+     ("825432/825432 339457.577745241:       1 cycles:u: "
       "\t    7f5c0c8681b0 _dl_process_pt_note+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c868baf _dl_map_object_from_fd+0x5af (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b6b0 _dl_map_object+0x1e0 (/usr/lib64/ld-2.28.so)"
@@ -11100,7 +11100,7 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 131.566ms END   [unknown @ 0x7f5c0c2b5a90 (/usr/lib64/libc-2.28.so)]
     -> 131.566ms END   __libc_calloc
     -> 131.566ms END   _dl_check_map_versions
@@ -11111,7 +11111,7 @@ let%expect_test "A raise_notrace OCaml exception" =
     -> 131.714ms BEGIN _dl_setup_hash
     -> 131.763ms BEGIN [unknown @ -0x50ffef00 ([unknown])]
     (lines
-     ("825432/825432 339457.577987964: "
+     ("825432/825432 339457.577987964:       1 cycles:u: "
       "\t    7f5c0c8730e0 _dl_name_match_p+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c86b560 _dl_map_object+0x90 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c876184 dl_open_worker_begin+0xa4 (/usr/lib64/ld-2.28.so)"
@@ -11124,21 +11124,21 @@ let%expect_test "A raise_notrace OCaml exception" =
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a285 dlopen@@GLIBC_2.2.5+0x45 (/usr/lib64/libdl-2.28.so)"
-      "\t          4008de main+0x87 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4008de main+0x87 (/usr/local/home/demo)"))
     -> 131.812ms END   [unknown @ -0x50ffef00 ([unknown])]
     -> 131.812ms END   _dl_setup_hash
     -> 131.812ms END   _dl_map_object_from_fd
     -> 131.812ms BEGIN _dl_map_object_from_fd
     -> 131.933ms BEGIN _dl_process_pt_note
     (lines
-     ("825432/825432 339457.578230703: "
+     ("825432/825432 339457.578230703:       1 cycles:u: "
       "\t    7f5c0c863030 rtld_lock_default_lock_recursive+0x0 (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c877d9f _dl_close+0xf (/usr/lib64/ld-2.28.so)"
       "\t    7f5c0c3fe1a2 _dl_catch_exception+0x82 (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c3fe25e _dl_catch_error+0x2e (/usr/lib64/libc-2.28.so)"
       "\t    7f5c0c65a964 _dlerror_run+0x64 (/usr/lib64/libdl-2.28.so)"
       "\t    7f5c0c65a313 dlclose+0x23 (/usr/lib64/libdl-2.28.so)"
-      "\t          4009b7 main+0x160 (/usr/local/home/alamoreaux/demos/demo)"))
+      "\t          4009b7 main+0x160 (/usr/local/home/demo)"))
     -> 132.055ms END   _dl_process_pt_note
     -> 132.055ms END   _dl_map_object_from_fd
     -> 132.055ms END   _dl_map_object

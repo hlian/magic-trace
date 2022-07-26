@@ -47,7 +47,12 @@ module Ok = struct
           ; dst : Location.t
           }
       | Power of { freq : int }
-      | Sample of { callstack : Location.t list }
+      | Stacktrace_sample of { callstack : Location.t list }
+      | Event_sample of
+          { location : Location.t
+          ; count : int
+          ; name : Collection_mode.Event.Name.t
+          }
     [@@deriving sexp]
   end
 
@@ -62,7 +67,7 @@ end
 module Decode_error = struct
   type t =
     { thread : Thread.t
-          (* The time is only present sometimes. I haven't figured out when, exactly, but my
+        (* The time is only present sometimes. I haven't figured out when, exactly, but my
        Skylake test machine has it while my Tiger Lake test machine doesn't. It could
        easily be a difference between different versions of perf... *)
     ; time : Time_ns_unix.Span.Option.t
@@ -90,8 +95,8 @@ let change_time (t : t) ~f : t =
   | Ok ({ time; _ } as t) -> Ok { t with time = f time }
   | Error ({ time; _ } as u) ->
     (match%optional.Time_ns_unix.Span.Option time with
-    | None -> t
-    | Some time -> Error { u with time = Time_ns_unix.Span.Option.some (f time) })
+     | None -> t
+     | Some time -> Error { u with time = Time_ns_unix.Span.Option.some (f time) })
 ;;
 
 module With_write_info = struct
