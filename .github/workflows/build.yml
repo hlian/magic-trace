@@ -21,7 +21,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ~/.opam
-          key: ${{ matrix.os }}-opam-${{ matrix.ocaml-version }}-flambda-musl-v3
+          key: ${{ matrix.os }}-opam-${{ matrix.ocaml-version }}-flambda-musl-v6
 
       - name: Install musl-compatible kernel headers
         run: |
@@ -32,14 +32,15 @@ jobs:
 
       - name: Install upx
         run: |
-          # The version that comes with focal is broken for musl binaries, pulling 3.96 from hirsute.
-          wget http://azure.archive.ubuntu.com/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.96-2_amd64.deb
+          # The version that comes with focal is broken for musl binaries, so we have to download
+          # from another location.
+          wget http://ftp.debian.org/debian/pool/main/u/upx-ucl/upx-ucl_3.96-2_amd64.deb
           sudo dpkg -i upx-ucl_3.96-2_amd64.deb
 
       - name: Use OCaml ${{ matrix.ocaml-version }}
         run: |
           sudo apt-get update
-          sudo apt-get install bubblewrap musl-tools
+          sudo apt-get install bubblewrap musl-tools libzstd-dev
           sudo wget -O /usr/local/bin/opam https://github.com/ocaml/opam/releases/download/2.1.2/opam-2.1.2-x86_64-linux
           sudo chmod a+x /usr/local/bin/opam
 

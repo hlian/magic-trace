@@ -1,5 +1,6 @@
 open! Core
 open! Async
+open! Import
 
 module Serve = struct
   type enabled =
@@ -106,7 +107,7 @@ module Serve = struct
     in
     let stop = Cohttp_async.Server.close_finished server in
     Async_unix.Signal.handle ~stop [ Signal.int ] ~f:(fun (_ : Signal.t) ->
-        Cohttp_async.Server.close server |> don't_wait_for);
+      Cohttp_async.Server.close server |> don't_wait_for);
     Core.eprintf "Open %s to view the %s in Perfetto!\n%!" (url t) filename;
     stop |> Deferred.ok
   ;;
@@ -136,8 +137,8 @@ let param =
     | false -> `Fuchsia store_path
   in
   (match serve, output with
-  | Enabled _, `Sexp _ -> raise_s [%message "cannot serve .sexp output"]
-  | _ -> ());
+   | Enabled _, `Sexp _ -> raise_s [%message "cannot serve .sexp output"]
+   | _ -> ());
   { serve; output }
 ;;
 
@@ -166,7 +167,11 @@ let write_and_maybe_serve ?num_temp_strs t ~filename ~f_sexp ~f_fuchsia =
      serving the new trace, which is unlikely to be what the user expected. *)
     let indirect_store_path = [%string "/proc/self/fd/%{fd#Core_unix.File_descr}"] in
     let w =
-      Tracing_zero.Writer.create_for_file ?num_temp_strs ~filename:indirect_store_path ()
+      Tracing_zero.Writer.create_for_file
+        ?num_temp_strs
+        ~filename:indirect_store_path
+        ~original_filename:store_path
+        ()
     in
     let%bind res = f_fuchsia w in
     let%map () =
